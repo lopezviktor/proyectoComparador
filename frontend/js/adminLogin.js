@@ -15,7 +15,7 @@ function validarFormularioLogin(){
     if (usuario.trim() === ""){
         mensajesError.push('El nombre de usuario es obligatorio.');
     }
-    if (password.lenght > 8){
+    if (password.length > 8){
         mensajesError.push('La contraseña debe de tener al menos 8 caracteres.');
     }
     if(mensajesError > 0){
