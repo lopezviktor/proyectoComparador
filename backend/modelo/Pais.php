@@ -1,6 +1,7 @@
 <?php
 
 class Pais{
+    
     private $nombre;
     private $bandera;
     private $poblacion;
