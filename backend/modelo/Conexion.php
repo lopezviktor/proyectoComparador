@@ -1,15 +1,35 @@
 <?php
 
-    $dbhost = 'localhost';
-    $dbuser = 'root';
-    $dbpasswd = '';
-    $dbname = 'comparador';
+class Conexion {
+    private $conexion;
+    private $dbhost;
+    private $dbuser;
+    private $dbpasswd;
+    private $dbname;
 
-    $conexion = mysqli_connect($dbhost,$dbuser,$dbpasswd,$dbname);
-    if (!$conexion){
-        die ("Error de conexión :".mysqli_connect_error());
+    public function __construct($dbhost = 'localhost', $dbuser = 'root', $dbpasswd = '', $dbname = 'comparador') {
+        $this->dbhost = $dbhost;
+        $this->dbuser = $dbuser;
+        $this->dbpasswd = $dbpasswd;
+        $this->dbname = $dbname;
     }
-    else{
-        echo("conectado");
+
+    public function conectarBD() {
+        $this->conexion = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpasswd, $this->dbname);
+        if (!$this->conexion) {
+            die("Error de conexión: " . mysqli_connect_error());
+        } else {
+            echo "Conectado";
+        }
     }
+
+    public function getConexion() {
+        return $this->conexion;
+    }
+
+    public function cerrarConexion() {
+        mysqli_close($this->conexion);
+    }
+}
+
 ?>
