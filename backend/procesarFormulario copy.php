@@ -1,20 +1,15 @@
 <?php
 //Archivo que procesa los datos enviados desde el formulario de países y los maneja en el backend.
 
-/*
+
 $dbhost = 'localhost';
 $dbuser = 'root';
 $dbpasswd = '';
 $dbname = 'comparador';
-*/
-require "modelo/Conexion.php";
-
-$conexion = new Conexion();
-$conexion->conectarBD();
 
 // conexión a la BD
-//$conexion = mysqli_connect($dbhost,$dbuser,$dbpasswd,$dbname);
-if (!$conexion->getConexion()){
+$conexion = mysqli_connect($dbhost,$dbuser,$dbpasswd,$dbname);
+if (!$conexion){
     die ("Error de conexión :".mysqli_connect_error());
 }
 else{
@@ -93,7 +88,7 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
             $nombre = $_POST['nombre']; 
 
             #Se hace una consulta a la tabla registros de base de datos, se usa COUNT para saber cuántos registros tiene.
-            $queryRegistro = mysqli_query($conexion->getConexion(), "SELECT COUNT(nombre) AS cantidad FROM paises WHERE nombre = '$nombre'");
+            $queryRegistro = mysqli_query($conexion, "SELECT COUNT(nombre) AS cantidad FROM paises WHERE nombre = '$nombre'");
             $row = $queryRegistro->fetch_assoc();
 
             #Si la cantidad es mayor a 0 significa que ya hay un registro, por lo contrario, se inserta a la base de datos.
@@ -105,7 +100,7 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
                 //move_uploaded_file($banderaTemp, $carpetaDestino.$banderaNombre);
 
                 // Preparar la consulta SQL para insertar los datos en la tabla
-                $insertar = mysqli_query($conexion->getConexion(), "INSERT INTO paises (nombre, bandera, poblacion, superficie, 
+                $insertar = mysqli_query($conexion, "INSERT INTO paises (nombre, bandera, poblacion, superficie, 
                     pib, esperanzaVida, tasaNatalidad, tasaMortalidad) 
 
                     VALUES ('$nombre', 'https://localhost/proyectoComparador/imagenes/banderas/$banderaNombre$tipo', 
