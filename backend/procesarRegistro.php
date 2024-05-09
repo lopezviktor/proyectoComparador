@@ -1,6 +1,7 @@
 <?php
 
-require "modelo/Conexion.php";
+require_once "modelo/Conexion.php";
+require_once "modelo/Usuario.php";
 
 $conexion = new Conexion();
 $conexion->conectarBD();
@@ -19,19 +20,20 @@ $telefono = $_POST['telefono'];
 $password = $_POST['contrasena'];
 
 // Verificar si el nombre de usuario ya existe en la base de datos
-$query = mysqli_query($conexion->getConexion(), "SELECT * FROM usuarios WHERE nombreUsuario='$nombreUsuario'");
-$num = mysqli_num_rows($query);
+$query = $conexion->getConexion()->prepare("SELECT * FROM usuarios WHERE nombreUsuario = ?");
+$query->bind_param("s", $nombreUsuario);
+$query->execute();
+$result = $query->get_result();
+$query->close();
 
-if($num > 0){ // Si el nombre de usuario ya existe, mostrar mensaje de error
+if($result->num_rows > 0){ 
     echo "El nombre de usuario ya está en uso. Por favor, elige otro.";
     exit();
-} else { // Si el nombre de usuario no existe, insertar el nuevo usuario en la base de datos
-    $insert_query = "INSERT INTO usuarios (nombreUsuario, nombre, apellidos, correo, telefono, contrasena) VALUES ('$nombreUsuario', '$nombre', '$apellidos', '$correo', '$telefono', '$password')";
-    $insert_result = mysqli_query($conexion->getConexion(), $insert_query);
-
-    if ($insert_result) {
+} else {
+    // Crear el usuario y guardarlo en la base de datos
+    $usuario = new Usuario($nombreUsuario, $nombre, $apellidos, $correo, $telefono, $password);
+    if ($usuario->guardarUsuario()) {
         echo "¡Registro exitoso! Ahora puedes iniciar sesión.";
-        // Redireccionar a la página de inicio de sesión
         header("Location: ../frontend/html/login.html");
         exit();
     } else {

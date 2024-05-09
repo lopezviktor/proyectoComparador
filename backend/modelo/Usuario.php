@@ -84,6 +84,22 @@ class Usuario{
         return $this;
     }
 
+    public function guardarUsuario(){
+        require_once 'Conexion.php';
+        $conexion = new Conexion();
+        $conexion->conectarBD();
+        $sql = "INSERT INTO usuarios (nombreUsuario, nombre, apellidos, correo, telefono, contrasena) VALUES ('" . 
+        $this->nombreUsuario . "', '" . 
+        $this->nombre . "', '" . 
+        $this->apellidos . "', '" . 
+        $this->correo . "', '" . 
+        $this->telefono . "', '" . 
+        $this->contrasena . "')";
+
+        $result = $conexion->getConexion()->query($sql);
+
+        return $result;
+    }
 
 }
 ?>
