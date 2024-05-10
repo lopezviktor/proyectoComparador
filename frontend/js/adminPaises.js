@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function(){
+    const formularioPaises = document.getElementById('formularioPaises');
+    
+
+})
+
+
 function subirPais(){
     const nombre = document.getElementById('nombrePais').value;
     const poblacion = document.getElementById('poblacion').value;
