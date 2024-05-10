@@ -24,15 +24,14 @@ document.addEventListener('DOMContentLoaded', function(){
         if (contrasena.length < 8) {
             errores.push("La contraseña debe tener al menos 8 caracteres.");
         }
-        if (contrasena.length < 8) {
-            errores.push("La contraseña debe tener al menos 8 caracteres.");
-        }
 
         //Si hay errores, los muestra y no envia el formulario
-        if(errores.length > 0){
+        if(errores.length > 0) {
             alert(errores.join("\n"));
-        }else{
+
+        }else {
             formularioRegistro.submit();
+
         }
     });
 });
