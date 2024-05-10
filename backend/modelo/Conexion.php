@@ -19,7 +19,7 @@ class Conexion {
         if (!$this->conexion) {
             die("Error de conexión: " . mysqli_connect_error());
         } else {
-            echo "Conectado";
+            //echo "Conectado";
         }
     }
 
