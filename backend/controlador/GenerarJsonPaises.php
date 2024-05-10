@@ -21,15 +21,11 @@ die("Problemas con la consulta a la BBDD").mysqli_error($conexion->getConexion()
 
 $datosArrayPaises = array();
 
-while ($registro = mysqli_fetch_array($resulConsulta)) {
-    $datosArrayPaises[] = $registro;
-}
 
-/* Con esta opción introduce intros en cada línea
 while ($registro = mysqli_fetch_array($resulConsulta, MYSQLI_ASSOC)) {
     $datosArrayPaises[] = $registro;
 }
-*/
+
 
 // Generamos un fichero json
 $datosJsonPaises = json_encode($datosArrayPaises, JSON_UNESCAPED_UNICODE);

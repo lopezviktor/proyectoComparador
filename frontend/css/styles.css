@@ -1,0 +1,105 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+form p {
+    text-align: center;
+}
+
+label {
+    /*display: block;*/
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="email"],
+input[type="password"]
+{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: rgb(142, 142, 149);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+#contenedorPrincipal{
+    width: 90%;
+    margin: 0 5%;
+    padding: 20px;
+}
+
+#contenedorPaises {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#contenedorPais {
+    width: calc(15% - 20px);
+    height: 380px;
+    margin: 20px 10px 40px 10px;
+    padding: 10px;
+    position: relative;
+    float: left;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582);
+    overflow: auto;
+    background-color: rgba(159, 169, 175, 0.522);
+
+}
+
+#contenedorPais img {
+    width: 80%;
+    height: 100px;
+    display: block;
+    transition: transform 0.3s;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    margin: auto;
+}
+
+#contenedorPais:hover img {
+    transform: scale(1.05);
+}
+
+.infoPais {
+    text-align: left;
+    font-size: 14px;
+
+
+}
+.infoPais h3{
+    text-align: center;
+    font-size: 16px;
+
+
+}

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
             const infoPais = document.createElement('div');
             infoPais.className = 'infoPais';
             infoPais.innerHTML = `<h3>${pais.nombre}</h3>
-                                <p>Población: ${pais.poblacion} habitantes.</p>
+                                <p>Población: ${pais.poblacion} hab.</p>
                                 <p>Superficie: ${pais.superficie} km².</p>
                                 <p>PIB: ${pais.PIB} millones €.</p>
                                 <p>Esperanza de vida: ${pais.esperanzaVida} años</p>
