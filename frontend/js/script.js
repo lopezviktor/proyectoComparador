@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 
     function mostrarPaises(){
-        const ruta = 
+        const ruta = "../../backend/controlador/GenerarJsonPaises.php";
 
         fetch(ruta)
         .then(response => {
@@ -10,18 +10,18 @@ document.addEventListener('DOMContentLoaded', function(){
             }
             return response.json();
         })
-        .then(datos =>{
-            //LLama a la funcion para mostrar los datos
-            mostrarResultados(datos.results);
+        .then(datos => {
+            console.log(datos); // Agregar esta línea para depurar
+            mostrarResultados(datos);
         })
         .catch(error =>{
-            console.log('Error al buscar peliculas', error)
+            console.log('Error al buscar paises', error)
         });
     }
 
     function mostrarResultados(resultados) {
+        console.log(resultados); // Para verificar lo que recibe la función
         const contenedorPaises = document.getElementById("contenedorPaises");
-
         // Limpiar contenedor de paises
         contenedorPaises.innerHTML = '';
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             // Añadir imagen de la bandera
             const imagenBandera = document.createElement('img');
-            imagenBandera.src = pais.bandera;
+            imagenBandera.src = "../../imagenes/banderas/" + pais.bandera;
             imagenBandera.alt = 'Bandera de ' + pais.nombre;
             contenedorPais.appendChild(imagenBandera);
 
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function(){
             const infoPais = document.createElement('div');
             infoPais.className = 'infoPais';
             infoPais.innerHTML = `<h3>${pais.nombre}</h3>
-                                <p>Población: ${pais.poblacion}</p>
-                                <p>Superficie: ${pais.superficie} km²</p>
-                                <p>PIB: $${pais.PIB} billones</p>
+                                <p>Población: ${pais.poblacion} habitantes.</p>
+                                <p>Superficie: ${pais.superficie} km².</p>
+                                <p>PIB: ${pais.PIB} millones €.</p>
                                 <p>Esperanza de vida: ${pais.esperanzaVida} años</p>
                                 <p>Tasa de natalidad: ${pais.tasaNatalidad}%</p>
                                 <p>Tasa de mortalidad: ${pais.tasaMortalidad}%</p>`;
