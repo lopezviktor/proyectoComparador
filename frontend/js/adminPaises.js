@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', function(){
+    const formularioPaises = document.getElementById('formularioPaises');
+    
+
+})
+
+
 function subirPais(){
     const nombre = document.getElementById('nombrePais').value;
     const poblacion = document.getElementById('poblacion').value;
@@ -16,3 +23,5 @@ function subirPais(){
     .then(data => alert("Pais subido correctamente: " + data))
     .catch(error => console.error("Error :", error));
 }
+
+//NO ESTA ACABADO
