@@ -13,7 +13,7 @@ class Pais{
 
     public function __construct($nombre="", $poblacion="", $superficie="", $pib="", $esperanzaVida="", $tasaNatalidad="", $tasaMortalidad=""){
         $this->nombre = $nombre;
-        $this->pobacion = $poblacion;
+        $this->poblacion = $poblacion;
         $this->superficie = $superficie;
         $this->pib = $pib;
         $this->esperanzaVida = $esperanzaVida;

@@ -11,7 +11,7 @@ if (!isset($_POST["nombreUsuario"]) || !isset($_POST["nombre"]) || !isset($_POST
     die("No se enviaron todos los datos requeridos para el registro.");
 }
 
-// Guardar en variables los datos enviados desde el formulario de registro
+// Guardar en variables los datos enviados desde el formulario de registro de usuarios
 $nombreUsuario = $_POST['nombreUsuario'];
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
