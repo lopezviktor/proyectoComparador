@@ -8,17 +8,18 @@ nav ul{
 }
 nav ul a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     display: block;
     padding: 10px;
 }
 a:hover{
-    background-color: aquamarine;
+    background-color: rgb(68, 199, 247);
+    color: black;
 }
 
 #nav{
     height: 100vh; /* Altura completa */
-    width: 200px; /* Ancho del sidebar */
+    width: 150px; /* Ancho del sidebar */
     position: fixed; /* Fijo en la pantalla */
     left: 0;
     top: 0;
@@ -110,7 +111,7 @@ input[type="submit"] {
 
 #contenedorPais img {
     width: 80%;
-    height: auto;
+    height: 100px;
     display: block;
     transition: transform 0.3s;
     border-radius: 20px;
