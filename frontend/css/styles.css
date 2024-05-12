@@ -2,7 +2,36 @@
 body {
     font-family: Arial, sans-serif;
 }
+nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+nav ul a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: block;
+    padding: 10px;
+}
+a:hover{
+    background-color: aquamarine;
+}
 
+#nav{
+    height: 100vh; /* Altura completa */
+    width: 200px; /* Ancho del sidebar */
+    position: fixed; /* Fijo en la pantalla */
+    left: 0;
+    top: 0;
+    background-color: #00458b; /* Color de fondo del sidebar */
+    z-index: 100;
+    overflow: auto; /* Para scroll si es necesario */
+}
+.logo img{
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 30px;
+}
 h2 {
     text-align: center;
 }
@@ -50,10 +79,13 @@ input[type="submit"] {
     color: black;
 }
 
-#contenedorPrincipal{
+#contenedorPagina{
     width: 90%;
     margin: 0 5%;
     padding: 20px;
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
 }
 
 #contenedorPaises {
@@ -78,7 +110,7 @@ input[type="submit"] {
 
 #contenedorPais img {
     width: 80%;
-    height: 100px;
+    height: auto;
     display: block;
     transition: transform 0.3s;
     border-radius: 20px;
@@ -88,7 +120,7 @@ input[type="submit"] {
 }
 
 #contenedorPais:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .infoPais {
