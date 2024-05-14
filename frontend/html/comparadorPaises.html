@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/comparador.js"></script>
 </head>
 <body>
     <div id="contenedor">
         <h2>Bienvenido al comparador de Países</h2>
         <form id="comparadorForm">
-            <select id="seleccionPais" multiple size="20">
+            <div id="listaPaises">
                 <!-- Las opciones se cargarán aquí -->
-            </select>
+            </div>
             <button type="button" onclick="comparadorPaises()">Comparar</button>
         </form>
         <div id="ResultadosComparacion"></div>
     </div>
-    <script src="../js/comparador.js"></script>
+
 </body>
 </html>
