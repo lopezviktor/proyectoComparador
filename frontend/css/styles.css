@@ -144,3 +144,26 @@ input[type="submit"] {
     padding: 5px; 
     margin-bottom: 10px;
 }
+
+#ResultadosComparacion {
+
+    flex-direction: column; /* Alinea los países verticalmente */
+    gap: 10px; /* Espacio entre cada país */
+}
+
+.pais-comparacion {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.pais-comparacion h3 {
+    margin: 0;
+    padding-bottom: 5px;
+    color: #000000;
+}
+
+.pais-comparacion p {
+    margin: 0;
+    font-size: 14px;
+}
