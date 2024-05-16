@@ -9,21 +9,11 @@
 </head>
 <body>
     <div id="contenedor">
-        <nav id="nav">
-            <div class="logo">
-                <a href="index.html"><img src="../../imagenes/logo.png" alt="Logo comparador"></a>
-            </div>
-            <div class="buscadorNav">
-                <span class="espacioBuscador"></span>
-                <input type="text" id="inputBuscador" placeholder="Buscar país..." oninput="mostrarResultadosPorNombre()">
-            </div>
-            <ul class="listaNav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="paises.html">Países</a></li>
-                <li><a href="comparadorPaises.html">Comparador</a></li>
-                <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
-            </ul>
-        </nav>
+        <?php
+            include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
+
+        ?>
+
         <div id="contenedorPagina">
             <h2>Selecciona y compara</h2>
             <form id="comparadorForm">
@@ -32,8 +22,17 @@
                 </div>
                 <button type="button" onclick="comparadorPaises()">Comparar</button>
             </form>
+
             <div id="ResultadosComparacion"></div>
+            
         </div>
+
+        <?php
+
+            include "../includes/footer.php"  //incluye el código del archivo footer.php
+
+        ?>
+
     </div>
 
 </body>
