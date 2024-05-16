@@ -1,6 +1,98 @@
-
-body {
+body{
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    background-color: rgb(2, 2, 46);
+}
+.logo, .buscadorNav, nav ul {
+    margin: 0 20px;
+}
+
+.logo{
+    align-items: center;
+    position: relative;
+}
+.logo img {
+    width: 80px; 
+    height: auto; 
+    border-radius: 20%;
+    margin: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* Centra los elementos de la lista horizontalmente */
+    flex-grow: 0; /* Evita que la lista crezca y respete su contenido */
+}
+
+nav ul li {
+    padding: 0 10px; /* Espaciado entre elementos de la lista */
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px; /* Bordes redondeados para los enlaces */
+}
+
+nav ul a:hover {
+    background-color: rgb(68, 199, 247);
+    color: black;
+}
+
+.buscadorNav {
+    position: relative; /* Posicionamiento relativo para alinear los elementos internos */
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    flex-grow: 0; /* No permitirá que el buscador crezca */
+    max-width: 200px; /* Ajusta esto según tus necesidades para controlar el ancho */
+}
+.buscadorNav .espacioBuscador{
+    color: black;
+    position: absolute;
+    top: 4px;
+    border-color: 1px solid black;
+}
+.buscadorNav input[type="text"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px 10px; /* Espaciado interno */
+}
+.buscadorIndex {
+    position: relative; /* Posicionamiento relativo para alinear los elementos internos */
+    padding: 5px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    flex-grow: 1; /* No permitirá que el buscador crezca */
+    max-width: 600px; /* Ajusta esto según tus necesidades para controlar el ancho */
+}
+.buscadorIndex .espacioBuscador{
+    color: black;
+    position: absolute;
+    top: 4px;
+    border-color: 1px solid black;
+}
+.buscadorIndex input[type="text"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px 10px; /* Espaciado interno */
 }
 
 h2 {
@@ -49,11 +141,24 @@ input[type="submit"] {
     font-weight: bold;
     color: black;
 }
+#contenedorIndex{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(2, 2, 46);
+}
+#contenedorIndex h1{
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(18, 138, 7);
+}
 
-#contenedorPrincipal{
-    width: 90%;
+#contenedorPagina{
     margin: 0 5%;
     padding: 20px;
+    padding: 20px;
+    width: calc(100% - 200px);
 }
 
 #contenedorPaises {
@@ -88,7 +193,7 @@ input[type="submit"] {
 }
 
 #contenedorPais:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .infoPais {
@@ -102,4 +207,35 @@ input[type="submit"] {
     font-size: 16px;
 
 
+}
+#listaPaises{ 
+    height: 200px;
+    overflow-y: auto; 
+    border: 1px solid #000000;
+    background-color: #ccc;
+    padding: 5px; 
+    margin-bottom: 10px;
+}
+
+#ResultadosComparacion {
+
+    flex-direction: column; /* Alinea los países verticalmente */
+    gap: 10px; /* Espacio entre cada país */
+}
+
+.pais-comparacion {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.pais-comparacion h3 {
+    margin: 0;
+    padding-bottom: 5px;
+    color: #000000;
+}
+
+.pais-comparacion p {
+    margin: 0;
+    font-size: 14px;
 }
