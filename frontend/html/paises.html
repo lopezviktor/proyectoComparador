@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparador</title>
+    <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/comparador.js"></script>
+    <title>Comparador de paises</title>
+    
 </head>
 <body>
     <div id="contenedor">
@@ -14,6 +15,7 @@
                 <img src="../../imagenes/logo.png" alt="Logo comparador">
             </div>
             <div class="buscadorNav">
+                <div class="iconoBuscar"></div>
                 <span class="espacioBuscador"></span>
                 <input type="text">
             </div>
@@ -25,16 +27,18 @@
             </ul>
         </nav>
         <div id="contenedorPagina">
-            <h2>Selecciona y compara</h2>
-            <form id="comparadorForm">
-                <div id="listaPaises">
-                    <!-- Las opciones se cargarán aquí -->
+            <div id="contenedorPaises">
+                <div id="contenedorPais">
+                    <img src="..." alt="...">
+                    <div class="infoPais"></div>
                 </div>
-                <button type="button" onclick="comparadorPaises()">Comparar</button>
-            </form>
-            <div id="ResultadosComparacion"></div>
+            </div>
         </div>
+        <footer class="contenedorFooter">
+            <small>
+                <a href="#">Política de Privacidad</a> • <a href="#">Términos de Servicio</a>
+            </small>
+        </footer>
     </div>
-
 </body>
 </html>
