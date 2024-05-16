@@ -55,4 +55,25 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // Llamada a la función inicial para mostrar los países
     mostrarPaises();
+
+    function mostrarResultadosPorNombre() {
+        var inputBuscador = document.getElementById('inputBuscador').value; // Obtiene el valor del input
+        if (inputBuscador.length > 0) { // Verifica que el input no esté vacío
+            fetch(`../../backend/controlador/buscarPaisPorNombre.php?nombre=${encodeURIComponent(inputBuscador)}`) // Envía una solicitud GET al servidor
+                .then(response => response.json()) // Procesa la respuesta como JSON
+                .then(data => {
+                    const resultadosBusqueda = document.getElementById('resultadosBusqueda');
+                    resultadosBusqueda.innerHTML = ''; // Limpia resultados anteriores
+                    data.forEach(pais => { // Itera sobre cada país devuelto por el servidor
+                        const div = document.createElement('div');
+                        div.textContent = `${pais.nombre} - Población: ${pais.poblacion}`;
+                        resultadosBusqueda.appendChild(div); // Añade cada país a los resultados de búsqueda
+                    });
+                })
+                .catch(error => console.error('Error al buscar paises:', error));
+        } else {
+            document.getElementById('resultadosBusqueda').innerHTML = ''; // Limpia los resultados si el input está vacío
+        }
+    }
+
 });
