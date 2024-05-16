@@ -11,7 +11,7 @@ nav {
     display: flex;
     justify-content: center;
     padding: 0 20px;
-    background-color: rgb(3, 3, 97);
+    background-color: rgb(2, 2, 46);
 }
 .logo, .buscadorNav, nav ul {
     margin: 0 20px;
@@ -73,6 +73,27 @@ nav ul a:hover {
     background: transparent;
     padding: 8px 10px; /* Espaciado interno */
 }
+.buscadorIndex {
+    position: relative; /* Posicionamiento relativo para alinear los elementos internos */
+    padding: 5px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    flex-grow: 1; /* No permitirá que el buscador crezca */
+    max-width: 600px; /* Ajusta esto según tus necesidades para controlar el ancho */
+}
+.buscadorIndex .espacioBuscador{
+    color: black;
+    position: absolute;
+    top: 4px;
+    border-color: 1px solid black;
+}
+.buscadorIndex input[type="text"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px 10px; /* Espaciado interno */
+}
 
 h2 {
     text-align: center;
@@ -119,6 +140,18 @@ input[type="submit"] {
     font-size: 16px;
     font-weight: bold;
     color: black;
+}
+#contenedorIndex{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(2, 2, 46);
+}
+#contenedorIndex h1{
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(18, 138, 7);
 }
 
 #contenedorPagina{
