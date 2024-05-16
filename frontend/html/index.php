@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/buscarPaisPorNombre.js"></script>
     <title>Comparador de paises</title>
     
 </head>
