@@ -11,28 +11,24 @@ $conexion->conectarBD();
 mysqli_set_charset($conexion->getConexion(), "utf8");
 
 // Capturar el parámetro de búsqueda desde la URL
-$nombrePais = isset($_GET['nombre']) ? $_GET['nombre'] : '';
+$nombrePais = isset($_GET['nombre']) ? $_GET['nombre'] : null;
 
-// Modificar la consulta para buscar por nombre
+$datosArrayPaises = array();
+
+
 if (!empty($nombrePais)) {
-    $consulta = $conexion->getConexion()->prepare("SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises WHERE nombre LIKE ?");
     $nombrePais = "%$nombrePais%";
+    $consulta = $conexion->getConexion()->prepare("SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises WHERE nombre LIKE ?");
     $consulta->bind_param("s", $nombrePais);
     $consulta->execute();
     $resultado = $consulta->get_result();
-} else {
-    $resultado = mysqli_query($conexion->getConexion(), "SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises");
+    while ($registro = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
+        $datosArrayPaises[] = $registro;
+    }
+    $consulta->close();
 }
-
-$datosArrayPaises = array();
-while ($registro = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
-    $datosArrayPaises[] = $registro;
-}
-
-$consulta->close();
 
 // Generamos un fichero json
-$datosJsonPaises = json_encode($datosArrayPaises, JSON_UNESCAPED_UNICODE);
-echo $datosJsonPaises;
+echo json_encode($datosArrayPaises, JSON_UNESCAPED_UNICODE);
 
 ?>
