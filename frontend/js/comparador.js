@@ -74,12 +74,12 @@ function comparadorPaises() {
     };
 
     // Agregar filas con datos específicos
-    agregarFila('Población', 'poblacion');
-    agregarFila('Superficie', 'superficie');
-    agregarFila('PIB', 'PIB');
-    agregarFila('Esperanza de vida', 'esperanzaVida');
-    agregarFila('Tasa de natalidad', 'tasaNatalidad');
-    agregarFila('Tasa de mortalidad', 'tasaMortalidad');
+    agregarFila('Población (hab.):', 'poblacion');
+    agregarFila('Superficie (km2):', 'superficie');
+    agregarFila('PIB (%):', 'PIB');
+    agregarFila('Esperanza de vida (años):', 'esperanzaVida');
+    agregarFila('Tasa de natalidad (%):', 'tasaNatalidad');
+    agregarFila('Tasa de mortalidad (%)', 'tasaMortalidad');
 
     // Añadir la tabla completa al div de resultados
     divResultados.appendChild(tabla);
