@@ -12,16 +12,13 @@
     <div id="contenedor">
         <?php
             include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
-
         ?>
 
         <div id="contenedorPagina">
             <div id="contenedorPaises">
-                <div id="contenedorPais">
-                    <img src="..." alt="...">
-                    <div class="infoPais"></div>
-                </div>
+                
             </div>
+            <div id="resultadosBusqueda"></div> <!-- Cuando se haga una busqueda solo aparecera el pais buscado -->
         </div>
 
         <?php
