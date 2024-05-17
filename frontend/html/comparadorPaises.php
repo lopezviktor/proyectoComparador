@@ -6,6 +6,7 @@
     <title>Comparador</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/comparador.js"></script>
+    <script src="../js/buscarPaisPorNombre.js"></script>
 </head>
 <body>
     <div id="contenedor">
