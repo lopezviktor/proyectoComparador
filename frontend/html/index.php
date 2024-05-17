@@ -12,7 +12,7 @@
 <body>
     <div id="contenedorIndex">
         <?php
-            include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
+            include "../includes/nav.php"  //incluye el código del archivo nav.php
 
         ?>
         
