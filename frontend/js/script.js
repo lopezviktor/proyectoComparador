@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const infoPais = document.createElement('div');
         infoPais.className = 'infoPais';
         infoPais.innerHTML = `<h3>${pais.nombre}</h3>
-                              <p>Población: ${pais.poblacion} hab.</p>
-                              <p>Superficie: ${pais.superficie} km².</p>
-                              <p>PIB: ${pais.PIB} millones €.</p>
-                              <p>Esperanza de vida: ${pais.esperanzaVida} años</p>
-                              <p>Tasa de natalidad: ${pais.tasaNatalidad}%</p>
-                              <p>Tasa de mortalidad: ${pais.tasaMortalidad}%</p>`;
+                            <p>Población: ${pais.poblacion} hab.</p>
+                            <p>Superficie: ${pais.superficie} km².</p>
+                            <p>PIB: ${pais.PIB} millones €.</p>
+                            <p>Esperanza de vida: ${pais.esperanzaVida} años</p>
+                            <p>Tasa de natalidad: ${pais.tasaNatalidad}%</p>
+                            <p>Tasa de mortalidad: ${pais.tasaMortalidad}%</p>`;
         contenedorPais.appendChild(infoPais);
 
         return contenedorPais;

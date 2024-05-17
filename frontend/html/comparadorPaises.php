@@ -19,8 +19,9 @@
             <h2>Selecciona y compara</h2>
             <form id="comparadorForm">
                 <div id="listaPaises">
-                    <!-- Las opciones se cargarán aquí -->
+                    <!-- Los paises se cargarán aquí -->
                 </div>
+                
                 <button type="button" onclick="comparadorPaises()">Comparar</button>
             </form>
 

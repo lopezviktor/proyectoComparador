@@ -7,7 +7,7 @@ body{
     
 }
 
-nav {
+nav, #contenedorFooter {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -170,7 +170,7 @@ input[type="submit"] {
 
 }
 
-#contenedorIndex{
+#contenedorIndex {
     margin: 0;
     padding: 0;
     background-color: rgb(2, 2, 46);
@@ -259,22 +259,107 @@ input[type="submit"] {
 
 }
 
-.pais-comparacion {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
+/* Estilos base para la tabla */
+.tabla-comparativa {
+    width: 80%; /* Ajusta esto según el diseño de tu página */
+    margin: 20px auto; /* Centra la tabla horizontalmente y proporciona espacio arriba y abajo */
+    border-collapse: collapse; /* Los bordes de las celdas se colapsan en uno solo */
+    background-color: #ffffff; /* Fondo blanco para la claridad */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la tabla */
+    font-family: 'Arial', sans-serif; /* Fuente sans-serif para mejor legibilidad */
+}
+
+/* Estilos para las celdas de cabecera */
+.tabla-comparativa th {
+    background-color: #f4f4f4; /* Fondo gris claro para las cabeceras */
+    color: #333; /* Color de texto oscuro para contraste */
+    font-weight: bold; /* Texto en negrita para las cabeceras */
+    padding: 5px 5px; /* Relleno dentro de las celdas */
+    border-bottom: 2px solid #e0e0e0; /* Borde inferior más oscuro para separar de las filas */
+    text-align: right;
+}
+
+/* Estilos para las celdas de datos */
+.tabla-comparativa td {
+    padding: 5px 5px; /* Relleno similar al de las cabeceras */
+    border-bottom: 1px solid #e0e0e0; /* Borde sutil para separar filas */
+    text-align: right;
+}
+
+/* Estilo para las filas al pasar el mouse */
+.tabla-comparativa tr:hover {
+    background-color: #f9f9f9; /* Cambio de fondo al pasar el mouse para resaltar la fila */
+}
+
+/* Estilos para la primera columna, que contiene las categorías */
+.tabla-comparativa td:first-child, .tabla-comparativa th:first-child {
+    font-weight: bold; /* Hacer el texto en negrita para destacar las categorías */
+    color: #000; /* Texto más oscuro para la primera columna */
+    background-color: #eef; /* Un fondo ligeramente diferente para destacar las categorías */
+    text-align: left;
+}
+
+/* Media queries para responsive */
+@media (max-width: 768px) {
+    .tabla-comparativa {
+        width: 100%; /* La tabla ocupa el 100% del ancho en dispositivos más pequeños */
+        box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */
+    }
+}
+
+footer {
+    height: 140px;
+    background-color: rgb(2, 2, 46);
+    color: white;
+    clear: both;
+    margin-top: 40px;
 
 }
 
-.pais-comparacion h3 {
-    margin: 0;
-    padding-bottom: 5px;
-    color: #000000;
+footer div {
+    float: right;
+    padding-top: 50px;
+    margin-right: 50px;
 
 }
 
-.pais-comparacion p {
-    margin: 0;
-    font-size: 14px;
+footer ul {
+    float: left;
+    font-weight: bold;
+    margin: 10px 20px 10px 20px;
+    list-style: none;
+    font-size: 20px;
 
+}
+
+footer li {
+    margin-top: 8px;
+
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: lighter;
+    margin: 2px;
+}
+
+footer li a img {
+    width: 20px;
+    margin: 0px;
+    border-radius: 100%;
+
+}
+
+footer p { /* Esto es para el texto de derehos reservados*/
+    font-size: 15px;
+
+}
+
+.logoPie img {
+    position: relative;
+    width: 70px;
+    height: 70px;
 }

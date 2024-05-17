@@ -13,6 +13,7 @@
     <div id="contenedorIndex">
         <?php
             include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
+
         ?>
         
         <div id="contenedorPagina">
