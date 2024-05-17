@@ -15,9 +15,7 @@
         ?>
 
         <div id="contenedorPagina">
-            <div id="contenedorPaises">
-                
-            </div>
+            <div id="contenedorPaises"></div>
             <div id="resultadosBusqueda"></div> <!-- Cuando se haga una busqueda solo aparecera el pais buscado -->
         </div>
 

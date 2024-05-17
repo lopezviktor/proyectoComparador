@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-    //VER SI ESTE CODIGO ES UTIL O CON EL SCRIPT.JS FUNCIONA TAMBIEN EL BUSCADOR
-
-
-
     // Obtener referencia al campo de entrada de texto para búsqueda
     const inputBusqueda = document.getElementById('inputBuscador');
 
