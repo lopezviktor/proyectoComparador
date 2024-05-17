@@ -9,15 +9,38 @@
     
 </head>
 <body>
-    <div id="contenedorIndex">
-    <?php
-            include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
+    <div id="contenedor">
+        <?php
+                include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
 
-    ?>
-    <?php
+        ?>
 
-        include "../includes/footer.php"  //incluye el código del archivo footer.php
+        <div>
+            <h2>Iniciar Sesión</h2>
+            <form id="formularioLogin" action="../../backend/login.php" method="post"> 
+                
+                <label for="usuario">Usuario:</label><br>
+                <input type="text" id="usuario" name="nombreUsuario" required><br><br>
 
-    ?>
+                <label for="password">Contraseña:</label><br>
+                <input type="password" id="password" name="contrasena" required><br><br>
+
+                <input type="submit" id="btnSubmitLogin" value="Iniciar Sesión">
+            </form>
+
+            <div style="text-align: center;">
+                <p>¿No tienes una cuenta?</p>
+                <p><a href="registroUsuarios.php">Regístrate aquí</a></p>
+            </div>
+
+        </div>
+
+        <?php
+
+            include "../includes/footer.php"  //incluye el código del archivo footer.php
+
+        ?>
+
+    </div>
 </body>
 </html>

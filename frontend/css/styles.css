@@ -7,7 +7,7 @@ body{
     
 }
 
-nav {
+nav, #contenedorFooter {
     align-items: center;
     display: flex;
     justify-content: center;
@@ -170,7 +170,7 @@ input[type="submit"] {
 
 }
 
-#contenedorIndex{
+#contenedorIndex {
     margin: 0;
     padding: 0;
     background-color: rgb(2, 2, 46);
@@ -277,4 +277,61 @@ input[type="submit"] {
     margin: 0;
     font-size: 14px;
 
+}
+
+footer {
+    height: 140px;
+    background-color: rgb(2, 2, 46);
+    color: white;
+    clear: both;
+    margin-top: 40px;
+
+}
+
+footer div {
+    float: right;
+    padding-top: 50px;
+    margin-right: 50px;
+
+}
+
+footer ul {
+    float: left;
+    font-weight: bold;
+    margin: 10px 20px 10px 20px;
+    list-style: none;
+    font-size: 20px;
+
+}
+
+footer li {
+    margin-top: 8px;
+
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: lighter;
+    margin: 2px;
+}
+
+footer li a img {
+    width: 20px;
+    margin: 0px;
+    border-radius: 100%;
+
+}
+
+footer p { /* Esto es para el texto de derehos reservados*/
+    font-size: 15px;
+
+}
+
+.logoPie img {
+    position: relative;
+    width: 70px;
+    height: 70px;
 }
