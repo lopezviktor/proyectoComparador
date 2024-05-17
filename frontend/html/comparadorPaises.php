@@ -6,6 +6,7 @@
     <title>Comparador</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/comparador.js"></script>
+    <script src="../js/buscarPaisPorNombre.js"></script>
 </head>
 <body>
     <div id="contenedor">
@@ -18,8 +19,9 @@
             <h2>Selecciona y compara</h2>
             <form id="comparadorForm">
                 <div id="listaPaises">
-                    <!-- Las opciones se cargarán aquí -->
+                    <!-- Los paises se cargarán aquí -->
                 </div>
+                
                 <button type="button" onclick="comparadorPaises()">Comparar</button>
             </form>
 
