@@ -19,7 +19,7 @@
     $result = $query->get_result();
     
     if($result->num_rows == 1) { // si se ha recuperado un registro
-        header("Location: ../frontend/html/index.html"); // Redirigir al index
+        header("Location: ../frontend/html/index.php"); // Redirigir al index
         exit();
     } else {
         echo "Datos incorrectos";
