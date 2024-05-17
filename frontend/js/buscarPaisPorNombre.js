@@ -6,13 +6,14 @@ document.addEventListener('DOMContentLoaded', function(){
     // Agregar evento de input al campo de búsqueda
     inputBusqueda.addEventListener('input', function() {
         const terminoBusqueda = inputBusqueda.value.trim();
-
+        
         // Realizar la búsqueda solo si el término de búsqueda tiene al menos 3 caracteres
-        if (terminoBusqueda.length >= 3) {
+        
+        if (terminoBusqueda.length >= 1) {
             buscarPaises(terminoBusqueda);
-        } else {
-            // Limpiar resultados si el término de búsqueda es menor a 3 caracteres
+        }else if(terminoBusqueda.length === 0){
             limpiarResultados();
+            console.log("Hay que limpiar los resultados")
         }
     });
 
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function(){
         // Iterar sobre cada país en el array de resultados
         resultados.forEach(pais => {
             const contenedorPais = document.createElement('div');
-            contenedorPais.id = "contenedorPais";
+            contenedorPais.id = "contenedorPaisIndex";
 
             // Añadir imagen de la bandera
             const imagenBandera = document.createElement('img');
@@ -68,5 +69,8 @@ document.addEventListener('DOMContentLoaded', function(){
             contenedorPaises.appendChild(contenedorPais);
         });
     }
-
+    function limpiarResultados() {
+        const contenedorResultados = document.getElementById('resultadosBusqueda');
+        contenedorResultados.innerHTML = ''; // Esto borra el contenido del elemento
+    }
 });

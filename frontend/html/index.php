@@ -16,10 +16,12 @@
 
         ?>
         
-        <div id="contenedorPagina">
-            <h1> Comparador de países</h1>
-            <div id="resultadosBusqueda"></div>
-        </div>
+    <div id="contenedorPagina">
+        <h1>Comparador de países</h1>
+        <div id="resultadosBusqueda">
+        <!-- Resultados se mostrarán aquí -->
+    </div>
+</div>
 
         <?php
 
