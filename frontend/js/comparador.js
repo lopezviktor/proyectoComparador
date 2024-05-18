@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 function comparadorPaises() {
     const checkboxes = document.querySelectorAll('input[name="paises[]"]:checked');
+    // Convierte los checkboxes marcados en un array de objetos país.
     const paisesSeleccionados = Array.from(checkboxes).map(checkbox => JSON.parse(checkbox.value));
 
     if (paisesSeleccionados.length < 2) {
@@ -54,26 +55,37 @@ function comparadorPaises() {
 
     // Crear fila de cabecera y añadir las celdas de cabecera para cada país
     const filaCabecera = tabla.insertRow();
-    filaCabecera.insertCell().textContent = 'Categoría'; // Celda vacía para la columna de categorías
+    filaCabecera.insertCell().textContent = 'Categoría'; // Columna para nombres de categorías
 
+     // Agrega una celda de cabecera para cada país seleccionado.
     paisesSeleccionados.forEach(pais => {
         const celdaCabecera = document.createElement('th');
         celdaCabecera.textContent = pais.nombre;
         filaCabecera.appendChild(celdaCabecera);
     });
-
-    // Función para agregar filas de datos a la tabla
+    
+    // Agrega filas a la tabla con datos de cada país.
     const agregarFila = (titulo, propiedad) => {
         const fila = tabla.insertRow();
-        fila.insertCell().textContent = titulo; // Celda para el título de la categoría
+        fila.insertCell().textContent = titulo; // Título de la fila
 
         paisesSeleccionados.forEach(pais => {
             const celda = fila.insertCell();
-            celda.textContent = pais[propiedad]; // Datos de cada país para la categoría dada
+            if (titulo === 'Bandera:') {
+                const img = document.createElement('img');
+                img.src = `../../imagenes/banderas/${pais[propiedad]}`; // Asume que la propiedad contiene el nombre del archivo
+                img.alt = `Bandera de ${pais.nombre}`;
+                img.style.width = '60px';
+                img.style.height = '30px';
+                celda.appendChild(img);
+            } else {
+                celda.textContent = pais[propiedad]; // Datos de cada país
+            }
         });
     };
 
     // Agregar filas con datos específicos
+    agregarFila('Bandera:', 'bandera');
     agregarFila('Población (hab.):', 'poblacion');
     agregarFila('Superficie (km2):', 'superficie');
     agregarFila('PIB (%):', 'PIB');
