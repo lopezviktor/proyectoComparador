@@ -17,7 +17,7 @@
 
         <div>
             <h2>Iniciar Sesión</h2>
-            <form id="formularioLogin" action="../../backend/login.php" method="post"> 
+            <form id="formularioLogin" action="../../backend/controlador/login.php" method="post"> 
                 
                 <label for="usuario">Usuario:</label><br>
                 <input type="text" id="usuario" name="nombreUsuario" required><br><br>
