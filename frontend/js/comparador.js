@@ -1,19 +1,25 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-    // Llama a la función para obtener la lista de países desde el servidor.
-    obtenerPaises();
+    const selectorContinente = document.getElementById('selectorContinente');
+    selectorContinente.addEventListener('change', function(){
+        const continenteSeleccionado = selectorContinente.value;
+        obtenerPaises(continenteSeleccionado);
+    });
 
     // Función asíncrona para obtener países del backend y mostrarlos como opciones con checkbox.
-    async function obtenerPaises() {
+    async function obtenerPaises(continente) {
+        
+        const lista = document.getElementById('listaPaises');
+        lista.innerHTML = ''; // Limpiar la lista anterior
         try {
             // Realiza una solicitud HTTP GET al servidor para obtener los países.
-            const respuesta = await fetch('../../backend/controlador/GenerarJsonPaises.php');
+            const url = `../../backend/controlador/GenerarJsonPaises.php?continente=${encodeURIComponent(continente)}`;
+            const respuesta = await fetch(url);
             if (!respuesta.ok) {
                 throw new Error('Error al obtener los países');
             }
             // Convierte la respuesta en formato JSON a un array de países.
             const paises = await respuesta.json();
-            const lista = document.getElementById('listaPaises');
             paises.forEach(pais => { // Itera sobre cada país recibido del servidor.
                 const contenedor = document.createElement('div'); // Crea un contenedor div para cada pareja de checkbox y etiqueta.
                 const checkbox = document.createElement('input'); // Crea un input de tipo checkbox para cada país.

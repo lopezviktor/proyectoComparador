@@ -15,9 +15,18 @@
 
         ?>
 
-        <div id="contenedorPagina">
-            <h2>Selecciona y compara</h2>
+        <div id="contenedorPaginaComparador">
             <form id="comparadorForm">
+            <h2>Selecciona y compara</h2>
+                <select id="selectorContinente">
+                <option value="">Seleccione un continente</option>
+                <option value="Europa">Europa</option>
+                <option value="Asia">Asia</option>
+                <option value="América">América</option>
+                <option value="África">África</option>
+                <option value="Oceanía">Oceanía</option>
+                </select>
+
                 <div id="listaPaises">
                     <!-- Los paises se cargarán aquí -->
                 </div>
