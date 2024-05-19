@@ -25,9 +25,10 @@ else{
 // Verificar si se han enviado los datos del formulario de registro
 if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
     !isset($_POST["superficie"]) || !isset($_POST["pib"]) || !isset($_POST["esperanzaVida"]) || 
-    !isset($_POST["tasaNatalidad"]) || !isset($_POST["tasaMortalidad"])) {
+    !isset($_POST["tasaNatalidad"]) || !isset($_POST["tasaMortalidad"]) || !isset($_POST["continente"]))
+    {
     die("No se enviaron todos los datos requeridos para el registro.");
-}
+    }
 
     // Recuperar los datos del formulario
     $nombre = $_POST['nombre'];
@@ -37,7 +38,7 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
     $esperanzaVida = $_POST['esperanzaVida'];
     $tasaNatalidad = isset($_POST['tasaNatalidad']) ? $_POST['tasaNatalidad'] : null;
     $tasaMortalidad = isset($_POST['tasaMortalidad']) ? $_POST['tasaMortalidad'] : null;
-
+    $continente = $_POST['continente'];
 
     // Procesar la subida de la imagen de la bandera
     $banderaNombre = $_FILES['bandera']['name'];
@@ -46,21 +47,6 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
     $tipo = $_FILES['bandera']['type']; 
     $tamano = $_FILES['bandera']['size'];
 
-    ////////////////////////////////////////
-/*
-    //Almacenar los datos del archivo en variables
-    if (isset($_FILES['bandera'])) {
-        $banderaNombre = $_FILES['bandera']['name'];
-        $tipo = $_FILES['bandera']['type']; 
-        $tamano = $_FILES['bandera']['size'];
-        $banderaTemp = $_FILES['bandera']['tmp_name'];
-    
-        // Resto del código para procesar la imagen
-    } else {
-        echo "<br>";
-        echo "Introduce una imagen";
-    }
-*/
     if ($_FILES['bandera']['name'] != "") {
 
         //Verifica que la imagen tiene extensión jpg, gif o png y tamaño menor de 10 Mb (por defecto trabaja en bytes)
@@ -105,24 +91,16 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
                 //move_uploaded_file($banderaTemp, $carpetaDestino.$banderaNombre);
 
                 // Preparar la consulta SQL para insertar los datos en la tabla
-                $insertar = mysqli_query($conexion->getConexion(), "INSERT INTO paises (nombre, bandera, poblacion, superficie, 
-                    pib, esperanzaVida, tasaNatalidad, tasaMortalidad) 
+                $query = "INSERT INTO paises (nombre, bandera, poblacion, superficie, pib, esperanzaVida, tasaNatalidad, tasaMortalidad, continente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-                    VALUES ('$nombre', 'https://localhost/proyectoComparador/imagenes/banderas/$banderaNombre$tipo', 
-                    $poblacion, $superficie, $pib, $esperanzaVida, $tasaNatalidad, $tasaMortalidad)");
-
-                    //VALUES ('$nombre', 'C:/xampp/htdocs/comparadorPaises/imagenes/banderas/$banderaNombre$tipo', 
-                    //$poblacion, $superficie, $pib, $esperanzaVida, $tasaNatalidad, $tasaMortalidad)");
-
-                // Ejecutar la consulta
-                if ($insertar) {
-                    echo "<br>";
+                $stmt = $conexion->getConexion()->prepare($query);
+                $stmt->bind_param("ssiiiiiss", $nombre, $banderaNombre, $poblacion, $superficie, $pib, $esperanzaVida, $tasaNatalidad, $tasaMortalidad, $continente);
+                if ($stmt->execute()) {
                     echo "Los datos se han guardado correctamente.";
                 } else {
-                    echo "<br>";
-                    echo "Error al guardar los datos: ";
+                    echo "Error al guardar los datos: " . $stmt->error;
                 }
- 
+                $stmt->close();
 
             }else{           
 
