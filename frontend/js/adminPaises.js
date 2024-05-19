@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const esperanzaVida = document.getElementById('esperanzaVida').value;
         const tasaNatalidad = document.getElementById('tasaNatalidad').value;
         const tasaMortalidad = document.getElementById('tasaMortalidad').value;
+        const continente = document.getElementById('continente');
 
         let errores = [];
 
@@ -38,7 +39,10 @@ document.addEventListener('DOMContentLoaded', function(){
         if(!/^[0-9]+$/.test(tasaMortalidad)){
             errores.push("La población solo puede contener caracteres numéricos.")
         }
-
+        if (continente === "") {
+            errores.push("Por favor, seleccione un continente.");
+        }
+        
         if(errores.length > 0){
             alert(errores.join("\n"));
 

@@ -22,9 +22,9 @@
                 <option value="">Seleccione un continente</option>
                 <option value="Europa">Europa</option>
                 <option value="Asia">Asia</option>
-                <option value="América">América</option>
-                <option value="África">África</option>
-                <option value="Oceanía">Oceanía</option>
+                <option value="America">América</option>
+                <option value="Africa">África</option>
+                <option value="Oceania">Oceanía</option>
                 </select>
 
                 <div id="listaPaises">
