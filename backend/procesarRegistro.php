@@ -34,7 +34,7 @@ if($result->num_rows > 0){
     $usuario = new Usuario($nombreUsuario, $nombre, $apellidos, $correo, $telefono, $password);
     if ($usuario->guardarUsuario()) {
         echo "¡Registro exitoso! Ahora puedes iniciar sesión.";
-        header("Location: ../frontend/html/login.html");
+        header("Location: ../frontend/html/login.php");
         exit();
     } else {
         echo "Error al registrar el usuario. Por favor, inténtalo de nuevo.";
