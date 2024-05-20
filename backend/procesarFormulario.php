@@ -68,12 +68,9 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
                 $tipo = '.bmp';
             }
 
-
             // Mover el archivo de la bandera a la carpeta destino
             move_uploaded_file($_FILES['bandera']['tmp_name'], 
             $carpetaDestino . $banderaNombre . $tipo);
-
-
 
             #variable con el registro que se va a insertar
             $nombre = $_POST['nombre']; 
@@ -85,25 +82,18 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
             #Si la cantidad es mayor a 0 significa que ya hay un registro, por lo contrario, se inserta a la base de datos.
             if ($row['cantidad'] == 0) { 
             //if($queryRegistro = 0) {               
-            
 
-                // Mover el archivo de la bandera a la carpeta destino
-                //move_uploaded_file($banderaTemp, $carpetaDestino.$banderaNombre);
+            // Preparar la consulta SQL para insertar los datos en la tabla
+            $query = "INSERT INTO paises (nombre, bandera, poblacion, superficie, pib, esperanzaVida, tasaNatalidad, tasaMortalidad, continente) VALUES ('$nombre', '$banderaNombre', $poblacion, $superficie, $pib, $esperanzaVida, $tasaNatalidad, $tasaMortalidad, '$continente')";
 
-                // Preparar la consulta SQL para insertar los datos en la tabla
-                $query = "INSERT INTO paises (nombre, bandera, poblacion, superficie, pib, esperanzaVida, tasaNatalidad, tasaMortalidad, continente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-                $stmt = $conexion->getConexion()->prepare($query);
-                $stmt->bind_param("ssiiiiiss", $nombre, $banderaNombre, $poblacion, $superficie, $pib, $esperanzaVida, $tasaNatalidad, $tasaMortalidad, $continente);
-                if ($stmt->execute()) {
-                    echo "Los datos se han guardado correctamente.";
-                } else {
-                    echo "Error al guardar los datos: " . $stmt->error;
-                }
-                $stmt->close();
+            // Ejecutar la consulta
+            if ($conexion->getConexion()->query($query) === TRUE) {
+                echo "Los datos se han guardado correctamente.";
+            } else {
+                echo "Error al guardar los datos: " . $conexion->getConexion()->error;
+            }
 
             }else{           
-
                 echo "<br>";
                 echo "El país $nombre ya existe";
                 //echo "El archivo $banderaNombre$tipo no se ha guardado correctamente";
@@ -118,10 +108,6 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
         echo "<br>";
         echo "Introduce una imagen";
     }
-
-    ///////////////////////////////////////
-
-
 
     // Cerrar la conexión
     //$mysqli->close();
