@@ -11,7 +11,7 @@
 <body>
     <div id="contenedor">
         <?php
-            include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
+            include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
 
         ?>
 
