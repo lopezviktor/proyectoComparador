@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const formularioPaises = document.getElementById('formularioPaises');
     formularioPaises.addEventListener('submit', function(event){
-        event.preventDefault();ç
+        event.preventDefault();
 
         const nombrePais = document.getElementById('nombrePais').value;
         const poblacion = document.getElementById('poblacion').value;
