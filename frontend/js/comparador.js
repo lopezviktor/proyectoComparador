@@ -57,22 +57,37 @@ function comparadorPaises() {
     const divResultados = document.getElementById('ResultadosComparacion');
     divResultados.innerHTML = ''; // Limpiar resultados anteriores
 
+    agregarTablaPrincipal(paisesSeleccionados);
+    agregarTablaComparacion(paisesSeleccionados, 'poblacion', 'Comparación por población:');
+    agregarTablaComparacion(paisesSeleccionados, 'superficie', 'Comparación por superficie:');
+    agregarTablaComparacion(paisesSeleccionados, 'PIB', 'Comparación por pib:');
+    agregarTablaComparacion(paisesSeleccionados, 'esperanzaVida', 'Comparación por esperanza de vida:');
+    agregarTablaComparacion(paisesSeleccionados, 'tasaNatalidad', 'Comparación por la tasa de natalidad:');
+    agregarTablaComparacion(paisesSeleccionados, 'tasaMortalidad', 'Comparación por la tasa de mortalidad:');
+}
+
+
+function agregarTablaPrincipal(paisesSeleccionados) {
+    const divResultados = document.getElementById('ResultadosComparacion');
+    divResultados.innerHTML = ''; // Asegurarse de limpiar resultados previos
+
     // Crear la tabla y establecer su clase para estilos
     const tabla = document.createElement('table');
     tabla.className = 'tabla-comparativa';
+    divResultados.appendChild(tabla); // Añadir la tabla al div de resultados
 
     // Crear fila de cabecera y añadir las celdas de cabecera para cada país
     const filaCabecera = tabla.insertRow();
-    filaCabecera.insertCell().textContent = 'Categoría'; // Columna para nombres de categorías
+    filaCabecera.insertCell().textContent = 'País'; // Columna para nombres de categorías
 
-     // Agrega una celda de cabecera para cada país seleccionado.
+    // Agrega una celda de cabecera para cada país seleccionado.
     paisesSeleccionados.forEach(pais => {
         const celdaCabecera = document.createElement('th');
         celdaCabecera.textContent = pais.nombre;
         filaCabecera.appendChild(celdaCabecera);
     });
-    
-    // Agrega filas a la tabla con datos de cada país.
+
+    // Función para agregar filas con datos de cada país
     const agregarFila = (titulo, propiedad) => {
         const fila = tabla.insertRow();
         fila.insertCell().textContent = titulo; // Título de la fila
@@ -81,7 +96,7 @@ function comparadorPaises() {
             const celda = fila.insertCell();
             if (titulo === 'Bandera:') {
                 const img = document.createElement('img');
-                img.src = `../../imagenes/banderas/${pais[propiedad]}`; // Asume que la propiedad contiene el nombre del archivo
+                img.src = `../../imagenes/banderas/${pais[propiedad]}`;
                 img.alt = `Bandera de ${pais.nombre}`;
                 img.style.width = '60px';
                 img.style.height = '30px';
@@ -92,7 +107,7 @@ function comparadorPaises() {
         });
     };
 
-    // Agregar filas con datos específicos
+    // Llamadas a agregarFila para cada propiedad que deseas mostrar
     agregarFila('Bandera:', 'bandera');
     agregarFila('Población (hab.):', 'poblacion');
     agregarFila('Superficie (km2):', 'superficie');
@@ -100,15 +115,8 @@ function comparadorPaises() {
     agregarFila('Esperanza de vida (años):', 'esperanzaVida');
     agregarFila('Tasa de natalidad (%):', 'tasaNatalidad');
     agregarFila('Tasa de mortalidad (%)', 'tasaMortalidad');
-
-    // Añadir la tabla completa al div de resultados
-    divResultados.appendChild(tabla);
-
-    agregarTablaComparacion(paisesSeleccionados, 'poblacion', 'Comparación por población:');
-    agregarTablaComparacion(paisesSeleccionados, 'superficie', 'Comparación por superficie:');
-    agregarTablaComparacion(paisesSeleccionados, 'PIB', 'Comparación por pib:');
-    agregarTablaComparacion(paisesSeleccionados, 'esperanzaVida', 'Comparación por esperanza de vida:');
 }
+
 
 function agregarTablaComparacion(paises, propiedad, titulo) {
     const divResultados = document.getElementById('ResultadosComparacion');
@@ -120,7 +128,7 @@ function agregarTablaComparacion(paises, propiedad, titulo) {
 
     // Crear fila de cabecera y añadir las celdas de cabecera para cada país
     const filaCabecera = tabla.insertRow();
-    filaCabecera.insertCell().textContent = 'Categoría'; // Columna para nombres de categorías
+    filaCabecera.insertCell().textContent = 'País'; // Columna para nombres de categorías
 
     paises.forEach(pais => {
         const celdaCabecera = filaCabecera.insertCell();
