@@ -13,22 +13,16 @@
     <div id="contenedorIndex">
         <?php
             include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
-
         ?>
-        
-    <div id="contenedorPagina">
-        <h1>Comparador de países</h1>
-        <div id="resultadosBusqueda">
-        <!-- Resultados se mostrarán aquí -->
-    </div>
-</div>
-
+        <div id="contenedorPagina">
+            <h1>Comparador de países</h1>
+            <div id="resultadosBusqueda">
+            <!-- Resultados se mostrarán aquí -->
+            </div>
+        </div>
         <?php
-
             include "../includes/footer.php"  //incluye el código del archivo footer.php
-
         ?>
-
     </div>
     
 </body>
