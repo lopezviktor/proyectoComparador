@@ -115,7 +115,7 @@ function agregarTablaPrincipal(paisesSeleccionados) {
     agregarFila('Bandera:', 'bandera');
     agregarFila('Población (hab.):', 'poblacion');
     agregarFila('Superficie (km2):', 'superficie');
-    agregarFila('PIB (%):', 'PIB');
+    agregarFila('PIB (mill. €):', 'PIB');
     agregarFila('Esperanza de vida (años):', 'esperanzaVida');
     agregarFila('Tasa de natalidad (%):', 'tasaNatalidad');
     agregarFila('Tasa de mortalidad (%)', 'tasaMortalidad');

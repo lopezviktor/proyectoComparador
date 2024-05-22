@@ -44,6 +44,7 @@
             <label for="tasaMortalidad">Tasa de mortalidad:</label><br>
             <input type="number" id="tasaMortalidad" name="tasaMortalidad" step="0.01" required><br><br>
 
+            <label for="continente">Continente:</label><br>
             <select id="continente" name="continente">
                 <option value="">Seleccione un continente</option>
                 <option value="Europa">Europa</option>
@@ -51,7 +52,7 @@
                 <option value="America">América</option>
                 <option value="Africa">África</option>
                 <option value="Oceania">Oceanía</option>
-                </select>
+                </select><br><br>
         
             <input type="submit" value="Guardar">
         </form>
