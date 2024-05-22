@@ -13,7 +13,7 @@ include "../modelo/Conexion.php";
 $conexion = new Conexion();
 $conexion->conectarBD();
 
-$query = "SELECT nombre, bandera, poblacion, superficie, pib, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises ORDER BY nombre";
+$query = "SELECT nombre, bandera, poblacion, superficie, pib, esperanzaVida, tasaNatalidad, tasaMortalidad, continente FROM paises ORDER BY nombre";
 $result = mysqli_query($conexion->getConexion(), $query);
 
 $paises = [];
@@ -26,7 +26,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         'pib' => $row['pib'],
         'esperanzaVida' => $row['esperanzaVida'],
         'tasaNatalidad' => $row['tasaNatalidad'],
-        'tasaMortalidad' => $row['tasaMortalidad']
+        'tasaMortalidad' => $row['tasaMortalidad'],
+        'continente' => $row['continente']
     ];
 }
 echo json_encode($paises);
