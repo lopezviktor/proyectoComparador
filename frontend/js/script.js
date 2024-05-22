@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function manejarInputBusqueda() {
         const terminoBusqueda = inputBusqueda.value.trim();
-        if (terminoBusqueda.length >= 3) {
+        if (terminoBusqueda.length >= 1) {
             buscarPaises(terminoBusqueda);
         } else if (terminoBusqueda.length === 0) {
             mostrarPaises(); // Mostrar todos los países si el campo de búsqueda está vacío
