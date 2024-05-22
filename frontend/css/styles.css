@@ -130,7 +130,7 @@ h2 {
 form {
     max-width: 400px;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
 
 }
@@ -144,6 +144,7 @@ label {
     /*display: block;*/
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 14px;
 
 }
 
@@ -278,17 +279,18 @@ input[type="submit"] {
 /* Estilizando el selector */
 select {
     width: 100%;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
+    padding: 8px;
+    margin-bottom: 0;
+    border: 1px solid black;
+    border-radius: 5px;
     box-sizing: border-box;
+    background-color: white;
     color: #333;
     font-size: 16px;
     cursor: pointer;
     appearance: none;
     transition: border-color 0.3s;
+
 }
 
 select:hover,
