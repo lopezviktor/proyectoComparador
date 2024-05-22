@@ -131,7 +131,6 @@ form {
     max-width: 400px;
     margin: auto;
     padding: 20px;
-    border: 1px solid black;
     border-radius: 5px;
 
 }
@@ -199,9 +198,9 @@ input[type="submit"] {
 }
 
 #contenedorPaginaComparador{
-    margin: 0 5%;
+    margin: 0;
     padding: 15px;
-    width: calc(100% - 100px);
+    width: 95%;
     display: flex;
     justify-content: space-between;
 }
@@ -344,12 +343,12 @@ label {
     margin-bottom: 10px;
 }
 #comparadorForm {
-    width: 30%; /* O ajusta según tus necesidades */
-    margin-right: 20px; /* Espacio entre el formulario y la tabla */
+    width: 15%; /* O ajusta según tus necesidades */
+    margin: 2%; /* Espacio entre el formulario y la tabla */
 }
 
 #ResultadosComparacion {
-    width: 65%;
+    width: 80%;
     flex-direction: column; /* Alinea los países verticalmente */
     gap: 10px; /* Espacio entre cada país */
 
@@ -381,6 +380,7 @@ label {
     padding: 5px 5px; /* Relleno similar al de las cabeceras */
     border-bottom: 1px solid #e0e0e0; /* Borde sutil para separar filas */
     text-align: right;
+    width: 200px;
 }
 
 /* Estilo para las filas al pasar el mouse */
@@ -394,6 +394,7 @@ label {
     color: #000; /* Texto más oscuro para la primera columna */
     background-color: #eef; /* Un fondo ligeramente diferente para destacar las categorías */
     text-align: left;
+    width: 220px;
 }
 
 /* Media queries para responsive */
