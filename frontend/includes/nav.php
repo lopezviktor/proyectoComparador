@@ -18,6 +18,15 @@ session_start(); // Asegúrate de llamar a session_start() si no se ha llamado a
         <?php if (isset($_SESSION['usuario'])): ?>
             <li class="nombre-usuario">Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?></li>
             <li><a href="../../backend/controlador/logout.php">Cerrar sesión</a></li>
+
+            <?php if ($_SESSION['usuario']=="admin"): ?> 
+                
+                <li><a href="../html/registroPaises.php">RegistroPaises</a></li>
+
+            <?php  endif; ?>
+                <!-- Aqui termina el if -->
+
+            
         <?php else: ?>
             <li><a href="login.php">Acceder o Registrar</a></li>
         <?php endif; ?>
