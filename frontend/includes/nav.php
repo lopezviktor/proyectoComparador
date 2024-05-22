@@ -21,7 +21,7 @@ session_start(); // Asegúrate de llamar a session_start() si no se ha llamado a
 
             <?php if ($_SESSION['usuario']=="admin"): ?> 
                 
-                <li><a href="../html/registroPaises.php">RegistroPaises</a></li>
+                <li><a href="../html/registroPaises.php">Registrar País</a></li>
 
             <?php  endif; ?>
                 <!-- Aqui termina el if -->
