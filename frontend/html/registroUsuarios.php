@@ -14,7 +14,7 @@
 
     ?>
 
-    <div>
+    <div class="contenedorSesion">
 
     <h2>Registro</h2>
     <form id="formularioRegistro" action="../../backend/procesarRegistro.php" method="post">
@@ -40,6 +40,7 @@
       <input type="submit" value="Registrarse"><br>
 
       <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+
     </form>
     </div>
 

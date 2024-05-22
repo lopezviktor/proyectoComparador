@@ -15,7 +15,7 @@
 
         ?>
 
-        <div>
+        <div class="contenedorSesion">
             <h2>Iniciar Sesión</h2>
             <form id="formularioLogin" action="../../backend/controlador/login.php" method="post"> 
                 
@@ -29,8 +29,8 @@
             </form>
 
             <div style="text-align: center;">
-                <p>¿No tienes una cuenta?</p>
-                <p><a href="registroUsuarios.php">Regístrate aquí</a></p>
+                <p>¿Aún no tienes una cuenta?</p>
+                <p><a href="registroUsuarios.php">Regístrate gratis aquí</a></p>
             </div>
 
         </div>
