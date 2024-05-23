@@ -21,10 +21,10 @@
 
       <label for="nombreUsuario">Nombre de Usuario:</label><br>
       <input type="text" id="nombreUsuario" name="nombreUsuario" required><br><br>
-  
+
       <label for="nombre">Nombre:</label><br>
       <input type="text" id="nombre" name="nombre" required><br><br>
-  
+
       <label for="apellidos">Apellidos:</label><br>
       <input type="text" id="apellidos" name="apellidos" required><br><br>
   
