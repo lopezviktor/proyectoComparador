@@ -375,6 +375,7 @@ label {
     padding: 5px 5px; /* Relleno dentro de las celdas */
     border-bottom: 2px solid #e0e0e0; /* Borde inferior más oscuro para separar de las filas */
     text-align: right;
+    
 }
 
 /* Estilos para las celdas de datos */
@@ -383,6 +384,7 @@ label {
     border-bottom: 1px solid #e0e0e0; /* Borde sutil para separar filas */
     text-align: right;
     width: 200px;
+    font-size: 14px;
 }
 
 /* Estilo para las filas al pasar el mouse */

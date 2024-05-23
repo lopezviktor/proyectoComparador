@@ -63,12 +63,12 @@ function comparadorPaises() {
     divResultados.innerHTML = ''; // Limpiar resultados anteriores
 
     agregarTablaPrincipal(paisesSeleccionados);
-    agregarTablaComparacion(paisesSeleccionados, 'poblacion', 'Comparación por población:');
-    agregarTablaComparacion(paisesSeleccionados, 'superficie', 'Comparación por superficie:');
-    agregarTablaComparacion(paisesSeleccionados, 'PIB', 'Comparación por PIB:');
-    agregarTablaComparacion(paisesSeleccionados, 'esperanzaVida', 'Comparación por esperanza de vida:');
-    agregarTablaComparacion(paisesSeleccionados, 'tasaNatalidad', 'Comparación por la tasa de natalidad:');
-    agregarTablaComparacion(paisesSeleccionados, 'tasaMortalidad', 'Comparación por la tasa de mortalidad:');
+    agregarTablaComparacion(paisesSeleccionados, 'poblacion', 'Comparación por Población (hab.):');
+    agregarTablaComparacion(paisesSeleccionados, 'superficie', 'Comparación por Superficie (km2):');
+    agregarTablaComparacion(paisesSeleccionados, 'PIB', 'Comparación por PIB (mill. €):');
+    agregarTablaComparacion(paisesSeleccionados, 'esperanzaVida', 'Comparación por esperanza de vida (años):');
+    agregarTablaComparacion(paisesSeleccionados, 'tasaNatalidad', 'Comparación por la tasa de natalidad (%):');
+    agregarTablaComparacion(paisesSeleccionados, 'tasaMortalidad', 'Comparación por la tasa de mortalidad (%):');
 }
 
 function agregarTablaPrincipal(paisesSeleccionados) {
@@ -116,9 +116,9 @@ function agregarTablaPrincipal(paisesSeleccionados) {
     agregarFila('Población (hab.):', 'poblacion');
     agregarFila('Superficie (km2):', 'superficie');
     agregarFila('PIB (mill. €):', 'PIB');
-    agregarFila('Esperanza de vida (años):', 'esperanzaVida');
-    agregarFila('Tasa de natalidad (%):', 'tasaNatalidad');
-    agregarFila('Tasa de mortalidad (%)', 'tasaMortalidad');
+    agregarFila('Esperanza vida (años):', 'esperanzaVida');
+    agregarFila('Tasa natalidad (%):', 'tasaNatalidad');
+    agregarFila('Tasa mortalidad (%)', 'tasaMortalidad');
 }
 
 function agregarTablaComparacion(paises, propiedad, titulo) {
