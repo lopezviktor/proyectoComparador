@@ -2,11 +2,6 @@
 
 header('Content-Type: application/json; charset=utf-8');
 
-/*
-$conexion = mysqli_connect("localhost", "root", "", "comparador") or
-die ("Ha habido un error conectando a la BBDD");
-*/
-
 require_once "../modelo/Conexion.php";
 
 $conexion = new Conexion();
@@ -19,7 +14,7 @@ $resulConsulta = mysqli_query($conexion->getConexion(), "SELECT nombreUsuario, n
     apellidos, correo, telefono  FROM usuarios") or
 die ("Problemas con la consulta a la BBDD").mysqli_error($conexion->getConexion());
 
-while ($registro = mysqli_fetch_array($resulConsulta)) {
+while ($registro = mysqli_fetch_assoc($resulConsulta)) {
 
     $datosArrayUsuarios[] = $registro;
 

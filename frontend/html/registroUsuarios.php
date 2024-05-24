@@ -14,17 +14,17 @@
 
     ?>
 
-    <div>
+    <div class="contenedorSesion">
 
     <h2>Registro</h2>
     <form id="formularioRegistro" action="../../backend/procesarRegistro.php" method="post">
 
       <label for="nombreUsuario">Nombre de Usuario:</label><br>
       <input type="text" id="nombreUsuario" name="nombreUsuario" required><br><br>
-  
+
       <label for="nombre">Nombre:</label><br>
       <input type="text" id="nombre" name="nombre" required><br><br>
-  
+
       <label for="apellidos">Apellidos:</label><br>
       <input type="text" id="apellidos" name="apellidos" required><br><br>
   
@@ -40,6 +40,7 @@
       <input type="submit" value="Registrarse"><br>
 
       <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+
     </form>
     </div>
 
