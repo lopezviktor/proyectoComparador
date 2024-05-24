@@ -9,11 +9,13 @@
     
 </head>
 <body>
-    <div id="contenedor">
-        <?php
-                include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
+<div id="contenedorIndex">
+    <?php
+            include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
 
-        ?>
+    ?>
+
+    <div id="contenedorPagina">
 
         <div class="contenedorSesion">
             <h2>Iniciar Sesión</h2>
@@ -34,6 +36,7 @@
             </div>
 
         </div>
+        </div>
 
         <?php
 
@@ -41,6 +44,6 @@
 
         ?>
 
-    </div>
+
 </body>
 </html>
