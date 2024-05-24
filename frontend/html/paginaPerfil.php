@@ -9,11 +9,14 @@
     <title>Perfil Usuario</title>
 </head>
 <body>
-    <div id="contenedor">
-        <?php
+<div id="contenedorIndex">
+    <?php
             include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
-        ?>
-        <h1>Perfil del Usuario</h1>
+
+    ?>
+
+    <div id="contenedorPagina">
+        <h2>Perfil del Usuario</h2>
             <form id="perfilForm">
 
                 <label for="nombreUsuario">Nombre de Usuario:</label><br>
@@ -36,10 +39,13 @@
 
                 <button type="submit">Guardar Cambios</button>
             </form>
+            </div>
+        </div>
+
         <?php
+
             include "../includes/footer.php"  //incluye el código del archivo footer.php
 
         ?>
-    </div>
 </body>
 </html>

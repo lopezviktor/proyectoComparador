@@ -10,12 +10,13 @@
 <body>
     <!--ESTA PAGINA SOLO DEBERIA VERLA EL ADMINISTRADOR -->
 
+    <div id="contenedorIndex">
     <?php
-        include "../includes/nav.php"  //incluye el código del archivo nav.php
+            include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
 
     ?>
 
-    <div>
+    <div id="contenedorPagina">
 
         <h2>Formulario de Ingreso de Países</h2>
         <form id="formularioPaises" action="/proyectoComparador/backend/procesarFormulario.php" method="post" enctype="multipart/form-data">
@@ -57,6 +58,7 @@
             <input type="submit" value="Guardar">
         </form>
 
+    </div>
     </div>
 
     <?php
