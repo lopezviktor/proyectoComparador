@@ -9,12 +9,15 @@
     <title>Nuevo registro</title>
 </head>
 <body>
+<div id="contenedorIndex">
     <?php
-        include "../includes/nav.php"  //incluye el código del archivo nav.php
+            include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
 
     ?>
 
-    <div class="contenedorSesion">
+    <div id="contenedorPagina">
+
+    <!--<div class="contenedorSesion">-->
 
     <h2>Registro</h2>
     <form id="formularioRegistro" action="../../backend/procesarRegistro.php" method="post">
@@ -39,16 +42,17 @@
   
       <input type="submit" value="Registrarse"><br>
 
-      <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+      <p>¿Ya tienes una cuenta? <a href="login.php">Inicia sesión aquí</a></p>
 
     </form>
     </div>
+    </div>
 
-    <?php
+        <?php
 
-        include "../includes/footer.php"  //incluye el código del archivo footer.php
+            include "../includes/footer.php"  //incluye el código del archivo footer.php
 
-    ?>
+        ?>
 
 
     
