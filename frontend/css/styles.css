@@ -219,14 +219,22 @@ input[type="submit"] {
 }
 
 .contenedorSesion{
+    margin-bottom: 80px;
+
+}
+
+/*
+.contenedorSesion{
     height: 600px;
     margin-top: 80px;
     margin-bottom: 80px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .contenedorSesion h2{
     font-size: 40px;
 }
+*/
 
 #contenedorPais {
     width: calc(15% - 20px);
