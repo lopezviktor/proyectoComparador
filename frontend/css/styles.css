@@ -490,3 +490,54 @@ footer p { /* Esto es para el texto de derehos reservados*/
     width: 80px;
     height: 70px;
 }
+
+/*ESTILOS DE TABLA DE ADMINISTRADOR PARA EDITAR PAISES*/
+#tablaPaises {
+    width: 100%; /* Ocupar el ancho completo del contenedor */
+    border-collapse: collapse; /* Eliminar el espacio entre las celdas */
+    margin-top: 20px; /* Espacio superior para separar de otros elementos */
+}
+
+/* Estilos para las celdas y cabeceras */
+#tablaPaises th, #tablaPaises td {
+    border: 1px solid #ddd; /* Borde sutil para las celdas */
+    padding: 8px; /* Espaciado interno en las celdas */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+/* Fondo para las cabeceras de la tabla */
+#tablaPaises thead th {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Texto en color blanco */
+}
+
+/* Estilos para los botones dentro de la tabla */
+#tablaPaises button {
+    padding: 5px 10px; /* Espaciado interno para el botón */
+    background-color: #b5b4b4; /* Color de fondo gris claro */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+#tablaPaises button:hover {
+    background-color: #010b65; /* Cambiar color de fondo al pasar el ratón */
+}
+
+/* Estilos para los inputs dentro de la tabla para editar datos */
+#tablaPaises input[type="text"],
+#tablaPaises input[type="number"] {
+    width: 100%; /* Ajustar el ancho al de la celda */
+    border: 1px solid #ccc; /* Borde sutil */
+    padding: 5px; /* Espaciado interno */
+    box-sizing: border-box; /* El padding y border se incluyen en el ancho */
+}
+
+/* Zebra striping para las filas */
+#tablaPaises tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Color de fondo para filas impares */
+}
+
+#tablaPaises tbody tr:hover {
+    background-color: #888888; /* Color de fondo al pasar el ratón */
+}
