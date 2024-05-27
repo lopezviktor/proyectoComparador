@@ -13,17 +13,15 @@ session_start(); // Asegúrate de llamar a session_start() si no se ha llamado a
 
         <!-- Si el usuario es está logueado, mostrar Bienvenido y Cerrar Sesión -->
         <?php if (isset($_SESSION['usuario'])): ?>
-            <li class="nombre-usuario">Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?></li>
-            <li><a href="../../backend/controlador/logout.php">Cerrar sesión</a></li>
+        <li class="nombre-usuario">
+            Bienvenido, <a href="../html/paginaPerfil.php"><?= htmlspecialchars($_SESSION['usuario']) ?></a>
+        </li>
+        <li><a href="../../backend/controlador/logout.php">Cerrar sesión</a></li>
 
-            <!-- Si el usuario es admin, mostrar Registro Países -->
-            <?php if ($_SESSION['usuario']=="admin"): ?> 
-                
-                <li><a href="../html/registroPaises.php">Registrar País</a></li>
-
-            <?php  endif; ?>
-            <!-- Aqui termina el if Registro Países-->
-
+        <?php if ($_SESSION['usuario'] == "admin"): ?> 
+            <li><a href="../html/registroPaises.php">Registrar País</a></li>
+            <li><a href="../html/tablaPaisesAdmin.php">Modificar País</a></li>
+        <?php endif; ?>
         <?php else: ?>
             <li><a href="login.php">Acceder o Registrar</a></li>
         <?php endif; ?>
