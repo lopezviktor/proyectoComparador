@@ -19,11 +19,11 @@
     <div id="contenedorPagina">
 
     <h2>Política de Privacidad</h2> 
-    <p>En Comparador de Países, accesible desde www.comparadordepaises.com, nos tomamos muy en serio la 
-        privacidad de nuestros visitantes. Este documento informa sobre qué datos recopilamos y cómo los utilizamos.</p> 
+    <p>En Comparador de Países, nos tomamos muy en serio la privacidad de nuestros visitantes. 
+        Este documento informa sobre qué datos recopilamos y cómo los utilizamos.</p> 
     <h3>Responsable del Sitio Web</h3> 
-    <p>Comparador de Países es operado por Acme Corp, una empresa registrada en España con número de 
-        identificación fiscal ABC123.</p> 
+    <p>Comparador de Países es operado por Nebrija.com, Inc., una empresa registrada en España con número de 
+        identificación fiscal B1112233.</p> 
     <h3>Recopilación y Uso de Datos</h3> 
     <p>Recopilamos información cuando te registras en nuestro sitio, completas un formulario o interactúas 
         con nosotros de alguna otra manera. La información que recopilamos puede incluir:</p> 

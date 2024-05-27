@@ -18,7 +18,8 @@ mysqli_set_charset($conexion->getConexion(), "utf8");
 $continente = isset($_GET['continente']) ? $_GET['continente'] : '';
 
 // Define la consulta SQL base para seleccionar los datos de los países.
-$query = "SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises"; 
+//$query = "SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises";
+$query = "SELECT nombre, bandera, FORMAT(poblacion, 0) as poblacion, FORMAT(superficie, 0) as superficie, FORMAT(PIB, 0) as PIB, FORMAT(esperanzaVida, 2) as esperanzaVida, FORMAT(tasaNatalidad, 2) as tasaNatalidad, FORMAT(tasaMortalidad, 2) as tasaMortalidad FROM paises";  
 
 // Modifica la consulta si se ha proporcionado un continente específico.
 if (!empty($continente)) {
