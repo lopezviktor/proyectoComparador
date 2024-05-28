@@ -62,13 +62,35 @@ function comparadorPaises() {
     const divResultados = document.getElementById('ResultadosComparacion');
     divResultados.innerHTML = ''; // Limpiar resultados anteriores
 
+    const checkedPoblacion = document.getElementById("checkedPoblacion");
+    const checkedSuperficie = document.getElementById("checkedSuperficie");
+    const checkedPib = document.getElementById("checkedPib");
+    const checkedEsperanzaVida = document.getElementById("checkedEsperanzaVida");
+    const checkedTasaNatalidad = document.getElementById("checkedTasaNatalidad");
+    const checkedTasaMortalidad = document.getElementById("checkedTasaMortalidad");
+
+
     agregarTablaPrincipal(paisesSeleccionados);
-    agregarTablaComparacion(paisesSeleccionados, 'poblacion', 'Comparación por Población (hab.):');
-    agregarTablaComparacion(paisesSeleccionados, 'superficie', 'Comparación por Superficie (km2):');
-    agregarTablaComparacion(paisesSeleccionados, 'PIB', 'Comparación por PIB (mill. €):');
-    agregarTablaComparacion(paisesSeleccionados, 'esperanzaVida', 'Comparación por esperanza de vida (años):');
-    agregarTablaComparacion(paisesSeleccionados, 'tasaNatalidad', 'Comparación por la tasa de natalidad (%):');
-    agregarTablaComparacion(paisesSeleccionados, 'tasaMortalidad', 'Comparación por la tasa de mortalidad (%):');
+
+    // Verificar el estado de cada checkbox antes de agregar la tabla de comparación correspondiente
+    if (checkedPoblacion.checked) {
+        agregarTablaComparacion(paisesSeleccionados, 'poblacion', 'Comparación por Población (hab.):');
+    }
+    if (checkedSuperficie.checked) {
+        agregarTablaComparacion(paisesSeleccionados, 'superficie', 'Comparación por Superficie (km2):');
+    }
+    if (checkedPib.checked) {
+        agregarTablaComparacion(paisesSeleccionados, 'PIB', 'Comparación por PIB (mill. €):');
+    }
+    if (checkedEsperanzaVida.checked) {
+        agregarTablaComparacion(paisesSeleccionados, 'esperanzaVida', 'Comparación por esperanza de vida (años):');
+    }
+    if (checkedTasaNatalidad.checked) {
+        agregarTablaComparacion(paisesSeleccionados, 'tasaNatalidad', 'Comparación por la tasa de natalidad (%):');
+    }
+    if (checkedTasaMortalidad.checked) {
+        agregarTablaComparacion(paisesSeleccionados, 'tasaMortalidad', 'Comparación por la tasa de mortalidad (%):');
+    }
 }
 
 function agregarTablaPrincipal(paisesSeleccionados) {
