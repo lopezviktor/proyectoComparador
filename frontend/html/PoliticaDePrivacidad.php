@@ -70,7 +70,7 @@
         <h3>Información de Contacto</h3> 
         <p>Si tienes alguna pregunta sobre esta política de privacidad o sobre cómo manejamos tus datos personales, 
             no dudes en ponerte en contacto con nuestro Delegado de Protección de Datos en:</p> 
-            <address> Acme Corp<br> Calle Ejemplo 123<br> 12345 Ciudad, País<br> 
+            <address>Nebrija.com, Inc.<br> Calle Joaquín María López, 62<br> 28015 Madrid, España<br> 
             <a href="mailto:privacy@comparadordepaises.com">privacy@comparadordepaises.com</a> 
         </address> <p>Esperamos que esta política de privacidad haya aclarado las cuestiones básicas sobre 
             cómo manejamos y protegemos tu información personal. Si tienes más preguntas, no dudes en contactarnos.</p>
