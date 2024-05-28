@@ -19,18 +19,24 @@
             <form id="comparadorForm">
             <h2>Selecciona y compara</h2>
                 <select id="selectorContinente">
-                <option value="">Seleccione un continente</option>
-                <option value="Europa">Europa</option>
-                <option value="Asia">Asia</option>
-                <option value="America">América</option>
-                <option value="Africa">África</option>
+                    <option value="">Seleccione un continente</option>
+                    <option value="Europa">Europa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="America">América</option>
+                    <option value="Africa">África</option>
                 <option value="Oceania">Oceanía</option>
                 </select>
-
                 <div id="listaPaises">
                     <!-- Los paises se cargarán aquí -->
                 </div>
-                
+                <div id="opcionesComparacion">
+                    <label><input type="checkbox" name="comparacion" value="poblacion" id="checkedPoblacion">Población</label> <br>
+                    <label><input type="checkbox" name="comparacion" value="superficie" id="checkedSuperficie">Superficie</label> <br>
+                    <label><input type="checkbox" name="comparacion" value="pib" id="checkedPib">PIB</label> <br>
+                    <label><input type="checkbox" name="comparacion" value="esperanzaVida" id="checkedEsperanzaVida">Esperanza de vida</label> <br>
+                    <label><input type="checkbox" name="comparacion" value="tasaNatalidad" id="checkedTasaNatalidad">Tasa de natalidad</label> <br>
+                    <label><input type="checkbox" name="comparacion" value="tasaMortalidad" id="checkedTasaMortalidad">Tasa de mortalidad</label> <br>
+                </div>
                 <button type="button" onclick="comparadorPaises()">Comparar</button>
             </form>
 

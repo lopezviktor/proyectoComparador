@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Configurar el HTML interno de la fila con celdas que incluyen inputs para permitir la edición de los datos del país.
                 fila.innerHTML = `
                 <td><input type="text" value="${pais.nombre}"/></td>
-                <td><input type="number" value="${pais.poblacion}"/></td>
-                <td><input type="number" value="${pais.superficie}"/></td>
-                <td><input type="number" value="${pais.PIB}"/></td>
-                <td><input type="number" value="${pais.esperanzaVida}"/></td>
-                <td><input type="number" value="${pais.tasaNatalidad}"/></td>
-                <td><input type="number" value="${pais.tasaMortalidad}"/></td>
+                <td><input type="double" value="${pais.poblacion}"/></td>
+                <td><input type="double" value="${pais.superficie}"/></td>
+                <td><input type="double" value="${pais.PIB}"/></td>
+                <td><input type="double" value="${pais.esperanzaVida}"/></td>
+                <td><input type="double" value="${pais.tasaNatalidad}"/></td>
+                <td><input type="double" value="${pais.tasaMortalidad}"/></td>
                 <td><button onclick="editarPais(this, '${pais.nombre}')">Guardar</button></td>
                 `;
             });
