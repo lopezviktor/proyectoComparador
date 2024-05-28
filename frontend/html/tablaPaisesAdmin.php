@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+    <div id="contenedorIndex">
+        <?php
+                include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
+
+        ?>
+        <div id="contenedorPagina">
+
     <h1>Administración de Países</h1>
     <table id="tablaPaises">
         <thead>
@@ -26,5 +34,13 @@
             <!-- Los datos se llenarán desde el backend -->
         </tbody>
     </table>
+    </div>
+    </div>
+
+    <?php
+
+        include "../includes/footer.php"  //incluye el código del archivo footer.php
+
+    ?>
 </body>
 </html>
