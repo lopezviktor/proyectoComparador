@@ -198,7 +198,6 @@ input[type="submit"] {
     padding: 20px;
     /*width: 100%;*/
     height: 100%;
-    background-color: white;
     max-width: 90%;
 
 }
@@ -543,4 +542,30 @@ footer p { /* Esto es para el texto de derehos reservados*/
 
 #tablaPaises tbody tr:hover {
     background-color: #888888; /* Color de fondo al pasar el ratón */
+}
+#galeriaImagenes {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#galeriaImagenes img {
+    
+    object-fit: cover;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#galeriaImagenes img.active {
+    display: block;
 }
