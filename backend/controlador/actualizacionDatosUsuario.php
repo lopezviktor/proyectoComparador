@@ -23,7 +23,7 @@ $apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : null;
 $correo = isset($_POST['correo']) ? $_POST['correo'] : null;
 $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
 
-// Preparar la consulta de actualización eliminando la coma antes del WHERE
+// Preparar la consulta de actualización
 $query = $conexion->getConexion()->prepare("UPDATE usuarios SET nombre = ?, apellidos = ?, correo = ?, telefono = ? WHERE nombreUsuario = ?");
 
 if (!$query) {
