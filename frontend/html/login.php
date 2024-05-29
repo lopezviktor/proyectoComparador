@@ -15,7 +15,7 @@
 
     ?>
 
-    <div id="contenedorPagina">
+    <div id="contenedorPaginaPlus">
 
         <div class="contenedorSesion">
             <h2>Iniciar Sesión</h2>

@@ -10,11 +10,12 @@
     
 </head>
 <body>
+    
     <div id="contenedorIndex">
         <?php
             include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
         ?>
-        <div id="contenedorPagina">
+        <div id="contenedorPaginaIndex">
             <h1>Comparador de países</h1>
             <div id="galeriaImagenes">
                 <div class="slider">
@@ -27,9 +28,11 @@
                     <div class="slide"><img src="../../imagenes/sidney.jpg" alt="Imagen 7"></div>
                 </div>
             </div>
+            
             <div id="resultadosBusqueda">
             <!-- Resultados se mostrarán aquí -->
             </div>
+            
         </div>
         <?php
             include "../includes/footer.php"  //incluye el código del archivo footer.php
