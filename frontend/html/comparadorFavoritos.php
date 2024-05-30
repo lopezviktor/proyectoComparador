@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/comparador.js"></script>
-    <script src="../js/buscarPaisPorNombre.js"></script>
+    <script src="../js/comparadorFavoritos.js"></script>
 </head>
 <body>
     <div id="contenedor">
@@ -27,7 +26,7 @@
                     <option value="Oceania">Oceanía</option>
                 </select>
                 
-                <div id="listaPaises">
+                <div id="listaPaisesFavoritos">
                     <!-- Los paises se cargarán aquí -->
                 </div>
                 <div id="opcionesComparacion">
