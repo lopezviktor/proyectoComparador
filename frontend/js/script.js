@@ -6,32 +6,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const terminoBusqueda = inputBusqueda.value.trim();
         if (terminoBusqueda.length >= 1) {
             buscarPaises(terminoBusqueda);
-        } else if (terminoBusqueda.length === 0) {
-            mostrarPaises(); // Mostrar todos los países si el campo de búsqueda está vacío
         } else {
-            limpiarResultados(); // Limpiar los resultados si la longitud es menor que 3 pero no es 0
+            mostrarPaises();
         }
     }
 
-    function buscarPaises(nombre) {
-        fetch(`../../backend/controlador/buscarPaisPorNombre.php?nombre=${encodeURIComponent(nombre)}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('No se pudo obtener los resultados.');
-                }
-                return response.json();
-            })
-            .then(mostrarResultados)
-            .catch(error => {
-                console.error('Error al buscar países:', error);
-            });
+    async function buscarPaises(nombre) {
+        try {
+            const response = await fetch(`../../backend/controlador/buscarPaisPorNombre.php?nombre=${encodeURIComponent(nombre)}`);
+            if (!response.ok) {
+                throw new Error('No se pudo obtener los resultados.');
+            }
+            const paises = await response.json();
+            mostrarResultados(paises);
+        } catch (error) {
+            console.error('Error al buscar países:', error);
+        }
     }
 
-    function mostrarPaises() {
-        fetch("../../backend/controlador/GenerarJsonPaises.php")
-            .then(response => response.json())
-            .then(mostrarResultados)
-            .catch(error => console.log('Error al cargar todos los países', error));
+    async function mostrarPaises() {
+        try {
+            const response = await fetch("../../backend/controlador/GenerarJsonPaises.php");
+            const paises = await response.json();
+            mostrarResultados(paises);
+        } catch (error) {
+            console.log('Error al cargar todos los países', error);
+        }
     }
 
     function mostrarResultados(paises) {
@@ -62,33 +62,47 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>Esperanza vida: ${pais.esperanzaVida} años</p>
                             <p>Tasa natalidad: ${pais.tasaNatalidad} %</p>
                             <p>Tasa mortalidad: ${pais.tasaMortalidad} %</p>`;
-        contenedorPais.appendChild(infoPais);
 
+        const btnFavorito = document.createElement('button');
+        btnFavorito.textContent = 'Favoritos';
+        btnFavorito.classList.add('btnFavorito');
+        btnFavorito.addEventListener('click', function() {
+            addFavorito(pais.nombre);
+        });
+
+        infoPais.appendChild(btnFavorito);
+        contenedorPais.appendChild(infoPais);
         return contenedorPais;
     }
+    
+    function addFavorito(nombrePais) {
+        fetch("../../backend/controlador/gestionFavoritos.php", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ pais: nombrePais })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la petición');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Operación completada:', data);
+            // Puedes agregar aquí cualquier otra lógica para manejar la respuesta.
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+    
 
     function limpiarResultados() {
         const contenedorPaises = document.getElementById("contenedorPaises");
         contenedorPaises.innerHTML = '';
     }
 
-    // Inicialmente cargar todos los países
     mostrarPaises();
-
-    //Bateria de imagenes INDEX
-    const images = document.querySelectorAll('#galeriaImagenes img');
-    let currentIndex = 0;
-
-    // Mostrar la primera imagen
-    images[currentIndex].classList.add('active');
-
-    function showNextImage() {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
-    }
-
-    // Cambiar imagen cada 3 segundos
-    setInterval(showNextImage, 4000);
-
 });
