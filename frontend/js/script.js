@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const btnFavorito = document.createElement('button');
         if (favoritosUsuario.includes(pais.nombre)) {
             btnFavorito.textContent = 'Eliminar de favoritos';
+            btnFavorito.id = "btnFavorito";
             btnFavorito.classList.add('favorito');
         } else {
             btnFavorito.textContent = 'Añadir a favoritos';

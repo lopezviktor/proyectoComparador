@@ -591,3 +591,21 @@ footer p { /* Esto es para el texto de derehos reservados*/
 #galeriaImagenes img.active { 
     display: block; 
 } 
+.btnFavorito{
+    width: auto;
+    height: auto;
+    padding: 5px;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+    text-align: center;
+    text-transform: none;
+.btnFavorito.favorito {
+
+    background-color: rgb(28, 163, 7); /* ejemplo de cambio de color */
+}
