@@ -15,7 +15,7 @@
 
     ?>
 
-    <div id="contenedorPagina">
+    <div id="contenedorPaginaPlus">
         <h3>Contacto</h3>
         <p>
         Para cualquier consulta, colaboración o sugerencia, no dudes en ponerte en contacto con nosotros. <br>

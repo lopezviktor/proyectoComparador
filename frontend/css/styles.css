@@ -1,574 +1,596 @@
-body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    
-}
-
-nav, #contenedorFooter {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding: 0 20px;
-    background-color: rgb(2, 2, 46);
-
-}
-
-.logo, .buscadorNav, nav ul {
-    margin: 0 20px;
-
-}
-
-.logo{
-    align-items: center;
-    position: relative;
-
-}
-
-.logo img {
-    width: 80px; 
-    height: auto; 
-    border-radius: 20%;
-    margin: 10px;
-
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    justify-content: center; /* Centra los elementos de la lista horizontalmente */
-    flex-grow: 0; /* Evita que la lista crezca y respete su contenido */
-
-}
-
-nav ul li {
-    padding: 0 10px; /* Espaciado entre elementos de la lista */
-
-}
-
-nav ul a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 20px; /* Bordes redondeados para los enlaces */
-
-}
-
-nav ul a:hover {
-    background-color: rgb(68, 199, 247);
-    color: black;
-
-}
-
-.buscadorNav {
-    position: relative; /* Posicionamiento relativo para alinear los elementos internos */
-    padding: 5px;
-    background-color: white;
-    border-radius: 10px;
-    flex-grow: 0; /* No permitirá que el buscador crezca */
-    max-width: 200px; /* Ajustar para controlar el ancho */
-
-}
-
-.buscadorNav .espacioBuscador{
-    color: black;
-    position: absolute;
-    top: 4px;
-    border-color: 1px solid black;
-
-}
-
-.buscadorNav input[type="text"] {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 8px 10px; /* Espaciado interno */
-
-}
-
-.buscadorIndex {
-    position: relative; /* Posicionamiento relativo para alinear los elementos internos */
-    padding: 5px;
-    margin: auto;
-    background-color: white;
-    border-radius: 10px;
-    flex-grow: 1; /* No permitirá que el buscador crezca */
-    max-width: 600px; /* Ajusta esto según tus necesidades para controlar el ancho */
-
-}
-
-.buscadorIndex .espacioBuscador{
-    color: black;
-    position: absolute;
-    top: 4px;
-    border-color: 1px solid black;
-
-}
-
-.buscadorIndex input[type="text"] {
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 8px 10px; /* Espaciado interno */
-
-}
-
-.nombre-usuario {
-    color: rgb(9, 240, 244); /* Establece el color del texto a azul */
-    /* Puedes añadir más estilos aquí si lo necesitas */
-}
-
-h2 {
-    text-align: center;
-
-}
-
-form {
-    max-width: 400px;
-    margin: auto;
-    padding: 10px;
-    border-radius: 5px;
-
-}
-
-form p {
-    text-align: center;
-
-}
-
-label {
-    /*display: block;*/
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 14px;
-
-}
-
-input[type="text"],
-input[type="number"],
-input[type="file"],
-input[type="email"],
-input[type="password"]
-{
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 0;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-sizing: border-box;
-
-}
-
-input[type="submit"] {
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #0056b3;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s;
-
-}
-
-#contenedorIndex {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(2, 2, 46);
-
-}
-
-#contenedorIndex h1{
-    text-align: center;
-    color: white;
-    font-size: 100px;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: rgb(18, 138, 7);
-
-}
-#contenedorPagina{
-    margin: 0 auto;
-    padding: 20px;
-    /*width: 100%;*/
-    height: 100%;
-    max-width: 90%;
-
-}
-
-#contenedorPaginaComparador{
-    margin: 0;
-    padding: 15px;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-}
-
-#contenedorPaises {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 90%;
-
-}
-
-.contenedorSesion{
-    margin-bottom: 80px;
-
-}
-
-/*
-.contenedorSesion{
-    height: 600px;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.contenedorSesion h2{
-    font-size: 40px;
-}
-*/
-
-#contenedorPais {
-    width: calc(15% - 20px);
-    height: 380px;
-    margin: 20px 10px 40px 10px;
-    padding: 10px;
-    position: relative;
-    float: left;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582);
-    overflow: auto;
-    background-color: rgba(159, 169, 175, 0.522);
-
-}
-#contenedorPaisIndex{
-    width: calc(30% - 10px);
-    height: 450px;
-    margin: 10px 5px 20px 5px;
-    padding: 10px;
-    position: relative;
-    float: left;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582);
-    overflow: auto;
-    background-color: rgba(159, 169, 175, 0.522);
-}
-#contenedorPaisIndex img{
-    width: 55%;
-    height: 150px;
-    display: block;
-    transition: transform 0.3s;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    min-height: 100px;
-    margin: auto;
-}
-#contenedorPais img {
-    width: 80%;
-    height: 100px;
-    display: block;
-    transition: transform 0.3s;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    min-height: 100px;
-    margin: auto;
-
-}
-
-#contenedorPais:hover img {
-    transform: scale(1.1);
-
-}
-
-.infoPais {
-    text-align: center;
-    font-size: 13px;
-
-}
-
-.infoPais h3{
-    text-align: center;
-    font-size: 16px;
-
-}
-
-/* Estilizando el selector */
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 0;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-sizing: border-box;
-    background-color: white;
-    color: #333;
-    font-size: 16px;
-    cursor: pointer;
-    appearance: none;
-    transition: border-color 0.3s;
-
-}
-
-select:hover,
-select:focus {
-    border-color: #0056b3;
-}
-
-/* Estilizando el botón */
-button {
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #0056b3;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #003d7a;
-}
-
-/* Estilos para la lista de países */
-#listaPaises div {
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: #5d89bb;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-}
-
-input[type='checkbox'] {
-    margin-right: 10px;
-}
-
-label {
-    flex-grow: 1;
-}
-
-
-#listaPaises{ 
-    height: 400px;
-    overflow-y: auto; 
-    border: 1px solid #000000;
-    background-color: #ccc;
+body{ 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%; 
+     
+} 
+ 
+nav, #contenedorFooter { 
+    align-items: center; 
+    display: flex; 
+    justify-content: center; 
+    padding: 0 20px; 
+    background-color: rgb(2, 2, 46); 
+ 
+} 
+ 
+.logo, .buscadorNav, nav ul { 
+    margin: 0 20px; 
+ 
+} 
+ 
+.logo{ 
+    align-items: center; 
+    position: relative; 
+ 
+} 
+ 
+.logo img { 
+    width: 80px;  
+    height: auto;  
+    border-radius: 20%; 
+    margin: 10px; 
+ 
+} 
+ 
+nav ul { 
+    display: flex; 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    justify-content: center; /* Centra los elementos de la lista horizontalmente */ 
+    flex-grow: 0; /* Evita que la lista crezca y respete su contenido */ 
+ 
+} 
+ 
+nav ul li { 
+    padding: 0 10px; /* Espaciado entre elementos de la lista */ 
+ 
+} 
+ 
+nav ul a { 
+    text-decoration: none; 
+    color: white; 
+    padding: 10px 15px; 
+    border-radius: 20px; /* Bordes redondeados para los enlaces */ 
+ 
+} 
+ 
+nav ul a:hover { 
+    background-color: rgb(68, 199, 247); 
+    color: black; 
+ 
+} 
+ 
+.buscadorNav { 
+    position: relative; /* Posicionamiento relativo para alinear los elementos internos */ 
     padding: 5px; 
-    margin-bottom: 10px;
-}
-#comparadorForm {
-    width: 15%; /* O ajusta según tus necesidades */
-    margin: 0 1% 1% 1%; /* Espacio entre el formulario y la tabla */
-}
+    background-color: white; 
+    border-radius: 10px; 
+    flex-grow: 0; /* No permitirá que el buscador crezca */ 
+    max-width: 200px; /* Ajustar para controlar el ancho */ 
+ 
+} 
+ 
+.buscadorNav .espacioBuscador{ 
+    color: black; 
+    position: absolute; 
+    top: 4px; 
+    border-color: 1px solid black; 
+ 
+} 
+ 
+.buscadorNav input[type="text"] { 
+    width: 100%; 
+    border: none; 
+    background: transparent; 
+    padding: 8px 10px; /* Espaciado interno */ 
+ 
+} 
+ 
+.buscadorIndex { 
+    position: relative; /* Posicionamiento relativo para alinear los elementos internos */ 
+    padding: 5px; 
+    margin: auto; 
+    background-color: white; 
+    border-radius: 10px; 
+    flex-grow: 1; /* No permitirá que el buscador crezca */ 
+    max-width: 600px; /* Ajusta esto según tus necesidades para controlar el ancho */ 
+ 
+} 
+ 
+.buscadorIndex .espacioBuscador{ 
+    color: black; 
+    position: absolute; 
+    top: 4px; 
+    border-color: 1px solid black; 
+ 
+} 
+ 
+.buscadorIndex input[type="text"] { 
+    width: 100%; 
+    border: none; 
+    background: transparent; 
+    padding: 8px 10px; /* Espaciado interno */ 
+ 
+} 
+ 
+.nombre-usuario { 
+    color: rgb(9, 240, 244); /* Establece el color del texto a azul */ 
+    /* Puedes añadir más estilos aquí si lo necesitas */ 
+} 
+ 
+h2 { 
+    text-align: center; 
+ 
+} 
+ 
+form { 
+    max-width: 400px; 
+    margin: auto; 
+    padding: 10px; 
+    border-radius: 5px; 
+ 
+} 
+ 
+form p { 
+    text-align: center; 
+ 
+} 
+ 
+label { 
+    /*display: block;*/ 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    font-size: 14px; 
+ 
+} 
+ 
+input[type="text"], 
+input[type="number"], 
+input[type="file"], 
+input[type="email"], 
+input[type="password"] 
+{ 
+    width: 100%; 
+    padding: 8px; 
+    margin-bottom: 0; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+ 
+} 
+ 
+input[type="submit"] { 
+    width: 100%; 
+    padding: 10px 15px; 
+    background-color: #0056b3; 
+    border: none; 
+    border-radius: 4px; 
+    color: white; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+ 
+} 
+ 
+#contenedorIndex { 
+    margin: 0; 
+    padding: 0; 
+    background-color: rgb(2, 2, 46); 
+ 
+} 
+ 
+#contenedorPaginaIndex h1{ 
+    text-align: center; 
+    color: white; 
+    font-size: 100px; 
+    -webkit-text-stroke-width: 3px; 
+    -webkit-text-stroke-color: rgb(18, 138, 7); 
+ 
+} 
 
-#ResultadosComparacion {
-    width: 80%;
-    flex-direction: column; /* Alinea los países verticalmente */
-    gap: 10px; /* Espacio entre cada país */
+#contenedorPagina{ 
+    margin: 0 auto; 
+    padding: 20px; 
+    /*width: 100%;*/ 
+    height: 100%; 
+    max-width: 90%; 
+    background-color: white; 
+ 
+} 
 
-}
+#contenedorPaginaPlus { 
+    margin: 0 auto; 
+    padding: 20px; 
+    /*width: 100%;*/ 
+    height: 500px; 
+    max-width: 90%; 
+    background-color: white; 
+ 
+} 
 
-#opcionesComparacion{
-    margin: 20px 0;
-}
-
-/* Estilos base para la tabla */
-.tabla-comparativa {
-    width: 80%; /* Ajusta esto según el diseño de tu página */
-    margin: 20px auto; /* Centra la tabla horizontalmente y proporciona espacio arriba y abajo */
-    border-collapse: collapse; /* Los bordes de las celdas se colapsan en uno solo */
-    background-color: #ffffff; /* Fondo blanco para la claridad */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la tabla */
-    font-family: 'Arial', sans-serif; /* Fuente sans-serif para mejor legibilidad */
-}
-
-/* Estilos para las celdas de cabecera */
-.tabla-comparativa th {
-    background-color: #f4f4f4; /* Fondo gris claro para las cabeceras */
-    color: #333; /* Color de texto oscuro para contraste */
-    font-weight: bold; /* Texto en negrita para las cabeceras */
-    padding: 5px 5px; /* Relleno dentro de las celdas */
-    border-bottom: 2px solid #e0e0e0; /* Borde inferior más oscuro para separar de las filas */
-    text-align: right;
-    
-}
-
-/* Estilos para las celdas de datos */
-.tabla-comparativa td {
-    padding: 5px 5px; /* Relleno similar al de las cabeceras */
-    border-bottom: 1px solid #e0e0e0; /* Borde sutil para separar filas */
-    text-align: right;
-    width: 200px;
-    font-size: 14px;
-}
-
-/* Estilo para las filas al pasar el mouse */
-.tabla-comparativa tr:hover {
-    background-color: #f9f9f9; /* Cambio de fondo al pasar el mouse para resaltar la fila */
-}
-
-/* Estilos para la primera columna, que contiene las categorías */
-.tabla-comparativa td:first-child, .tabla-comparativa th:first-child {
-    font-weight: bold; /* Hacer el texto en negrita para destacar las categorías */
-    color: #000; /* Texto más oscuro para la primera columna */
-    background-color: #eef; /* Un fondo ligeramente diferente para destacar las categorías */
-    text-align: left;
-    width: 220px;
-}
-
-/* Media queries para responsive */
-@media (max-width: 768px) {
-    .tabla-comparativa {
-        width: 100%; /* La tabla ocupa el 100% del ancho en dispositivos más pequeños */
-        box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */
-    }
-}
-
-footer {
-    height: 140px;
-    background-color: rgb(2, 2, 46);
-    color: white;
-    clear: both;
-    margin-top: auto;
-    width: 100%;
-
-}
-
-footer div {
-    float: right;
-    padding-top: 50px;
-    margin-right: 50px;
-
-}
-
-footer ul {
-    float: left;
-    font-weight: bold;
-    margin: 10px 20px 10px 20px;
-    list-style: none;
-    font-size: 20px;
-
-}
-
-footer li {
-    margin-top: 8px;
-
-}
-
-footer a {
-    text-decoration: none;
-    color: white;
-    margin-left: 20px;
-    font-size: 15px;
-    font-weight: lighter;
-    margin: 2px;
-}
-
-footer li a img {
-    width: 20px;
-    margin: 0px;
-    border-radius: 100%;
-
-}
-
-footer p { /* Esto es para el texto de derehos reservados*/
-    font-size: 15px;
-
-}
-
-.logoPie img {
-    position: relative;
-    width: 80px;
-    height: 70px;
-}
-
-/*ESTILOS DE TABLA DE ADMINISTRADOR PARA EDITAR PAISES*/
-#tablaPaises {
-    width: 100%; /* Ocupar el ancho completo del contenedor */
-    border-collapse: collapse; /* Eliminar el espacio entre las celdas */
-    margin-top: 20px; /* Espacio superior para separar de otros elementos */
-}
-
-/* Estilos para las celdas y cabeceras */
-#tablaPaises th, #tablaPaises td {
-    border: 1px solid #ddd; /* Borde sutil para las celdas */
-    padding: 8px; /* Espaciado interno en las celdas */
-    text-align: left; /* Alineación del texto a la izquierda */
-}
-
-/* Fondo para las cabeceras de la tabla */
-#tablaPaises thead th {
-    background-color: #4CAF50; /* Color de fondo verde */
-    color: white; /* Texto en color blanco */
-}
-
-/* Estilos para los botones dentro de la tabla */
-#tablaPaises button {
-    padding: 5px 10px; /* Espaciado interno para el botón */
-    background-color: #0056b3; /* Color de fondo gris claro */
-    border: none; /* Sin bordes */
-    cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
-    transition: background-color 0.3s; /* Transición suave del color de fondo */
-}
-
-#tablaPaises button:hover {
-    background-color: #012a56; /* Cambiar color de fondo al pasar el ratón */
-}
-
-/* Estilos para los inputs dentro de la tabla para editar datos */
-#tablaPaises input[type="text"],
-#tablaPaises input[type="number"] {
-    width: 100%; /* Ajustar el ancho al de la celda */
-    border: 1px solid #ccc; /* Borde sutil */
-    padding: 5px; /* Espaciado interno */
-    box-sizing: border-box; /* El padding y border se incluyen en el ancho */
-}
-
-/* Zebra striping para las filas */
-#tablaPaises tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Color de fondo para filas impares */
-}
-
-#tablaPaises tbody tr:hover {
-    background-color: #888888; /* Color de fondo al pasar el ratón */
-}
-#galeriaImagenes {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.slide img{
-    width: 100%;
-    height: 100%;
-}
-
-#galeriaImagenes img {
-    
-    object-fit: cover;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#galeriaImagenes img.active {
-    display: block;
-}
+#contenedorPaginaIndex{ 
+    margin: 0 auto; 
+    padding: 20px; 
+    /*width: 100%;*/ 
+    height: 100%; 
+    max-width: 90%; 
+ 
+} 
+ 
+#contenedorPaginaComparador{ 
+    margin: 0; 
+    padding: 15px; 
+    width: 95%; 
+    display: flex; 
+    justify-content: space-between; 
+} 
+ 
+#contenedorPaises { 
+    display: flex; 
+    flex-wrap: wrap; 
+    max-width: 90%; 
+ 
+} 
+ 
+.contenedorSesion{ 
+    margin-bottom: 80px; 
+    margin-top: 5%;
+ 
+} 
+ 
+/* 
+.contenedorSesion{ 
+    height: 600px; 
+    margin-top: 80px; 
+    margin-bottom: 80px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+} 
+ 
+.contenedorSesion h2{ 
+    font-size: 40px; 
+} 
+*/ 
+ 
+#contenedorPais { 
+    width: calc(15% - 20px); 
+    height: 380px; 
+    margin: 20px 10px 40px 10px; 
+    padding: 10px; 
+    position: relative; 
+    float: left; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582); 
+    overflow: auto; 
+    background-color: rgba(159, 169, 175, 0.522); 
+ 
+} 
+#contenedorPaisIndex{ 
+    width: calc(30% - 10px); 
+    height: 450px; 
+    margin: 10px 5px 20px 5px; 
+    padding: 10px; 
+    position: relative; 
+    float: left; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582); 
+    overflow: auto; 
+    background-color: rgba(159, 169, 175, 0.522); 
+} 
+#contenedorPaisIndex img{ 
+    width: 55%; 
+    height: 150px; 
+    display: block; 
+    transition: transform 0.3s; 
+    border-radius: 20px; 
+    margin-bottom: 20px; 
+    min-height: 100px; 
+    margin: auto; 
+} 
+#contenedorPais img { 
+    width: 80%; 
+    height: 100px; 
+    display: block; 
+    transition: transform 0.3s; 
+    border-radius: 20px; 
+    margin-bottom: 20px; 
+    min-height: 100px; 
+    margin: auto; 
+ 
+} 
+ 
+#contenedorPais:hover img { 
+    transform: scale(1.1); 
+ 
+} 
+ 
+.infoPais { 
+    text-align: center; 
+    font-size: 13px; 
+ 
+} 
+ 
+.infoPais h3{ 
+    text-align: center; 
+    font-size: 16px; 
+ 
+} 
+ 
+/* Estilizando el selector */ 
+select { 
+    width: 100%; 
+    padding: 8px; 
+    margin-bottom: 0; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    background-color: white; 
+    color: #333; 
+    font-size: 16px; 
+    cursor: pointer; 
+    appearance: none; 
+    transition: border-color 0.3s; 
+ 
+} 
+ 
+select:hover, 
+select:focus { 
+    border-color: #0056b3; 
+} 
+ 
+/* Estilizando el botón */ 
+button { 
+    width: 100%; 
+    padding: 10px 15px; 
+    background-color: #0056b3; 
+    border: none; 
+    border-radius: 4px; 
+    color: white; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+} 
+ 
+button:hover { 
+    background-color: #003d7a; 
+} 
+ 
+/* Estilos para la lista de países */ 
+#listaPaises div { 
+    margin-bottom: 10px; 
+    padding: 5px; 
+    background-color: #5d89bb; 
+    border-radius: 4px; 
+    display: flex; 
+    align-items: center; 
+} 
+ 
+input[type='checkbox'] { 
+    margin-right: 10px; 
+} 
+ 
+label { 
+    flex-grow: 1; 
+} 
+ 
+ 
+#listaPaises{  
+    height: 400px; 
+    overflow-y: auto;  
+    border: 1px solid #000000; 
+    background-color: #ccc; 
+    padding: 5px;  
+    margin-bottom: 10px; 
+} 
+#comparadorForm { 
+    width: 15%; /* O ajusta según tus necesidades */ 
+    margin: 0 1% 1% 1%; /* Espacio entre el formulario y la tabla */ 
+} 
+ 
+#ResultadosComparacion { 
+    width: 80%; 
+    flex-direction: column; /* Alinea los países verticalmente */ 
+    gap: 10px; /* Espacio entre cada país */ 
+ 
+} 
+ 
+#opcionesComparacion{ 
+    margin: 20px 0; 
+} 
+ 
+/* Estilos base para la tabla */ 
+.tabla-comparativa { 
+    width: 80%; /* Ajusta esto según el diseño de tu página */ 
+    margin: 20px auto; /* Centra la tabla horizontalmente y proporciona espacio arriba y abajo */ 
+    border-collapse: collapse; /* Los bordes de las celdas se colapsan en uno solo */ 
+    background-color: #ffffff; /* Fondo blanco para la claridad */ 
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la tabla */ 
+    font-family: 'Arial', sans-serif; /* Fuente sans-serif para mejor legibilidad */ 
+} 
+ 
+/* Estilos para las celdas de cabecera */ 
+.tabla-comparativa th { 
+    background-color: #f4f4f4; /* Fondo gris claro para las cabeceras */ 
+    color: #333; /* Color de texto oscuro para contraste */ 
+    font-weight: bold; /* Texto en negrita para las cabeceras */ 
+    padding: 5px 5px; /* Relleno dentro de las celdas */ 
+    border-bottom: 2px solid #e0e0e0; /* Borde inferior más oscuro para separar de las filas */ 
+    text-align: right; 
+     
+} 
+ 
+/* Estilos para las celdas de datos */ 
+.tabla-comparativa td { 
+    padding: 5px 5px; /* Relleno similar al de las cabeceras */ 
+    border-bottom: 1px solid #e0e0e0; /* Borde sutil para separar filas */ 
+    text-align: right; 
+    width: 200px; 
+    font-size: 14px; 
+} 
+ 
+/* Estilo para las filas al pasar el mouse */ 
+.tabla-comparativa tr:hover { 
+    background-color: #f9f9f9; /* Cambio de fondo al pasar el mouse para resaltar la fila */ 
+} 
+ 
+/* Estilos para la primera columna, que contiene las categorías */ 
+.tabla-comparativa td:first-child, .tabla-comparativa th:first-child { 
+    font-weight: bold; /* Hacer el texto en negrita para destacar las categorías */ 
+    color: #000; /* Texto más oscuro para la primera columna */ 
+    background-color: #eef; /* Un fondo ligeramente diferente para destacar las categorías */ 
+    text-align: left; 
+    width: 220px; 
+} 
+ 
+/* Media queries para responsive */ 
+@media (max-width: 768px) { 
+    .tabla-comparativa { 
+        width: 100%; /* La tabla ocupa el 100% del ancho en dispositivos más pequeños */ 
+        box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */ 
+    } 
+} 
+ 
+footer { 
+    height: 140px; 
+    background-color: rgb(2, 2, 46); 
+    color: white; 
+    clear: both; 
+    margin-top: auto; 
+    width: 100%; 
+ 
+} 
+ 
+footer div { 
+    float: right; 
+    padding-top: 50px; 
+    margin-right: 50px; 
+ 
+} 
+ 
+footer ul { 
+    float: left; 
+    font-weight: bold; 
+    margin: 10px 20px 10px 20px; 
+    list-style: none; 
+    font-size: 20px; 
+ 
+} 
+ 
+footer li { 
+    margin-top: 8px; 
+ 
+} 
+ 
+footer a { 
+    text-decoration: none; 
+    color: white; 
+    margin-left: 20px; 
+    font-size: 15px; 
+    font-weight: lighter; 
+    margin: 2px; 
+} 
+ 
+footer li a img { 
+    width: 20px; 
+    margin: 0px; 
+    border-radius: 100%; 
+ 
+} 
+ 
+footer p { /* Esto es para el texto de derehos reservados*/ 
+    font-size: 15px; 
+ 
+} 
+ 
+.logoPie img { 
+    position: relative; 
+    width: 80px; 
+    height: 70px; 
+} 
+ 
+/*ESTILOS DE TABLA DE ADMINISTRADOR PARA EDITAR PAISES*/ 
+#tablaPaises { 
+    width: 100%; /* Ocupar el ancho completo del contenedor */ 
+    border-collapse: collapse; /* Eliminar el espacio entre las celdas */ 
+    margin-top: 20px; /* Espacio superior para separar de otros elementos */ 
+} 
+ 
+/* Estilos para las celdas y cabeceras */ 
+#tablaPaises th, #tablaPaises td { 
+    border: 1px solid #ddd; /* Borde sutil para las celdas */ 
+    padding: 8px; /* Espaciado interno en las celdas */ 
+    text-align: left; /* Alineación del texto a la izquierda */ 
+} 
+ 
+/* Fondo para las cabeceras de la tabla */ 
+#tablaPaises thead th { 
+    background-color: #4CAF50; /* Color de fondo verde */ 
+    color: white; /* Texto en color blanco */ 
+} 
+ 
+/* Estilos para los botones dentro de la tabla */ 
+#tablaPaises button { 
+    padding: 5px 10px; /* Espaciado interno para el botón */ 
+    background-color: #0056b3; /* Color de fondo gris claro */ 
+    border: none; /* Sin bordes */ 
+    cursor: pointer; /* Cursor en forma de mano al pasar el ratón */ 
+    transition: background-color 0.3s; /* Transición suave del color de fondo */ 
+} 
+ 
+#tablaPaises button:hover { 
+    background-color: #012a56; /* Cambiar color de fondo al pasar el ratón */ 
+} 
+ 
+/* Estilos para los inputs dentro de la tabla para editar datos */ 
+#tablaPaises input[type="text"], 
+#tablaPaises input[type="number"] { 
+    width: 100%; /* Ajustar el ancho al de la celda */ 
+    border: 1px solid #ccc; /* Borde sutil */ 
+    padding: 5px; /* Espaciado interno */ 
+    box-sizing: border-box; /* El padding y border se incluyen en el ancho */ 
+} 
+ 
+/* Zebra striping para las filas */ 
+#tablaPaises tbody tr:nth-child(odd) { 
+    background-color: #f9f9f9; /* Color de fondo para filas impares */ 
+} 
+ 
+#tablaPaises tbody tr:hover { 
+    background-color: #888888; /* Color de fondo al pasar el ratón */ 
+} 
+#galeriaImagenes { 
+    width: 100%; 
+    height: 400px; 
+    overflow: hidden; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
+.slide img{ 
+    width: 100%; 
+    height: 100%; 
+} 
+ 
+#galeriaImagenes img { 
+     
+    object-fit: cover; 
+    display: none; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+} 
+ 
+#galeriaImagenes img.active { 
+    display: block; 
+} 
 .btnFavorito{
     width: auto;
     height: auto;
@@ -580,10 +602,9 @@ footer p { /* Esto es para el texto de derehos reservados*/
     font-size: 12px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
     text-align: center;
     text-transform: none;
-}
-
 .btnFavorito.favorito {
 
     background-color: rgb(28, 163, 7); /* ejemplo de cambio de color */
