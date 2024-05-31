@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/script.js"></script>
+    <script src="../js/busqueda.js"></script>
+    <script src="../js/favoritos.js"></script>
+    <script src="..//js/utilidades.js"></script>
+    <script src="../js/main.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
     <title>Comparador de paises</title>
     
