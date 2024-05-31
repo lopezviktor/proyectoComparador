@@ -25,8 +25,16 @@ if($result->num_rows == 1) { // Si se encuentra el usuario
     header("Location: ../../frontend/html/index.php");
     exit();
 } else {
+
+    echo "<script>
+        alert('Datos de usuario y/o contraseña incorrectos. Si no estas registrado, regístrate gratis en el link');
+        window.location= '../../frontend/html/login.php'
+    </script>";
+
+/*
     echo "Datos incorrectos";
     header("Location: ../../frontend/html/registroUsuarios.php");
     exit();
+*/
 }
 ?>
