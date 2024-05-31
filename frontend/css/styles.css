@@ -569,3 +569,9 @@ footer p { /* Esto es para el texto de derehos reservados*/
 #galeriaImagenes img.active {
     display: block;
 }
+
+
+.btnFavorito.favorito {
+    /* Estilos cuando el botón está en estado de favorito */
+    background-color: gold; /* ejemplo de cambio de color */
+}
