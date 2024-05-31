@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => {
                 if (response.ok) {
                     return response.json();
-                } else {
+                } /*else {
                     usuarioLogueado = false;
                     favoritosUsuario = [];
-                }
+                }*/
             })
             .then(data => {
                 if (data) {
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const btnFavorito = document.createElement('button');
         if (favoritosUsuario.includes(pais.nombre)) {
             btnFavorito.textContent = 'Eliminar de favoritos';
-            btnFavorito.id = "btnFavorito";
             btnFavorito.classList.add('favorito');
         } else {
             btnFavorito.textContent = 'Añadir a favoritos';
@@ -103,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (usuarioLogueado) {
                 toggleFavorito(btnFavorito, pais.nombre);
             } else {
-                alert('Para añadir a favoritos es necesario iniciar sesión.');
+                console.log('Para añadir a favoritos es necesario iniciar sesión.');
             }
         });
 
@@ -147,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 console.error('Error en la operación:', result);
+                alert("Para añadir a favoritos es necesario iniciar sesión")
             }
         })
         .catch(error => console.error('Error:', error.message));
@@ -155,11 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function limpiarResultados() {
         contenedorPaises.innerHTML = '';
     }
-
-    function iniciar() {
-        obtenerFavoritosUsuario();
-        mostrarPaises();
-    }
-
-    iniciar();
+    
+    obtenerFavoritosUsuario();
+    mostrarPaises();
 });
