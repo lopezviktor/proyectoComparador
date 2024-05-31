@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/script.js"></script>
-    <script src="../js/buscarPaisPorNombre.js" ></script>
+    <script src="../js/scriptIndex.js"></script>
+    <!--<script src="../js/buscarPaisPorNombre.js" ></script>-->
     <link rel="stylesheet" href="../css/styles.css">
     <title>Comparador de paises</title>
     
 </head>
 <body>
-    
     <div id="contenedorIndex">
         <?php
-            include "../includes/nav.php"  //incluye el cóigo del archivo nav.php
+            include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
         ?>
         <div id="contenedorPaginaIndex">
             <h1>Comparador de países</h1>
@@ -28,10 +27,9 @@
                     <div class="slide"><img src="../../imagenes/sidney.jpg" alt="Imagen 7"></div>
                 </div>
             </div>
-            
-            <div id="resultadosBusqueda">
+            <!-- <div id="resultadosBusqueda">-->
             <!-- Resultados se mostrarán aquí -->
-            </div>
+            <!-- </div>-->
             
         </div>
         <?php
