@@ -10,9 +10,11 @@ session_start(); // Asegúrate de llamar a session_start() si no se ha llamado a
         <li><a href="paises.php">Países</a></li>
         <li><a href="comparadorPaises.php">Comparador</a></li>
         <li><a href="sobreNosotros.php">Sobre nosotros</a></li>
-
         <!-- Si el usuario es está logueado, mostrar Bienvenido y Cerrar Sesión -->
         <?php if (isset($_SESSION['usuario'])): ?>
+        <li class ="favoritosComparador">
+            <a href="../html/comparadorFavoritos.php"><?= htmlspecialchars('Favoritos') ?></a>
+        </li>
         <li class="nombre-usuario">
             Bienvenido, <a href="../html/paginaPerfil.php"><?= htmlspecialchars($_SESSION['usuario']) ?></a>
         </li>

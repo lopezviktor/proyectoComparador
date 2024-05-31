@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const inputBusqueda = document.getElementById('inputBuscador');
+    const contenedorPaises = document.getElementById("contenedorPaises");
+    let favoritosUsuario = [];
+    let usuarioLogueado = false;
+
     inputBusqueda.addEventListener('input', manejarInputBusqueda);
 
     function manejarInputBusqueda() {
         const terminoBusqueda = inputBusqueda.value.trim();
         if (terminoBusqueda.length >= 1) {
             buscarPaises(terminoBusqueda);
-        } else if (terminoBusqueda.length === 0) {
-            mostrarPaises(); // Mostrar todos los países si el campo de búsqueda está vacío
         } else {
-            limpiarResultados(); // Limpiar los resultados si la longitud es menor que 3 pero no es 0
+            mostrarPaises();
         }
     }
 
@@ -21,21 +23,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 return response.json();
             })
-            .then(mostrarResultados)
-            .catch(error => {
-                console.error('Error al buscar países:', error);
-            });
+            .then(paises => mostrarResultados(paises))
+            .catch(error => console.error('Error al buscar países:', error));
     }
 
     function mostrarPaises() {
         fetch("../../backend/controlador/GenerarJsonPaises.php")
-            .then(response => response.json())
-            .then(mostrarResultados)
-            .catch(error => console.log('Error al cargar todos los países', error));
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('No se pudo cargar los países.');
+                }
+                return response.json();
+            })
+            .then(paises => mostrarResultados(paises))
+            .catch(error => console.error('Error al cargar todos los países', error));
+    }
+
+    function obtenerFavoritosUsuario() {
+        fetch("../../backend/controlador/obtenerNombreFavoritos.php")
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    usuarioLogueado = false;
+                    favoritosUsuario = [];
+                }
+            })
+            .then(data => {
+                if (data) {
+                    favoritosUsuario = data;
+                    usuarioLogueado = true;
+                }
+            })
+            .catch(error => {
+                console.error('Error al obtener favoritos del usuario:', error);
+                usuarioLogueado = false;
+                favoritosUsuario = [];
+            });
     }
 
     function mostrarResultados(paises) {
-        const contenedorPaises = document.getElementById("contenedorPaises");
         limpiarResultados();
         paises.forEach(pais => {
             const contenedorPais = crearContenedorPais(pais);
@@ -62,33 +89,76 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>Esperanza vida: ${pais.esperanzaVida} años</p>
                             <p>Tasa natalidad: ${pais.tasaNatalidad} %</p>
                             <p>Tasa mortalidad: ${pais.tasaMortalidad} %</p>`;
-        contenedorPais.appendChild(infoPais);
 
+        const btnFavorito = document.createElement('button');
+        if (favoritosUsuario.includes(pais.nombre)) {
+            btnFavorito.textContent = 'Eliminar de favoritos';
+            btnFavorito.classList.add('favorito');
+        } else {
+            btnFavorito.textContent = 'Añadir a favoritos';
+        }
+        btnFavorito.classList.add('btnFavorito');
+        btnFavorito.addEventListener('click', function() {
+            if (usuarioLogueado) {
+                toggleFavorito(btnFavorito, pais.nombre);
+            } else {
+                alert('Para añadir a favoritos es necesario iniciar sesión.');
+            }
+        });
+
+        infoPais.appendChild(btnFavorito);
+        contenedorPais.appendChild(infoPais);
         return contenedorPais;
     }
 
+    function toggleFavorito(button, nombrePais) {
+        const isFavorito = button.classList.contains('favorito');
+        const data = { 
+            pais: nombrePais,
+            accion: isFavorito ? 'eliminar' : 'añadir' 
+        };
+
+        fetch("../../backend/controlador/gestionFavoritos.php", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(errorInfo => {
+                    throw new Error('Error en la petición: ' + (errorInfo.error || 'Desconocido'));
+                });
+            }
+            return response.json();
+        })
+        .then(result => {
+            if (result.success) {
+                if (isFavorito) {
+                    button.textContent = 'Añadir a favoritos';
+                    button.classList.remove('favorito');
+                    favoritosUsuario = favoritosUsuario.filter(fav => fav !== nombrePais);
+                } else {
+                    button.textContent = 'Eliminar de favoritos';
+                    button.classList.add('favorito');
+                    favoritosUsuario.push(nombrePais);
+                }
+            } else {
+                console.error('Error en la operación:', result);
+            }
+        })
+        .catch(error => console.error('Error:', error.message));
+    }
+
     function limpiarResultados() {
-        const contenedorPaises = document.getElementById("contenedorPaises");
         contenedorPaises.innerHTML = '';
     }
 
-    // Inicialmente cargar todos los países
-    mostrarPaises();
-
-    //Bateria de imagenes INDEX
-    const images = document.querySelectorAll('#galeriaImagenes img');
-    let currentIndex = 0;
-
-    // Mostrar la primera imagen
-    images[currentIndex].classList.add('active');
-
-    function showNextImage() {
-        images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length;
-        images[currentIndex].classList.add('active');
+    function iniciar() {
+        obtenerFavoritosUsuario();
+        mostrarPaises();
     }
 
-    // Cambiar imagen cada 3 segundos
-    setInterval(showNextImage, 4000);
-
+    iniciar();
 });
