@@ -601,7 +601,8 @@ footer p {
 #galeriaImagenes img.active { 
     display: block; 
 } 
-.btnFavorito{
+.btnFavorito {
+    margin-top: 10px;
     width: auto;
     height: auto;
     padding: 5px;
@@ -611,14 +612,17 @@ footer p {
     color: white;
     font-size: 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.6s; /* Añadir transición para el giro */
     text-align: center;
     text-transform: none;
 }
 
 .btnFavorito.favorito {
-
     background-color: rgb(28, 163, 7); /* ejemplo de cambio de color */
+}
+
+.btnFavorito.girar {
+    transform: rotateY(180deg); /* Aplicar rotación completa en el eje Y */
 }
 
 /* Reviews Section */
