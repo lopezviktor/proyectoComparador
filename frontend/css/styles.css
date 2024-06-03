@@ -4,66 +4,88 @@ body{
     padding: 0; 
     width: 100%; 
     height: 100%; 
-     
 } 
- 
-nav, #contenedorFooter { 
-    align-items: center; 
-    display: flex; 
-    justify-content: center; 
-    padding: 0 20px; 
-    background-color: rgb(2, 2, 46); 
- 
-} 
- 
-.logo, .buscadorNav, nav ul { 
-    margin: 0 20px; 
- 
-} 
- 
-.logo{ 
-    align-items: center; 
-    position: relative; 
- 
-} 
- 
-.logo img { 
-    width: 80px;  
-    height: auto;  
-    border-radius: 20%; 
-    margin: 10px; 
- 
-} 
- 
-nav ul { 
-    display: flex; 
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
-    justify-content: center; /* Centra los elementos de la lista horizontalmente */ 
-    flex-grow: 0; /* Evita que la lista crezca y respete su contenido */ 
- 
-} 
- 
-nav ul li { 
-    padding: 0 10px; /* Espaciado entre elementos de la lista */ 
- 
-} 
- 
-nav ul a { 
-    text-decoration: none; 
-    color: white; 
-    padding: 10px 15px; 
-    border-radius: 20px; /* Bordes redondeados para los enlaces */ 
- 
-} 
- 
-nav ul a:hover { 
-    background-color: rgb(68, 199, 247); 
-    color: black; 
- 
-} 
- 
+
+nav, #contenedorFooter {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    background-color: #001f3f; /* Azul oscuro */
+}
+
+.logo, .buscadorNav, .listaNav {
+    margin: 0 20px;
+}
+
+.logo {
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    border-radius: 20%;
+    margin: 10px;
+}
+
+.buscadorNav {
+    position: relative;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 200px; /* Ajustar para controlar el ancho */
+    display: flex;
+    align-items: center;
+}
+
+.buscadorNav input[type="text"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px 10px;
+    color: black; /* Color del texto del input */
+}
+
+.listaNav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-grow: 0;
+}
+
+.listaNav li {
+    padding: 0 10px;
+}
+
+.listaNav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Asegurarse de añadir esta línea */
+}
+
+.listaNav a:hover {
+    transform: scale(1.1); /* Asegúrate de que esta línea esté presente */
+    color: red; /* Esto es opcional si quieres ver claramente el efecto */
+    font-weight: bold;
+}
+
+
+
+.favoritosComparador a, .nombre-usuario a {
+    color: #00a01d; /* Color diferente para enlaces específicos */
+}
+
+.favoritosComparador a:hover, .nombre-usuario a:hover {
+    color: red; /* Color de hover diferente para estos enlaces */
+    font-weight: bold;
+}
+
 .buscadorNav { 
     position: relative; /* Posicionamiento relativo para alinear los elementos internos */ 
     padding: 5px; 
@@ -71,25 +93,25 @@ nav ul a:hover {
     border-radius: 10px; 
     flex-grow: 0; /* No permitirá que el buscador crezca */ 
     max-width: 200px; /* Ajustar para controlar el ancho */ 
- 
+
 } 
- 
+
 .buscadorNav .espacioBuscador{ 
     color: black; 
     position: absolute; 
     top: 4px; 
     border-color: 1px solid black; 
- 
+
 } 
- 
+
 .buscadorNav input[type="text"] { 
     width: 100%; 
     border: none; 
     background: transparent; 
     padding: 8px 10px; /* Espaciado interno */ 
- 
+
 } 
- 
+
 .buscadorIndex { 
     position: relative; /* Posicionamiento relativo para alinear los elementos internos */ 
     padding: 5px; 
@@ -98,56 +120,56 @@ nav ul a:hover {
     border-radius: 10px; 
     flex-grow: 1; /* No permitirá que el buscador crezca */ 
     max-width: 600px; /* Ajusta esto según tus necesidades para controlar el ancho */ 
- 
+
 } 
- 
+
 .buscadorIndex .espacioBuscador{ 
     color: black; 
     position: absolute; 
     top: 4px; 
     border-color: 1px solid black; 
- 
+
 } 
- 
+
 .buscadorIndex input[type="text"] { 
     width: 100%; 
     border: none; 
     background: transparent; 
     padding: 8px 10px; /* Espaciado interno */ 
- 
-} 
- 
+
+}
+
 .nombre-usuario { 
     color: rgb(9, 240, 244); /* Establece el color del texto a azul */ 
     /* Puedes añadir más estilos aquí si lo necesitas */ 
 } 
- 
+
 h2 { 
     text-align: center; 
- 
+
 } 
- 
+
 form { 
     max-width: 400px; 
     margin: auto; 
     padding: 10px; 
     border-radius: 5px; 
- 
+
 } 
- 
+
 form p { 
     text-align: center; 
- 
+
 } 
- 
+
 label { 
     /*display: block;*/ 
     margin-bottom: 5px; 
     font-weight: bold; 
     font-size: 14px; 
- 
+
 } 
- 
+
 input[type="text"], 
 input[type="number"], 
 input[type="file"], 
@@ -160,9 +182,9 @@ input[type="password"]
     border: 1px solid black; 
     border-radius: 5px; 
     box-sizing: border-box; 
- 
+
 } 
- 
+
 input[type="submit"] { 
     width: 100%; 
     padding: 10px 15px; 
@@ -175,25 +197,26 @@ input[type="submit"] {
     text-transform: uppercase; 
     cursor: pointer; 
     transition: background-color 0.3s; 
- 
+
 } 
- 
+/*
 #contenedorIndex { 
     margin: 0; 
     padding: 0; 
     background-color: rgb(2, 2, 46); 
- 
+
 } 
- 
+
 #contenedorPaginaIndex h1{ 
     text-align: center; 
     color: white; 
     font-size: 100px; 
     -webkit-text-stroke-width: 3px; 
     -webkit-text-stroke-color: rgb(18, 138, 7); 
- 
-} 
+    margin: 0;
 
+} 
+*/
 #contenedorPagina{ 
     margin: 0 auto; 
     padding: 20px; 
@@ -201,7 +224,7 @@ input[type="submit"] {
     height: 100%; 
     max-width: 90%; 
     background-color: white; 
- 
+
 } 
 
 #contenedorPaginaPlus { 
@@ -211,18 +234,9 @@ input[type="submit"] {
     /*width: 100%;*/ 
     max-width: 90%; 
     background-color: white; 
- 
-} 
 
-#contenedorPaginaIndex{ 
-    margin: 0 auto; 
-    padding: 20px; 
-    /*width: 100%;*/ 
-    height: 100%; 
-    max-width: 90%; 
- 
-} 
- 
+}
+
 #contenedorPaginaComparador{ 
     margin: 0; 
     padding: 15px; 
@@ -230,20 +244,20 @@ input[type="submit"] {
     display: flex; 
     justify-content: space-between; 
 } 
- 
+
 #contenedorPaises { 
     display: flex; 
     flex-wrap: wrap; 
-    max-width: 90%; 
- 
+    max-width: 100%; 
+
 } 
- 
+
 .contenedorSesion{ 
     margin-bottom: 80px; 
     margin-top: 5%;
- 
+
 } 
- 
+
 /* 
 .contenedorSesion{ 
     height: 600px; 
@@ -251,12 +265,12 @@ input[type="submit"] {
     margin-bottom: 80px; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 } 
- 
+
 .contenedorSesion h2{ 
     font-size: 40px; 
 } 
 */ 
- 
+
 #contenedorPais { 
     width: calc(15% - 20px); 
     height: 400px; 
@@ -268,7 +282,7 @@ input[type="submit"] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582); 
     overflow: auto; 
     background-color: rgba(159, 169, 175, 0.522); 
- 
+
 } 
 #contenedorPaisIndex{ 
     width: calc(30% - 10px); 
@@ -456,64 +470,61 @@ label {
         box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */ 
     } 
 } 
- 
-footer { 
-    height: 140px; 
-    background-color: rgb(2, 2, 46); 
-    color: white; 
-    clear: both; 
-    margin-top: auto; 
-    width: 100%; 
- 
-} 
- 
-footer div { 
-    float: right; 
-    padding-top: 50px; 
-    margin-right: 50px; 
- 
-} 
- 
-footer ul { 
-    float: left; 
-    font-weight: bold; 
-    margin: 10px 20px 10px 20px; 
-    list-style: none; 
-    font-size: 20px; 
- 
-} 
- 
-footer li { 
-    margin-top: 8px; 
- 
-} 
- 
-footer a { 
-    text-decoration: none; 
-    color: white; 
-    margin-left: 20px; 
-    font-size: 15px; 
-    font-weight: lighter; 
-    margin: 2px; 
-} 
- 
-footer li a img { 
-    width: 20px; 
-    margin: 0px; 
-    border-radius: 100%; 
- 
-} 
- 
-footer p { /* Esto es para el texto de derehos reservados*/ 
-    font-size: 15px; 
- 
-} 
- 
-.logoPie img { 
-    position: relative; 
-    width: 80px; 
-    height: 70px; 
-} 
+footer {
+    height: 140px;
+    background-color: #001f3f; /* Azul oscuro */
+    color: white;
+    clear: both;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer div {
+    float: right;
+    padding-top: 50px;
+    margin-right: 50px;
+}
+
+footer ul {
+    float: left;
+    font-weight: bold;
+    margin: 10px 20px 10px 20px;
+    list-style: none;
+    font-size: 20px;
+}
+
+footer li {
+    margin-top: 8px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: lighter;
+    margin: 2px;
+}
+footer a:hover{
+    color: red; /* Color de hover diferente para estos enlaces */
+    font-weight: bold;
+}
+
+footer li a img {
+    width: 20px;
+    margin: 0px;
+    border-radius: 100%;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+.logoPie img {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
  
 /*ESTILOS DE TABLA DE ADMINISTRADOR PARA EDITAR PAISES*/ 
 #tablaPaises { 
@@ -566,8 +577,8 @@ footer p { /* Esto es para el texto de derehos reservados*/
     background-color: #888888; /* Color de fondo al pasar el ratón */ 
 } 
 #galeriaImagenes { 
-    width: 100%; 
-    height: 400px; 
+    width: 100%;
+    height: 1500px; 
     overflow: hidden; 
     position: relative; 
     display: flex; 
@@ -576,7 +587,7 @@ footer p { /* Esto es para el texto de derehos reservados*/
 } 
 .slide img{ 
     width: 100%; 
-    height: 100%; 
+
 } 
 
 #galeriaImagenes img { 
@@ -682,4 +693,47 @@ footer p { /* Esto es para el texto de derehos reservados*/
 #listaResenas .resena small {
     color: #666;
     font-size: 12px;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: url('../../imagenes/fondoIndex.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin: 0.5em 0;
+    -webkit-text-stroke: 1px black; /* Borde negro alrededor del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+}
+
+.hero p {
+    font-size: 1.8em;
+    margin: 0.5em 0 1.5em;
+    -webkit-text-stroke: 0.5px black; /* Borde negro alrededor del texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+    font-family: 'Arial Black', Arial, sans-serif; /* Fuente más gruesa */
+    font-weight: bold; /* Grosor de fuente adicional */
 }
