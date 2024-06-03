@@ -206,9 +206,9 @@ input[type="submit"] {
 
 #contenedorPaginaPlus { 
     margin: 0 auto; 
-    padding: 20px; 
+    padding: 20px;
+    height: auto; 
     /*width: 100%;*/ 
-    height: 500px; 
     max-width: 90%; 
     background-color: white; 
  
@@ -608,4 +608,78 @@ footer p { /* Esto es para el texto de derehos reservados*/
 .btnFavorito.favorito {
 
     background-color: rgb(28, 163, 7); /* ejemplo de cambio de color */
+}
+
+/* Reviews Section */
+#resenas {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#resenas h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#formResena {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#formResena div {
+    margin-bottom: 10px;
+}
+
+#formResena label {
+    font-weight: bold;
+}
+
+#formResena textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#formResena button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#formResena button:hover {
+    background-color: #005bb5;
+}
+
+/* Reviews List */
+#listaResenas .resena {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#listaResenas .resena h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+#listaResenas .resena p {
+    margin: 0 0 10px;
+}
+
+#listaResenas .resena small {
+    color: #666;
+    font-size: 12px;
 }

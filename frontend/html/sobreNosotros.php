@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/resenas.js"></script>
     <title>Comparador de paises</title>
 </head>
 <body>
     <div id="contenedorIndex">
     <?php
             include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
-
     ?>
 
     <div id="contenedorPaginaPlus">
+
+        <section id="resenas">
+            <h2>Reseñas de Clientes</h2>
+            <form id="formResena">
+                <div>
+                    <label for="resena">Reseña:</label>
+                    <textarea id="resena" name="resena" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Enviar Reseña</button>
+                </div>
+            </form>
+            <div id="listaResenas">
+                <!-- Aquí se mostrarán las reseñas -->
+            </div>
+        </section>
+
         <h3>Contacto</h3>
         <p>
         Para cualquier consulta, colaboración o sugerencia, no dudes en ponerte en contacto con nosotros. <br>
@@ -21,7 +38,6 @@
         Puedes enviarnos un correo electrónico a comparadorPaises@comparatupais.com o llamarnos al +34 918 456 789. <br>
         También puedes seguirnos en nuestras redes sociales para estar al día con las últimas noticias y 
         actualizaciones.
-
         </p>
         <h3>Términos de servicio.</h3>
         <p>
@@ -32,7 +48,6 @@
         No somos responsables de ningún error u omisión en la funcionalidad o contenido ni de las consecuencias 
         que puedan derivarse de su uso. Nos reservamos el derecho de modificar estos términos en cualquier 
         momento, por lo que te recomendamos revisarlos periódicamente.
-
         </p>
         <h3>Política de privacidad</h3>
         <p>
