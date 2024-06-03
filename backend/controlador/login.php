@@ -1,4 +1,5 @@
 <?php
+
 session_start();  // Esto debe ir al principio, antes de cualquier salida HTML.
 
 require_once "../modelo/Conexion.php";
