@@ -14,21 +14,23 @@
 .contenedorPaisSolo img {
     width: 30%;
     height: auto;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    margin-top: px;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.8);
     border-radius: 20px;
 }
 
 .infoPais {
     text-align: center;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
 }
 
 .infoPais h3 {
     margin-bottom: 20px;
-    font-size: 35px;
+    font-size: 40px;
     color: #001121;
+    text-shadow: 1px 1px 2px rgba(0, 21, 255, 0.7);
 }
 
 .infoPais p {
