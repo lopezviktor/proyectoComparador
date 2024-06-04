@@ -1,5 +1,4 @@
 <footer>
-
         <div>
             <a href="../html/sobreNosotros.php">Contacto</a> <br>
             <a href="../html/registroUsuarios.php">Regístrate</a>

@@ -70,7 +70,7 @@ nav, #contenedorFooter {
 }
 
 .listaNav a:hover {
-    transform: scale(1.1); 
+    transform: scale(2); 
     color: goldenrod; 
 }
 
@@ -81,8 +81,8 @@ nav, #contenedorFooter {
 }
 
 .favoritosComparador a:hover, .nombre-usuario a:hover {
-    color: red; /* Color de hover diferente para estos enlaces */
-    font-weight: bold;
+    transform: scale(2); 
+    color: goldenrod; 
 }
 
 .buscadorNav { 
@@ -314,18 +314,15 @@ input[type="submit"] {
     margin-bottom: 20px; 
     min-height: 100px; 
     margin: auto; 
- 
 } 
- 
+
 #contenedorPais:hover img { 
     transform: scale(1.1); 
- 
 } 
- 
+
 .infoPais { 
     text-align: center; 
     font-size: 13px; 
- 
 } 
 
 .infoPais p{
@@ -336,9 +333,8 @@ input[type="submit"] {
 .infoPais h3{ 
     text-align: center; 
     font-size: 17px; 
- 
 } 
- 
+
 /* Estilizando el selector */ 
 select { 
     width: 100%; 
@@ -353,14 +349,13 @@ select {
     cursor: pointer; 
     appearance: none; 
     transition: border-color 0.3s; 
- 
 } 
- 
+
 select:hover, 
 select:focus { 
     border-color: #0056b3; 
 } 
- 
+
 /* Estilizando el botón */ 
 button { 
     width: 100%; 
@@ -375,11 +370,11 @@ button {
     cursor: pointer; 
     transition: background-color 0.3s; 
 } 
- 
+
 button:hover { 
     background-color: #003d7a; 
 } 
- 
+
 /* Estilos para la lista de países */ 
 #listaPaises div { 
     margin-bottom: 10px; 
@@ -389,16 +384,15 @@ button:hover {
     display: flex; 
     align-items: center; 
 } 
- 
+
 input[type='checkbox'] { 
     margin-right: 10px; 
 } 
- 
+
 label { 
     flex-grow: 1; 
 } 
- 
- 
+
 #listaPaises{  
     height: 400px; 
     overflow-y: auto;  
@@ -411,18 +405,18 @@ label {
     width: 15%; /* O ajusta según tus necesidades */ 
     margin: 0 1% 1% 1%; /* Espacio entre el formulario y la tabla */ 
 } 
- 
+
 #ResultadosComparacion { 
     width: 80%; 
     flex-direction: column; /* Alinea los países verticalmente */ 
     gap: 10px; /* Espacio entre cada país */ 
- 
+
 } 
- 
+
 #opcionesComparacion{ 
     margin: 20px 0; 
 } 
- 
+
 /* Estilos base para la tabla */ 
 .tabla-comparativa { 
     width: 80%; /* Ajusta esto según el diseño de tu página */ 
@@ -432,7 +426,7 @@ label {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la tabla */ 
     font-family: 'Arial', sans-serif; /* Fuente sans-serif para mejor legibilidad */ 
 } 
- 
+
 /* Estilos para las celdas de cabecera */ 
 .tabla-comparativa th { 
     background-color: #f4f4f4; /* Fondo gris claro para las cabeceras */ 
@@ -440,10 +434,9 @@ label {
     font-weight: bold; /* Texto en negrita para las cabeceras */ 
     padding: 5px 5px; /* Relleno dentro de las celdas */ 
     border-bottom: 2px solid #e0e0e0; /* Borde inferior más oscuro para separar de las filas */ 
-    text-align: right; 
-     
+    text-align: right;
 } 
- 
+
 /* Estilos para las celdas de datos */ 
 .tabla-comparativa td { 
     padding: 5px 5px; /* Relleno similar al de las cabeceras */ 
@@ -451,13 +444,13 @@ label {
     text-align: right; 
     width: 200px; 
     font-size: 14px; 
-} 
- 
+}
+
 /* Estilo para las filas al pasar el mouse */ 
 .tabla-comparativa tr:hover { 
     background-color: #f9f9f9; /* Cambio de fondo al pasar el mouse para resaltar la fila */ 
 } 
- 
+
 /* Estilos para la primera columna, que contiene las categorías */ 
 .tabla-comparativa td:first-child, .tabla-comparativa th:first-child { 
     font-weight: bold; /* Hacer el texto en negrita para destacar las categorías */ 
@@ -466,7 +459,13 @@ label {
     text-align: left; 
     width: 220px; 
 } 
- 
+
+canvas{
+    width: 70%;
+    margin: auto;
+    max-height: 500px;
+}
+
 /* Media queries para responsive */ 
 @media (max-width: 768px) { 
     .tabla-comparativa { 
@@ -510,8 +509,8 @@ footer a {
     margin: 2px;
 }
 footer a:hover{
-    color: red; /* Color de hover diferente para estos enlaces */
-    font-weight: bold;
+    transform: scale(2); 
+    color: goldenrod; 
 }
 
 footer li a img {
@@ -529,27 +528,27 @@ footer p {
     width: 70px;
     height: 70px;
 }
- 
+
 /*ESTILOS DE TABLA DE ADMINISTRADOR PARA EDITAR PAISES*/ 
 #tablaPaises { 
     width: 100%; /* Ocupar el ancho completo del contenedor */ 
     border-collapse: collapse; /* Eliminar el espacio entre las celdas */ 
     margin-top: 20px; /* Espacio superior para separar de otros elementos */ 
 } 
- 
+
 /* Estilos para las celdas y cabeceras */ 
 #tablaPaises th, #tablaPaises td { 
     border: 1px solid #ddd; /* Borde sutil para las celdas */ 
     padding: 8px; /* Espaciado interno en las celdas */ 
     text-align: left; /* Alineación del texto a la izquierda */ 
 } 
- 
+
 /* Fondo para las cabeceras de la tabla */ 
 #tablaPaises thead th { 
     background-color: #4CAF50; /* Color de fondo verde */ 
     color: white; /* Texto en color blanco */ 
 } 
- 
+
 /* Estilos para los botones dentro de la tabla */ 
 #tablaPaises button { 
     padding: 5px 10px; /* Espaciado interno para el botón */ 
@@ -558,11 +557,11 @@ footer p {
     cursor: pointer; /* Cursor en forma de mano al pasar el ratón */ 
     transition: background-color 0.3s; /* Transición suave del color de fondo */ 
 } 
- 
+
 #tablaPaises button:hover { 
     background-color: #012a56; /* Cambiar color de fondo al pasar el ratón */ 
 } 
- 
+
 /* Estilos para los inputs dentro de la tabla para editar datos */ 
 #tablaPaises input[type="text"], 
 #tablaPaises input[type="number"] { 
@@ -570,13 +569,13 @@ footer p {
     border: 1px solid #ccc; /* Borde sutil */ 
     padding: 5px; /* Espaciado interno */ 
     box-sizing: border-box; /* El padding y border se incluyen en el ancho */ 
-} 
- 
+}
+
 /* Zebra striping para las filas */ 
 #tablaPaises tbody tr:nth-child(odd) { 
     background-color: #f9f9f9; /* Color de fondo para filas impares */ 
 } 
- 
+
 #tablaPaises tbody tr:hover { 
     background-color: #888888; /* Color de fondo al pasar el ratón */ 
 } 
@@ -744,4 +743,87 @@ footer p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra del texto */
     font-family: 'Arial Black', Arial, sans-serif; /* Fuente más gruesa */
     font-weight: bold; /* Grosor de fuente adicional */
+}
+
+@media (max-width: 768px) { 
+    nav, #contenedorFooter {
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        padding: 10px; /* Reducir padding para móviles */
+    }
+
+    .logo, .buscadorNav, .listaNav {
+        margin: 10px 0;
+        flex: 1 1 100%; /* Los elementos ocuparán el ancho completo en móviles */
+        text-align: center; /* Centrar elementos */
+    }
+
+    .logo img {
+        width: 50px;
+        margin: 5px;
+    }
+
+    .buscadorNav {
+        max-width: 90%; /* Ajustar el ancho para móviles */
+        margin: auto; /* Centrar el buscador */
+    }
+
+    .listaNav {
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    }
+
+    .listaNav li {
+        padding: 5px 10px;
+    }
+
+    form {
+        max-width: 90%; /* Ajustar el ancho del formulario para móviles */
+    }
+
+    #contenedorPagina, #contenedorPaginaPlus {
+        max-width: 100%; /* Ajustar el ancho del contenedor para móviles */
+        padding: 10px; /* Reducir padding para móviles */
+    }
+
+    #contenedorPaginaComparador {
+        flex-direction: column; /* Disponer los elementos en columna en móviles */
+    }
+    #comparadorForm{
+        width: 100%;
+    }
+
+    #contenedorPais {
+        width: calc(45% - 30px); /* Ajustar el ancho para mostrar dos en una fila en móviles */
+        margin: 20px 13px; /* Ajustar margen para móviles */
+        
+    }
+
+    #contenedorPaisIndex {
+        width: calc(50% - 20px); /* Ajustar el ancho para mostrar dos en una fila en móviles */
+        margin: 10px 5px; /* Ajustar margen para móviles */
+    }
+
+    .tabla-comparativa {
+        width: 100%; /* La tabla ocupa el 100% del ancho en dispositivos más pequeños */
+        box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */
+    }
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    footer ul{
+        flex-wrap: wrap;
+    }
+    .logoPie, .listaNav {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .logoPie img {
+        display: none;
+    }
+
+    p {
+        font-size: 15px;
+    }
 }
