@@ -69,9 +69,7 @@ function comparadorPaises() {
     const checkedTasaNatalidad = document.getElementById("checkedTasaNatalidad");
     const checkedTasaMortalidad = document.getElementById("checkedTasaMortalidad");
 
-
     agregarTablaPrincipal(paisesSeleccionados);
-
 
     // Asignar colores específicos a cada país
     const colores = [

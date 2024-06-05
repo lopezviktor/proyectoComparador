@@ -272,7 +272,7 @@ input[type="submit"] {
 
 #contenedorPais { 
     width: calc(15% - 20px); 
-    height: 380px; 
+    height: 400px; 
     margin: 20px 10px 40px 10px; 
     padding: 10px; 
     position: relative; 

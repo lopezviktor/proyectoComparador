@@ -6,6 +6,7 @@
     <title>Comparador</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/comparadorFavoritos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="contenedor">
