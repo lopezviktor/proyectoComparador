@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
             accion: isFavorito ? 'eliminar' : 'añadir' 
         };
 
+         // Añadir la clase girar para la animación
+        button.classList.add('girar');
+
+         // Eliminar la clase girar después de la duración de la animación
+        setTimeout(() => {
+            button.classList.remove('girar');
+         }, 600); // Duración de la animación
+
         gestionFavoritos(data, (result) => {
             if (result.success) {
                 if (isFavorito) {

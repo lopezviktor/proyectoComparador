@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/comparador.js"></script>
     <script src="../js/buscarPaisPorNombre.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="contenedor">
