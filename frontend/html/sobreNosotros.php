@@ -15,22 +15,7 @@
 
     <div id="contenedorPaginaPlus">
 
-        <section id="resenas">
-            <h2>Reseñas de Clientes</h2>
-            <form id="formResena">
-                <div>
-                    <label for="resena">Reseña:</label>
-                    <textarea id="resena" name="resena" required></textarea>
-                </div>
-                <div>
-                    <button type="submit">Enviar Reseña</button>
-                </div>
-            </form>
-            <div id="listaResenas">
-                <!-- Aquí se mostrarán las reseñas -->
-            </div>
-        </section>
-
+        <h2>Sobre Nosotros</h2>
         <h3>Contacto</h3>
         <p>
         Para cualquier consulta, colaboración o sugerencia, no dudes en ponerte en contacto con nosotros. <br>

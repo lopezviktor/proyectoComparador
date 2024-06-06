@@ -1,6 +1,7 @@
 <footer>
         <div>
-            <a href="../html/sobreNosotros.php">Contacto</a> <br>
+            <a href="../html/resenas.php">Reseñas</a> <br>
+            <a href="../html/sobreNosotros.php">Sobre nosotros</a> <br>
             <a href="../html/registroUsuarios.php">Regístrate</a>
             <p>© 2024 nebrija.com, Inc. All Rights Reserved</p>
         </div>

@@ -34,18 +34,11 @@ session_start(); // Asegúrate de llamar a session_start() si no se ha llamado a
             <li><a href="login.php">Acceder o Registrar</a></li>
         <?php endif; ?>
     </ul>
-<!--
-    <div class="buscadorNav">
+
+    <div class="buscadorNav" style="float: right;">
         <div class="iconoBuscar"></div>
         <span class="espacioBuscador"></span>
         <input type="text" id="inputBuscador" placeholder="Buscar país...">
     </div>
--->
-    <!--Añadimos al buscador una imagen -->
-    <div class="buscadorNav">
-        <div class="iconoBuscar"><img src="../../imagenes/lupa.png" alt="Icono de búsqueda"></div>
-        <span class="espacioBuscador"></span>
-    <input type="text" id="inputBuscador" placeholder="Buscar país...">
-</div>
 
 </nav>
