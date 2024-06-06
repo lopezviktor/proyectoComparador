@@ -151,9 +151,9 @@ h2 {
 
 /*CON ESTA CONFIGURACIÓN DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
 HASTA LA SIGUIENTE INDICACION*/
-#contenedorPagina {
+#contenedorPaginaFormRegistro {
     width: 500px;
-    margin: 6% auto 6% auto;
+    margin: 1% auto 1% auto;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #000;
@@ -163,7 +163,7 @@ HASTA LA SIGUIENTE INDICACION*/
     transition: transform 0.5s ease-in-out;
 }
 
-#contenedorPagina:before {
+#contenedorPaginaFormRegistro:before {
     content: "";
     position: absolute;
     top: 0;
@@ -177,11 +177,11 @@ HASTA LA SIGUIENTE INDICACION*/
     border-radius: 5%;
 }
 
-#contenedorPagina:hover:before {
+#contenedorPaginaFormRegistro:hover:before {
     opacity: 1;
 }
 
-#contenedorPagina:hover {
+#contenedorPaginaFormRegistro:hover {
     transform: scale(1.1) translateZ(50px);
 }
 

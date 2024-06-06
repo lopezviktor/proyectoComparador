@@ -17,7 +17,7 @@
 
     ?>
 
-    <div id="contenedorPagina">
+    <div id="contenedorPaginaFormRegistro">
 
         <h2>Formulario de Ingreso de Países</h2>
         <form id="formularioPaises" action="/proyectoComparador/backend/procesarFormulario.php" method="post" enctype="multipart/form-data">
