@@ -9,7 +9,7 @@ body{
 nav, #contenedorFooter {
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     padding: 0 20px;
     background-color: #001f3f; /* Azul oscuro */
 }
@@ -38,6 +38,7 @@ nav, #contenedorFooter {
     max-width: 200px; /* Ajustar para controlar el ancho */
     display: flex;
     align-items: center;
+    justify-content: right;
 }
 
 .buscadorNav input[type="text"] {
@@ -148,6 +149,45 @@ h2 {
 
 } 
 
+/*CON ESTA CONFIGURACIÓN DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+HASTA LA SIGUIENTE INDICACION*/
+#contenedorPagina {
+    width: 500px;
+    margin: 6% auto 6% auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+#contenedorPagina:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateZ(-50px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 5%;
+}
+
+#contenedorPagina:hover:before {
+    opacity: 1;
+}
+
+#contenedorPagina:hover {
+    transform: scale(1.1) translateZ(50px);
+}
+
+/*HATA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+DESDE LA ANTERIOR INDICACION*/
+
 form { 
     max-width: 400px; 
     margin: auto; 
@@ -251,11 +291,60 @@ input[type="submit"] {
 
 } 
 
+/*CON ESTA CONFIGURACIÓN DA UN EFECTO AL LOGIN, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+HASTA LA SIGUIENTE INDICACION Y DESCOMENTAR EL SIGUIENTE '.contenedorSesion'*/
+
+.contenedorSesion {
+    width: 500px;
+    height: 400px;
+    margin-bottom: 80px;
+    margin-top: 5%;
+    border-color: #000;
+    border: 1px solid #000;
+    border-radius: 5%;
+    margin: 7% auto 7% auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.contenedorSesion:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateZ(-50px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.contenedorSesion:hover:before {
+    opacity: 1;
+}
+
+.contenedorSesion:hover {
+    transform: scale(1.1) translateZ(100px);
+}
+
+/*HASTA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL LOGIN, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+LA ANTERIOR INDICACION Y DESCOMENTAR EL SIGUIENTE '.contenedorSesion'*/
+
+/*
 .contenedorSesion{ 
+    width: 500px;
+    height: 400px;
     margin-bottom: 80px; 
     margin-top: 5%;
+    border-color: #000;
+    border: 1px solid #000;
+    border-radius: 5%;
+    margin: 6% auto 6% auto;
 
 } 
+*/
 
 /* 
 .contenedorSesion{ 
