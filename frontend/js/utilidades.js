@@ -39,11 +39,7 @@ function crearContenedorPais(pais, favoritosUsuario, usuarioLogueado, toggleFavo
     }
     btnFavorito.classList.add('btnFavorito');
     btnFavorito.addEventListener('click', function() {
-        if (usuarioLogueado) {
-            toggleFavorito(btnFavorito, pais.nombre);
-        } else {
-            alert('Para añadir a favoritos es necesario iniciar sesión.');
-        }
+        toggleFavorito(btnFavorito, pais.nombre);
     });
 
     infoPais.appendChild(btnFavorito);
