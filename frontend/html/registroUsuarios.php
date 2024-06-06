@@ -14,11 +14,11 @@
 
     ?>
 
-    <div id="contenedorPagina">
+    <div id="contenedorPaginaFormRegistro">
 
     <!--<div class="contenedorSesion">-->
 
-    <h2>Registro</h2>
+    <h2>Registro Usuario</h2>
     <form id="formularioRegistro" action="../../backend/procesarRegistro.php" method="post">
 
       <label for="nombreUsuario">Nombre de Usuario:</label><br>
