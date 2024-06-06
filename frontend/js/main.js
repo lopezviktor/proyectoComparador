@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 console.error('Error en la operación:', result);
-                alert("Para añadir a favoritos es necesario iniciar sesión")
+                alert("Error al añadir.")
             }
         });
     }
