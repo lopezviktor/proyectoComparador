@@ -2,10 +2,6 @@
 
 header('Content-Type: application/json; charset=utf-8');
 
-/*
-$conexion = mysqli_connect("localhost", "root", "", "comparador") or
-die("Ha habido un error conectando a la BBDD");
-*/
 require_once "../modelo/Conexion.php";
 
 $conexion = new Conexion();
@@ -18,8 +14,7 @@ mysqli_set_charset($conexion->getConexion(), "utf8");
 $continente = isset($_GET['continente']) ? $_GET['continente'] : '';
 
 // Define la consulta SQL base para seleccionar los datos de los países.
-$query = "SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises";
-//$query = "SELECT nombre, bandera, FORMAT(poblacion, 0) as poblacion, FORMAT(superficie, 0) as superficie, FORMAT(PIB, 0) as PIB, FORMAT(esperanzaVida, 2) as esperanzaVida, FORMAT(tasaNatalidad, 2) as tasaNatalidad, FORMAT(tasaMortalidad, 2) as tasaMortalidad FROM paises";  
+$query = "SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad, ubicacion FROM paises";
 
 // Modifica la consulta si se ha proporcionado un continente específico.
 if (!empty($continente)) {
@@ -51,22 +46,4 @@ echo json_encode($datosArrayPaises, JSON_UNESCAPED_UNICODE);
 // Cierra la conexión a la base de datos.
 $conexion->cerrarConexion();
 
-/* PARTE ANTERIOR CON LA QUERY SIN AÑADIR UN CONTINENTE.
-$resulConsulta = mysqli_query($conexion->getConexion(), "SELECT nombre, bandera, poblacion, superficie, 
-PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises") or
-die("Problemas con la consulta a la BBDD").mysqli_error($conexion->getConexion());
-
-$datosArrayPaises = array();
-
-
-while ($registro = mysqli_fetch_array($resulConsulta, MYSQLI_ASSOC)) {
-    $datosArrayPaises[] = $registro;
-}
-
-
-// Generamos un fichero json
-$datosJsonPaises = json_encode($datosArrayPaises, JSON_UNESCAPED_UNICODE);
-echo $datosJsonPaises;
-
-*/
 ?>

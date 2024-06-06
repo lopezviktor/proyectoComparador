@@ -11,6 +11,11 @@ function crearContenedorPais(pais, favoritosUsuario, usuarioLogueado, toggleFavo
     imagenBandera.src = "../../imagenes/banderas/" + pais.bandera;
     imagenBandera.alt = 'Bandera de ' + pais.nombre;
 
+    const imagenUbicacion = document.createElement('img');
+    imagenUbicacion.src = "../../imagenes/ubicacion/" + pais.ubicacion;
+    imagenUbicacion.alt = 'Ubicación de ' + pais.nombre;
+    
+
     imagenBandera.addEventListener('click', function() {
         localStorage.setItem('paisSeleccionado', pais.nombre);
         window.location.href = '../html/pais.php';

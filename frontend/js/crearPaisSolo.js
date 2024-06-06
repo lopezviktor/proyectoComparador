@@ -35,17 +35,33 @@ document.addEventListener('DOMContentLoaded', function() {
         const imagenBandera = document.createElement('img');
         imagenBandera.src = "../../imagenes/banderas/" + pais.bandera;
         imagenBandera.alt = 'Bandera de ' + pais.nombre;
-        contenedorPais.appendChild(imagenBandera);
+        imagenBandera.className = "imagenBandera";
 
-        const infoPais = document.createElement('div');
-        infoPais.className = 'infoPais';
-        infoPais.innerHTML = `<h3>${pais.nombre}</h3>
-                                <p>La población es de ${pais.poblacion} habitantes.</p>
-                                <p>Su superficie ${pais.superficie} km².</p>
-                                <p>Tiene un PIB de  ${pais.PIB} millones de €.</p>
-                                <p>La esperanza de vida es de ${pais.esperanzaVida} años,
-                                con una tasa de natalidad del ${pais.tasaNatalidad} %, y
-                                una tasa de mortalidad del ${pais.tasaMortalidad} %.</p>`;
-        contenedorPais.appendChild(infoPais);
+        const imagenUbicacion = document.createElement('img');
+        imagenUbicacion.src = "../../imagenes/ubicacion/" + pais.ubicacion;
+        imagenUbicacion.alt = 'Ubicación de ' + pais.nombre;
+        imagenUbicacion.className = "imagenUbicacion";
+
+        const imagenesContainer = document.createElement('div');
+    imagenesContainer.className = 'imagenes';
+    imagenesContainer.appendChild(imagenBandera);
+    imagenesContainer.appendChild(imagenUbicacion);
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = pais.nombre;
+
+    const infoPais = document.createElement('div');
+    infoPais.className = 'infoPais';
+    infoPais.innerHTML = `
+        <p>La población es de ${pais.poblacion} habitantes.</p>
+        <p>Su superficie ${pais.superficie} km².</p>
+        <p>Tiene un PIB de ${pais.PIB} millones de €.</p>
+        <p>La esperanza de vida es de ${pais.esperanzaVida} años, con una tasa de natalidad del ${pais.tasaNatalidad} %, y una tasa de mortalidad del ${pais.tasaMortalidad} %.</p>
+    `;
+
+    contenedorPais.appendChild(imagenesContainer);
+    contenedorPais.appendChild(titulo);
+    contenedorPais.appendChild(infoPais);
+
     }
 });
