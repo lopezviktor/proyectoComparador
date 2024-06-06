@@ -18,7 +18,7 @@ $datosArrayPaises = array();
 
 if (!empty($nombrePais)) {
     $nombrePais = "%$nombrePais%";
-    $consulta = $conexion->getConexion()->prepare("SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad FROM paises WHERE nombre LIKE ?");
+    $consulta = $conexion->getConexion()->prepare("SELECT nombre, bandera, poblacion, superficie, PIB, esperanzaVida, tasaNatalidad, tasaMortalidad, ubicacion FROM paises WHERE nombre LIKE ?");
     $consulta->bind_param("s", $nombrePais);
     $consulta->execute();
     $resultado = $consulta->get_result();
