@@ -22,6 +22,14 @@
     margin-top: 2px;
 }
 
+.imagenUbicacion:hover { 
+    transform: scale(1.4); 
+} 
+
+.imagenBandera:hover { 
+    transform: scale(1.4); 
+} 
+
 .imagenes {
     order: 2; 
     display: flex;

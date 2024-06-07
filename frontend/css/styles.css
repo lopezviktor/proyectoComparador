@@ -151,7 +151,7 @@ h2 {
 
 /*CON ESTA CONFIGURACIÓN DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
 HASTA LA SIGUIENTE INDICACION*/
-#contenedorPaginaFormRegistro {
+#contenedorPaginaForm {
     width: 500px;
     margin: 1% auto 1% auto;
     padding: 20px;
@@ -163,7 +163,7 @@ HASTA LA SIGUIENTE INDICACION*/
     transition: transform 0.5s ease-in-out;
 }
 
-#contenedorPaginaFormRegistro:before {
+#contenedorPaginaForm:before {
     content: "";
     position: absolute;
     top: 0;
@@ -177,16 +177,17 @@ HASTA LA SIGUIENTE INDICACION*/
     border-radius: 5%;
 }
 
-#contenedorPaginaFormRegistro:hover:before {
+#contenedorPaginaForm:hover:before {
     opacity: 1;
 }
 
-#contenedorPaginaFormRegistro:hover {
+#contenedorPaginaForm:hover {
     transform: scale(1.1) translateZ(50px);
 }
 
-/*HATA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+/*HASTA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
 DESDE LA ANTERIOR INDICACION*/
+
 
 form { 
     max-width: 400px; 
