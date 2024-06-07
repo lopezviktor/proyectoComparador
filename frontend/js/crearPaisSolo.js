@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     infoPais.className = 'infoPais';
     infoPais.innerHTML = `
         <p>La población es de ${pais.poblacion} habitantes.</p>
-        <p>Su superficie ${pais.superficie} km².</p>
+        <p>Su superficie es de ${pais.superficie} km².</p>
         <p>Tiene un PIB de ${pais.PIB} millones de €.</p>
         <p>La esperanza de vida es de ${pais.esperanzaVida} años, con una tasa de natalidad del ${pais.tasaNatalidad} %, y una tasa de mortalidad del ${pais.tasaMortalidad} %.</p>
     `;

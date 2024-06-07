@@ -49,14 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode(['success' => 'Datos actualizados correctamente']);
     } else {
         // Si no se afectaron filas, puede ser que los datos sean iguales a los anteriores
-        echo json_encode(['error' => 'No se pudo actualizar la información o los datos son los mismos']);
+        echo json_encode(['error' => 'No se pudo actualizar la información o los datos son los mismos'], JSON_UNESCAPED_UNICODE);
     }
 
     // Cerrar la consulta preparada
     $query->close();
 } else {
     // Si el método de solicitud no es POST, devolver error
-    echo json_encode(['error' => 'Método de solicitud no soportado']);
+    echo json_encode(['error' => 'Método de solicitud no soportado'], JSON_UNESCAPED_UNICODE);
 }
 
 // Cerrar la conexión a la base de datos

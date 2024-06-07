@@ -14,7 +14,7 @@
 
     ?>
 
-    <div id="contenedorPagina">
+    <div id="contenedorPaginaForm">
         <h2>Perfil del Usuario</h2>
             <form id="perfilForm">
 
