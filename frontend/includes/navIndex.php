@@ -11,7 +11,7 @@ session_start(); // Asegúrate de llamar a session_start() si no se ha llamado a
         <li><a href="index.php">Home</a></li>
         <li><a href="paises.php">Países</a></li>
         <li><a href="comparadorPaises.php">Comparador</a></li>
-        <li><a href="sobreNosotros.php">Sobre nosotros</a></li>
+        <!--<li><a href="sobreNosotros.php">Sobre nosotros</a></li>-->
         <?php if (isset($_SESSION['usuario'])): ?>
         <li class="nombre-usuario">
             Bienvenido, <a href="../html/paginaPerfil.php"><?= htmlspecialchars($_SESSION['usuario']) ?></a>

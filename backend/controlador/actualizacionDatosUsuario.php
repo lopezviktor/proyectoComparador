@@ -36,9 +36,9 @@ $query->execute();
 
 // Verificar si la actualización fue exitosa
 if ($query->affected_rows > 0) {
-    echo json_encode(['success' => 'Datos actualizados correctamente']);
+    echo json_encode('Datos actualizados correctamente');
 } else {
-    echo json_encode(['error' => 'No se pudo actualizar la información o los datos son los mismos']);
+    echo json_encode(['error' => 'No se pudo actualizar la información o los datos son los mismos'], JSON_UNESCAPED_UNICODE); //Para que ponga acentos bien
 }
 
 $query->close();
