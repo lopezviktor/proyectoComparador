@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/script.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/resenas.js"></script>
     <title>Comparador de paises</title>
-    
 </head>
 <body>
     <div id="contenedorIndex">
     <?php
             include "../includes/navSinBuscador.php"  //incluye el cóigo del archivo nav.php
-
     ?>
 
     <div id="contenedorPaginaPlus">
+
+        <h2>Sobre Nosotros</h2>
         <h3>Contacto</h3>
         <p>
         Para cualquier consulta, colaboración o sugerencia, no dudes en ponerte en contacto con nosotros. <br>
@@ -23,7 +23,6 @@
         Puedes enviarnos un correo electrónico a comparadorPaises@comparatupais.com o llamarnos al +34 918 456 789. <br>
         También puedes seguirnos en nuestras redes sociales para estar al día con las últimas noticias y 
         actualizaciones.
-
         </p>
         <h3>Términos de servicio.</h3>
         <p>
@@ -34,7 +33,6 @@
         No somos responsables de ningún error u omisión en la funcionalidad o contenido ni de las consecuencias 
         que puedan derivarse de su uso. Nos reservamos el derecho de modificar estos términos en cualquier 
         momento, por lo que te recomendamos revisarlos periódicamente.
-
         </p>
         <h3>Política de privacidad</h3>
         <p>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/comparador.js"></script>
     <script src="../js/buscarPaisPorNombre.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="contenedor">
@@ -24,8 +25,9 @@
                     <option value="Asia">Asia</option>
                     <option value="America">América</option>
                     <option value="Africa">África</option>
-                <option value="Oceania">Oceanía</option>
+                    <option value="Oceania">Oceanía</option>
                 </select>
+                
                 <div id="listaPaises">
                     <!-- Los paises se cargarán aquí -->
                 </div>

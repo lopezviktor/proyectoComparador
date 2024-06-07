@@ -4,66 +4,88 @@ body{
     padding: 0; 
     width: 100%; 
     height: 100%; 
-     
 } 
- 
-nav, #contenedorFooter { 
-    align-items: center; 
-    display: flex; 
-    justify-content: center; 
-    padding: 0 20px; 
-    background-color: rgb(2, 2, 46); 
- 
-} 
- 
-.logo, .buscadorNav, nav ul { 
-    margin: 0 20px; 
- 
-} 
- 
-.logo{ 
-    align-items: center; 
-    position: relative; 
- 
-} 
- 
-.logo img { 
-    width: 80px;  
-    height: auto;  
-    border-radius: 20%; 
-    margin: 10px; 
- 
-} 
- 
-nav ul { 
-    display: flex; 
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0; 
-    justify-content: center; /* Centra los elementos de la lista horizontalmente */ 
-    flex-grow: 0; /* Evita que la lista crezca y respete su contenido */ 
- 
-} 
- 
-nav ul li { 
-    padding: 0 10px; /* Espaciado entre elementos de la lista */ 
- 
-} 
- 
-nav ul a { 
-    text-decoration: none; 
-    color: white; 
-    padding: 10px 15px; 
-    border-radius: 20px; /* Bordes redondeados para los enlaces */ 
- 
-} 
- 
-nav ul a:hover { 
-    background-color: rgb(68, 199, 247); 
-    color: black; 
- 
-} 
- 
+
+nav, #contenedorFooter {
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    padding: 0 20px;
+    background-color: #001f3f; /* Azul oscuro */
+}
+
+.logo, .buscadorNav, .listaNav {
+    margin: 0 20px;
+}
+
+.logo {
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    border-radius: 20%;
+    margin: 10px;
+}
+
+.buscadorNav {
+    position: relative;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 200px; /* Ajustar para controlar el ancho */
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.buscadorNav input[type="text"] {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px 10px;
+    color: black; /* Color del texto del input */
+}
+
+.listaNav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-grow: 0;
+}
+
+.listaNav li {
+    padding: 0 10px;
+}
+
+.listaNav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Asegurarse de añadir esta línea */
+}
+
+.listaNav a:hover {
+    transform: scale(2); 
+    color: goldenrod; 
+}
+
+
+
+.favoritosComparador a, .nombre-usuario a {
+    color: #00a01d; /* Color diferente para enlaces específicos */
+}
+
+.favoritosComparador a:hover, .nombre-usuario a:hover {
+    transform: scale(2); 
+    color: goldenrod; 
+}
+
 .buscadorNav { 
     position: relative; /* Posicionamiento relativo para alinear los elementos internos */ 
     padding: 5px; 
@@ -71,25 +93,25 @@ nav ul a:hover {
     border-radius: 10px; 
     flex-grow: 0; /* No permitirá que el buscador crezca */ 
     max-width: 200px; /* Ajustar para controlar el ancho */ 
- 
+
 } 
- 
+
 .buscadorNav .espacioBuscador{ 
     color: black; 
     position: absolute; 
     top: 4px; 
     border-color: 1px solid black; 
- 
+
 } 
- 
+
 .buscadorNav input[type="text"] { 
     width: 100%; 
     border: none; 
     background: transparent; 
     padding: 8px 10px; /* Espaciado interno */ 
- 
+
 } 
- 
+
 .buscadorIndex { 
     position: relative; /* Posicionamiento relativo para alinear los elementos internos */ 
     padding: 5px; 
@@ -98,56 +120,95 @@ nav ul a:hover {
     border-radius: 10px; 
     flex-grow: 1; /* No permitirá que el buscador crezca */ 
     max-width: 600px; /* Ajusta esto según tus necesidades para controlar el ancho */ 
- 
+
 } 
- 
+
 .buscadorIndex .espacioBuscador{ 
     color: black; 
     position: absolute; 
     top: 4px; 
     border-color: 1px solid black; 
- 
+
 } 
- 
+
 .buscadorIndex input[type="text"] { 
     width: 100%; 
     border: none; 
     background: transparent; 
     padding: 8px 10px; /* Espaciado interno */ 
- 
-} 
- 
+
+}
+
 .nombre-usuario { 
     color: rgb(9, 240, 244); /* Establece el color del texto a azul */ 
     /* Puedes añadir más estilos aquí si lo necesitas */ 
 } 
- 
+
 h2 { 
     text-align: center; 
- 
+
 } 
- 
+
+/*CON ESTA CONFIGURACIÓN DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+HASTA LA SIGUIENTE INDICACION*/
+#contenedorPaginaFormRegistro {
+    width: 500px;
+    margin: 1% auto 1% auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+#contenedorPaginaFormRegistro:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateZ(-50px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 5%;
+}
+
+#contenedorPaginaFormRegistro:hover:before {
+    opacity: 1;
+}
+
+#contenedorPaginaFormRegistro:hover {
+    transform: scale(1.1) translateZ(50px);
+}
+
+/*HATA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+DESDE LA ANTERIOR INDICACION*/
+
 form { 
     max-width: 400px; 
     margin: auto; 
     padding: 10px; 
     border-radius: 5px; 
- 
+
 } 
- 
+
 form p { 
     text-align: center; 
- 
+
 } 
- 
+
 label { 
     /*display: block;*/ 
     margin-bottom: 5px; 
     font-weight: bold; 
     font-size: 14px; 
- 
+
 } 
- 
+
 input[type="text"], 
 input[type="number"], 
 input[type="file"], 
@@ -160,9 +221,9 @@ input[type="password"]
     border: 1px solid black; 
     border-radius: 5px; 
     box-sizing: border-box; 
- 
+
 } 
- 
+
 input[type="submit"] { 
     width: 100%; 
     padding: 10px 15px; 
@@ -175,25 +236,26 @@ input[type="submit"] {
     text-transform: uppercase; 
     cursor: pointer; 
     transition: background-color 0.3s; 
- 
+
 } 
- 
+/*
 #contenedorIndex { 
     margin: 0; 
     padding: 0; 
     background-color: rgb(2, 2, 46); 
- 
+
 } 
- 
+
 #contenedorPaginaIndex h1{ 
     text-align: center; 
     color: white; 
     font-size: 100px; 
     -webkit-text-stroke-width: 3px; 
     -webkit-text-stroke-color: rgb(18, 138, 7); 
- 
-} 
+    margin: 0;
 
+} 
+*/
 #contenedorPagina{ 
     margin: 0 auto; 
     padding: 20px; 
@@ -201,29 +263,19 @@ input[type="submit"] {
     height: 100%; 
     max-width: 90%; 
     background-color: white; 
- 
-} 
 
+} 
 
 #contenedorPaginaPlus { 
     margin: 0 auto; 
-    padding: 20px; 
+    padding: 20px;
+    height: auto; 
     /*width: 100%;*/ 
-    height: 500px; 
     max-width: 90%; 
     background-color: white; 
- 
-} 
 
-#contenedorPaginaIndex{ 
-    margin: 0 auto; 
-    padding: 20px; 
-    /*width: 100%;*/ 
-    height: 100%; 
-    max-width: 90%; 
- 
-} 
- 
+}
+
 #contenedorPaginaComparador{ 
     margin: 0; 
     padding: 15px; 
@@ -231,20 +283,69 @@ input[type="submit"] {
     display: flex; 
     justify-content: space-between; 
 } 
- 
+
 #contenedorPaises { 
     display: flex; 
     flex-wrap: wrap; 
-    max-width: 90%; 
- 
+    max-width: 100%; 
+
 } 
- 
+
+/*CON ESTA CONFIGURACIÓN DA UN EFECTO AL LOGIN, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+HASTA LA SIGUIENTE INDICACION Y DESCOMENTAR EL SIGUIENTE '.contenedorSesion'*/
+
+.contenedorSesion {
+    width: 500px;
+    height: 400px;
+    margin-bottom: 80px;
+    margin-top: 5%;
+    border-color: #000;
+    border: 1px solid #000;
+    border-radius: 5%;
+    margin: 7% auto 7% auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.contenedorSesion:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateZ(-50px);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.contenedorSesion:hover:before {
+    opacity: 1;
+}
+
+.contenedorSesion:hover {
+    transform: scale(1.1) translateZ(100px);
+}
+
+/*HASTA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL LOGIN, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+LA ANTERIOR INDICACION Y DESCOMENTAR EL SIGUIENTE '.contenedorSesion'*/
+
+/*
 .contenedorSesion{ 
+    width: 500px;
+    height: 400px;
     margin-bottom: 80px; 
     margin-top: 5%;
- 
+    border-color: #000;
+    border: 1px solid #000;
+    border-radius: 5%;
+    margin: 6% auto 6% auto;
+
 } 
- 
+*/
+
 /* 
 .contenedorSesion{ 
     height: 600px; 
@@ -252,15 +353,15 @@ input[type="submit"] {
     margin-bottom: 80px; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 } 
- 
+
 .contenedorSesion h2{ 
     font-size: 40px; 
 } 
 */ 
- 
+
 #contenedorPais { 
     width: calc(15% - 20px); 
-    height: 380px; 
+    height: 400px; 
     margin: 20px 10px 40px 10px; 
     padding: 10px; 
     position: relative; 
@@ -269,7 +370,7 @@ input[type="submit"] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582); 
     overflow: auto; 
     background-color: rgba(159, 169, 175, 0.522); 
- 
+
 } 
 #contenedorPaisIndex{ 
     width: calc(30% - 10px); 
@@ -302,26 +403,27 @@ input[type="submit"] {
     margin-bottom: 20px; 
     min-height: 100px; 
     margin: auto; 
- 
 } 
- 
+
 #contenedorPais:hover img { 
     transform: scale(1.1); 
- 
 } 
- 
+
 .infoPais { 
     text-align: center; 
     font-size: 13px; 
- 
 } 
- 
+
+.infoPais p{
+    line-height: 1;
+    font-size: 15px;
+}
+
 .infoPais h3{ 
     text-align: center; 
-    font-size: 16px; 
- 
+    font-size: 17px; 
 } 
- 
+
 /* Estilizando el selector */ 
 select { 
     width: 100%; 
@@ -336,14 +438,13 @@ select {
     cursor: pointer; 
     appearance: none; 
     transition: border-color 0.3s; 
- 
 } 
- 
+
 select:hover, 
 select:focus { 
     border-color: #0056b3; 
 } 
- 
+
 /* Estilizando el botón */ 
 button { 
     width: 100%; 
@@ -358,11 +459,11 @@ button {
     cursor: pointer; 
     transition: background-color 0.3s; 
 } 
- 
+
 button:hover { 
     background-color: #003d7a; 
 } 
- 
+
 /* Estilos para la lista de países */ 
 #listaPaises div { 
     margin-bottom: 10px; 
@@ -372,16 +473,15 @@ button:hover {
     display: flex; 
     align-items: center; 
 } 
- 
+
 input[type='checkbox'] { 
     margin-right: 10px; 
 } 
- 
+
 label { 
     flex-grow: 1; 
 } 
- 
- 
+
 #listaPaises{  
     height: 400px; 
     overflow-y: auto;  
@@ -394,18 +494,18 @@ label {
     width: 15%; /* O ajusta según tus necesidades */ 
     margin: 0 1% 1% 1%; /* Espacio entre el formulario y la tabla */ 
 } 
- 
+
 #ResultadosComparacion { 
     width: 80%; 
     flex-direction: column; /* Alinea los países verticalmente */ 
     gap: 10px; /* Espacio entre cada país */ 
- 
+
 } 
- 
+
 #opcionesComparacion{ 
     margin: 20px 0; 
 } 
- 
+
 /* Estilos base para la tabla */ 
 .tabla-comparativa { 
     width: 80%; /* Ajusta esto según el diseño de tu página */ 
@@ -415,7 +515,7 @@ label {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la tabla */ 
     font-family: 'Arial', sans-serif; /* Fuente sans-serif para mejor legibilidad */ 
 } 
- 
+
 /* Estilos para las celdas de cabecera */ 
 .tabla-comparativa th { 
     background-color: #f4f4f4; /* Fondo gris claro para las cabeceras */ 
@@ -423,10 +523,9 @@ label {
     font-weight: bold; /* Texto en negrita para las cabeceras */ 
     padding: 5px 5px; /* Relleno dentro de las celdas */ 
     border-bottom: 2px solid #e0e0e0; /* Borde inferior más oscuro para separar de las filas */ 
-    text-align: right; 
-     
+    text-align: right;
 } 
- 
+
 /* Estilos para las celdas de datos */ 
 .tabla-comparativa td { 
     padding: 5px 5px; /* Relleno similar al de las cabeceras */ 
@@ -434,13 +533,13 @@ label {
     text-align: right; 
     width: 200px; 
     font-size: 14px; 
-} 
- 
+}
+
 /* Estilo para las filas al pasar el mouse */ 
 .tabla-comparativa tr:hover { 
     background-color: #f9f9f9; /* Cambio de fondo al pasar el mouse para resaltar la fila */ 
 } 
- 
+
 /* Estilos para la primera columna, que contiene las categorías */ 
 .tabla-comparativa td:first-child, .tabla-comparativa th:first-child { 
     font-weight: bold; /* Hacer el texto en negrita para destacar las categorías */ 
@@ -449,7 +548,13 @@ label {
     text-align: left; 
     width: 220px; 
 } 
- 
+
+canvas{
+    width: 70%;
+    margin: auto;
+    max-height: 500px;
+}
+
 /* Media queries para responsive */ 
 @media (max-width: 768px) { 
     .tabla-comparativa { 
@@ -457,85 +562,82 @@ label {
         box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */ 
     } 
 } 
- 
-footer { 
-    height: 140px; 
-    background-color: rgb(2, 2, 46); 
-    color: white; 
-    clear: both; 
-    margin-top: auto; 
-    width: 100%; 
- 
-} 
- 
-footer div { 
-    float: right; 
-    padding-top: 50px; 
-    margin-right: 50px; 
- 
-} 
- 
-footer ul { 
-    float: left; 
-    font-weight: bold; 
-    margin: 10px 20px 10px 20px; 
-    list-style: none; 
-    font-size: 20px; 
- 
-} 
- 
-footer li { 
-    margin-top: 8px; 
- 
-} 
- 
-footer a { 
-    text-decoration: none; 
-    color: white; 
-    margin-left: 20px; 
-    font-size: 15px; 
-    font-weight: lighter; 
-    margin: 2px; 
-} 
- 
-footer li a img { 
-    width: 20px; 
-    margin: 0px; 
-    border-radius: 100%; 
- 
-} 
- 
-footer p { /* Esto es para el texto de derehos reservados*/ 
-    font-size: 15px; 
- 
-} 
- 
-.logoPie img { 
-    position: relative; 
-    width: 80px; 
-    height: 70px; 
-} 
- 
+footer {
+    height: 140px;
+    background-color: #001f3f; /* Azul oscuro */
+    color: white;
+    clear: both;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer div {
+    float: right;
+    padding-top: 50px;
+    margin-right: 50px;
+}
+
+footer ul {
+    float: left;
+    font-weight: bold;
+    margin: 10px 20px 10px 20px;
+    list-style: none;
+    font-size: 20px;
+}
+
+footer li {
+    margin-top: 8px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: lighter;
+    margin: 2px;
+}
+footer a:hover{
+    transform: scale(2); 
+    color: goldenrod; 
+}
+
+footer li a img {
+    width: 20px;
+    margin: 0px;
+    border-radius: 100%;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+.logoPie img {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
 /*ESTILOS DE TABLA DE ADMINISTRADOR PARA EDITAR PAISES*/ 
 #tablaPaises { 
     width: 100%; /* Ocupar el ancho completo del contenedor */ 
     border-collapse: collapse; /* Eliminar el espacio entre las celdas */ 
     margin-top: 20px; /* Espacio superior para separar de otros elementos */ 
 } 
- 
+
 /* Estilos para las celdas y cabeceras */ 
 #tablaPaises th, #tablaPaises td { 
     border: 1px solid #ddd; /* Borde sutil para las celdas */ 
     padding: 8px; /* Espaciado interno en las celdas */ 
     text-align: left; /* Alineación del texto a la izquierda */ 
 } 
- 
+
 /* Fondo para las cabeceras de la tabla */ 
 #tablaPaises thead th { 
     background-color: #4CAF50; /* Color de fondo verde */ 
     color: white; /* Texto en color blanco */ 
 } 
- 
+
 /* Estilos para los botones dentro de la tabla */ 
 #tablaPaises button { 
     padding: 5px 10px; /* Espaciado interno para el botón */ 
@@ -544,11 +646,11 @@ footer p { /* Esto es para el texto de derehos reservados*/
     cursor: pointer; /* Cursor en forma de mano al pasar el ratón */ 
     transition: background-color 0.3s; /* Transición suave del color de fondo */ 
 } 
- 
+
 #tablaPaises button:hover { 
     background-color: #012a56; /* Cambiar color de fondo al pasar el ratón */ 
 } 
- 
+
 /* Estilos para los inputs dentro de la tabla para editar datos */ 
 #tablaPaises input[type="text"], 
 #tablaPaises input[type="number"] { 
@@ -556,19 +658,19 @@ footer p { /* Esto es para el texto de derehos reservados*/
     border: 1px solid #ccc; /* Borde sutil */ 
     padding: 5px; /* Espaciado interno */ 
     box-sizing: border-box; /* El padding y border se incluyen en el ancho */ 
-} 
- 
+}
+
 /* Zebra striping para las filas */ 
 #tablaPaises tbody tr:nth-child(odd) { 
     background-color: #f9f9f9; /* Color de fondo para filas impares */ 
 } 
- 
+
 #tablaPaises tbody tr:hover { 
     background-color: #888888; /* Color de fondo al pasar el ratón */ 
 } 
 #galeriaImagenes { 
-    width: 100%; 
-    height: 400px; 
+    width: 100%;
+    height: 1500px; 
     overflow: hidden; 
     position: relative; 
     display: flex; 
@@ -577,18 +679,240 @@ footer p { /* Esto es para el texto de derehos reservados*/
 } 
 .slide img{ 
     width: 100%; 
-    height: 100%; 
+
 } 
- 
+
 #galeriaImagenes img { 
-     
     object-fit: cover; 
     display: none; 
     position: absolute; 
     top: 0; 
     left: 0; 
 } 
- 
+
 #galeriaImagenes img.active { 
     display: block; 
 } 
+.btnFavorito {
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.6s; /* Añadir transición para el giro */
+    text-align: center;
+    text-transform: none;
+}
+
+.btnFavorito.favorito {
+    background-color: rgb(28, 163, 7); /* ejemplo de cambio de color */
+}
+
+.btnFavorito.girar {
+    transform: rotateY(180deg); /* Aplicar rotación completa en el eje Y */
+}
+
+/* Reviews Section */
+#resenas {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#resenas h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#formResena {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#formResena div {
+    margin-bottom: 10px;
+}
+
+#formResena label {
+    font-weight: bold;
+}
+
+#formResena textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#formResena button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#formResena button:hover {
+    background-color: #005bb5;
+}
+
+/* Reviews List */
+#listaResenas .resena {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#listaResenas .resena h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+#listaResenas .resena p {
+    margin: 0 0 10px;
+}
+
+#listaResenas .resena small {
+    color: #666;
+    font-size: 12px;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: url('../../imagenes/fondoIndex.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin: 0.5em 0;
+    -webkit-text-stroke: 1px black; /* Borde negro alrededor del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+}
+
+.hero p {
+    font-size: 1.8em;
+    margin: 0.5em 0 1.5em;
+    -webkit-text-stroke: 0.5px black; /* Borde negro alrededor del texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+    font-family: 'Arial Black', Arial, sans-serif; /* Fuente más gruesa */
+    font-weight: bold; /* Grosor de fuente adicional */
+}
+
+@media (max-width: 768px) { 
+    nav, #contenedorFooter {
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        padding: 10px; /* Reducir padding para móviles */
+    }
+
+    .logo, .buscadorNav, .listaNav {
+        margin: 10px 0;
+        flex: 1 1 100%; /* Los elementos ocuparán el ancho completo en móviles */
+        text-align: center; /* Centrar elementos */
+    }
+
+    .logo img {
+        width: 50px;
+        margin: 5px;
+    }
+
+    .buscadorNav {
+        max-width: 90%; /* Ajustar el ancho para móviles */
+        margin: auto; /* Centrar el buscador */
+    }
+
+    .listaNav {
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    }
+
+    .listaNav li {
+        padding: 5px 10px;
+    }
+
+    form {
+        max-width: 90%; /* Ajustar el ancho del formulario para móviles */
+    }
+
+    #contenedorPagina, #contenedorPaginaPlus {
+        max-width: 100%; /* Ajustar el ancho del contenedor para móviles */
+        padding: 10px; /* Reducir padding para móviles */
+    }
+
+    #contenedorPaginaComparador {
+        flex-direction: column; /* Disponer los elementos en columna en móviles */
+    }
+    #comparadorForm{
+        width: 100%;
+    }
+
+    #contenedorPais {
+        width: calc(45% - 30px); /* Ajustar el ancho para mostrar dos en una fila en móviles */
+        margin: 20px 13px; /* Ajustar margen para móviles */
+        
+    }
+
+    #contenedorPaisIndex {
+        width: calc(50% - 20px); /* Ajustar el ancho para mostrar dos en una fila en móviles */
+        margin: 10px 5px; /* Ajustar margen para móviles */
+    }
+
+    .tabla-comparativa {
+        width: 100%; /* La tabla ocupa el 100% del ancho en dispositivos más pequeños */
+        box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */
+    }
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    footer ul{
+        flex-wrap: wrap;
+    }
+    .logoPie, .listaNav {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .logoPie img {
+        display: none;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}

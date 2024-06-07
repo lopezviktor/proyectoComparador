@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/administrarPaisesAdmin.js"></script>
     <title>Formulario añadir países</title>
     <link rel="stylesheet" href="../css/styles.css">
     
@@ -16,7 +17,7 @@
 
     ?>
 
-    <div id="contenedorPagina">
+    <div id="contenedorPaginaFormRegistro">
 
         <h2>Formulario de Ingreso de Países</h2>
         <form id="formularioPaises" action="/proyectoComparador/backend/procesarFormulario.php" method="post" enctype="multipart/form-data">

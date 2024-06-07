@@ -1,0 +1,51 @@
+.contenedorPaisSolo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #e4e4e4;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+.contenedorPaisSolo h3 {
+    order: 1; 
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    font-size: 60px;
+    color: #002447;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    margin-top: 2px;
+}
+
+.imagenes {
+    order: 2; 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.imagenBandera, .imagenUbicacion {
+    width: 30%;
+    height: auto;
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    margin: 5px 50px; /* Margen lateral para separación */
+}
+
+.infoPais {
+    order: 3; /* Coloca la información del país en tercer lugar */
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+}
+
+.infoPais p {
+    margin: 10px 0;
+    font-size: 18px;
+}

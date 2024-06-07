@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/adminUsuarios.js" ></script>
     <link rel="stylesheet" href="../css/styles.css">
-    
     <title>Nuevo registro</title>
 </head>
 <body>
@@ -15,11 +14,11 @@
 
     ?>
 
-    <div id="contenedorPagina">
+    <div id="contenedorPaginaFormRegistro">
 
     <!--<div class="contenedorSesion">-->
 
-    <h2>Registro</h2>
+    <h2>Registro Usuario</h2>
     <form id="formularioRegistro" action="../../backend/procesarRegistro.php" method="post">
 
       <label for="nombreUsuario">Nombre de Usuario:</label><br>

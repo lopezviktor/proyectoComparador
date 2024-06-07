@@ -69,27 +69,53 @@ function comparadorPaises() {
     const checkedTasaNatalidad = document.getElementById("checkedTasaNatalidad");
     const checkedTasaMortalidad = document.getElementById("checkedTasaMortalidad");
 
-
     agregarTablaPrincipal(paisesSeleccionados);
 
-    // Verificar el estado de cada checkbox antes de agregar la tabla de comparación correspondiente
+    // Asignar colores específicos a cada país
+    const colores = [
+        'rgba(238, 21, 21, 0.4)',
+        'rgba(21, 238, 37, 0.4)',
+        'rgba(21, 130, 238, 0.4)',
+        'rgba(218, 21, 238, 0.4)'
+    ];
+    const borderColores = [
+        'rgba(238, 21, 21, 1)',
+        'rgba(21, 238, 37, 1)',
+        'rgba(21, 130, 238, 1)',
+        'rgba(218, 21, 238, 1)'
+    ];
+    
+    const colorMap = {};
+    paisesSeleccionados.forEach((pais, index) => {
+        colorMap[pais.nombre] = {
+            backgroundColor: colores[index],
+            borderColor: borderColores[index]
+        };
+    });
+
     if (checkedPoblacion.checked) {
         agregarTablaComparacion(paisesSeleccionados, 'poblacion', 'Comparación por Población (hab.):');
+        agregarGrafica(paisesSeleccionados, 'poblacion', 'Población (hab.)', colorMap);
     }
     if (checkedSuperficie.checked) {
         agregarTablaComparacion(paisesSeleccionados, 'superficie', 'Comparación por Superficie (km2):');
+        agregarGrafica(paisesSeleccionados, 'superficie', 'Superficie (km2)', colorMap);
     }
     if (checkedPib.checked) {
         agregarTablaComparacion(paisesSeleccionados, 'PIB', 'Comparación por PIB (mill. €):');
+        agregarGrafica(paisesSeleccionados, 'PIB', 'PIB (mill. €)', colorMap);
     }
     if (checkedEsperanzaVida.checked) {
         agregarTablaComparacion(paisesSeleccionados, 'esperanzaVida', 'Comparación por esperanza de vida (años):');
+        agregarGrafica(paisesSeleccionados, 'esperanzaVida', 'Esperanza de vida (años)', colorMap);
     }
     if (checkedTasaNatalidad.checked) {
         agregarTablaComparacion(paisesSeleccionados, 'tasaNatalidad', 'Comparación por la tasa de natalidad (%):');
+        agregarGrafica(paisesSeleccionados, 'tasaNatalidad', 'Tasa de natalidad (%)', colorMap);
     }
     if (checkedTasaMortalidad.checked) {
         agregarTablaComparacion(paisesSeleccionados, 'tasaMortalidad', 'Comparación por la tasa de mortalidad (%):');
+        agregarGrafica(paisesSeleccionados, 'tasaMortalidad', 'Tasa de mortalidad (%)', colorMap);
     }
 }
 
@@ -148,6 +174,10 @@ function agregarTablaComparacion(paises, propiedad, titulo) {
 
     paises.sort((a, b) => b[propiedad] - a[propiedad]);
 
+    const tituloComparacion = document.createElement('h2');
+    tituloComparacion.className = 'tituloComparacion';
+    tituloComparacion.textContent = titulo;
+
     const tabla = document.createElement('table');
     tabla.className = 'tabla-comparativa';
 
@@ -183,8 +213,48 @@ function agregarTablaComparacion(paises, propiedad, titulo) {
         celdaBandera.appendChild(img);
     });
 
-    // Añadir la tabla completa al div de resultados
+    // Añadir el título y la tabla completa al div de resultados
+    divResultados.appendChild(tituloComparacion);
     divResultados.appendChild(tabla);
 }
+
+function agregarGrafica(paises, propiedad, titulo, colorMap) {
+    const divResultados = document.getElementById('ResultadosComparacion');
+
+    const canvas = document.createElement('canvas');
+    canvas.id = `grafica-${propiedad}`;
+    divResultados.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    const nombresPaises = paises.map(pais => pais.nombre);
+    const valores = paises.map(pais => pais[propiedad]);
+
+    const backgroundColors = nombresPaises.map(nombre => colorMap[nombre].backgroundColor);
+    const borderColors = nombresPaises.map(nombre => colorMap[nombre].borderColor);
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: nombresPaises,
+            datasets: [{
+                label: titulo,
+                data: valores,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+}
+
 
 
