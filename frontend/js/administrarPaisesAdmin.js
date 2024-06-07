@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td><input type="double" value="${pais.tasaNatalidad}"/></td>
                 <td><input type="double" value="${pais.tasaMortalidad}"/></td>
                 <td><button onclick="editarPais(this, '${pais.nombre}')">Guardar</button></td>
+                <td><button onclick="borrarPais('${pais.nombre}')">Borrar</button></td>
                 `;
             });
         })
@@ -63,5 +64,27 @@ function editarPais(button, nombre) {
         alert(result.success || result.error);
     })
     .catch(error => console.log('Error', error)); // Capturar y registrar errores de la solicitud.
+}
+
+function borrarPais(nombre) {
+    // Preparar el objeto con el nombre del país a borrar
+    const data = { nombre: nombre };
+
+    // Hacer una solicitud POST al servidor para borrar el país
+    fetch("../../backend/controlador/deletePais.php", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)  // Convertir el objeto de datos a una cadena JSON
+    })
+    .then(response => response.json())  // Convertir la respuesta a JSON
+    .then(result => {
+        // Mostrar un mensaje de éxito o error dependiendo del resultado
+        alert(result.success || result.error);
+        // Recargar los datos de los países para reflejar los cambios
+        fetchDatos();
+    })
+    .catch(error => console.error('Error', error)); // Capturar y registrar errores de la solicitud
 }
 
