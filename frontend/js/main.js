@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             } else {
                 console.error('Error en la operación:', result);
-                alert("Error al añadir.")
+                //alert("Error al añadir.")
+                alert("Para añadir favoritos, debe estar autenticado.")
             }
         });
     }

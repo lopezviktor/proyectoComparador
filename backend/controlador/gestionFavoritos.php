@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $verificarPais->store_result();
 
         if ($verificarPais->num_rows === 0) {
-            echo json_encode(['error' => 'El país no existe en la base de datos']);
+            echo json_encode(['error' => 'El país no existe en la base de datos'], JSON_UNESCAPED_UNICODE);
             $verificarPais->close();
             exit;
         }
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $query->close();
         } else {
-            echo json_encode(['error' => 'Acción no válida']);
+            echo json_encode(['error' => 'Acción no válida'], JSON_UNESCAPED_UNICODE);
         }
 
         $conexion->cerrarConexion();
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 } else {
     http_response_code(405);
-    echo json_encode(['message' => 'Método no permitido']);
+    echo json_encode(['message' => 'Método no permitido'], JSON_UNESCAPED_UNICODE);
 }
 
 ?>

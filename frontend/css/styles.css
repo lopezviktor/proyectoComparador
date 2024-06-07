@@ -151,7 +151,7 @@ h2 {
 
 /*CON ESTA CONFIGURACIÓN DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
 HASTA LA SIGUIENTE INDICACION*/
-#contenedorPaginaFormRegistro {
+#contenedorPaginaForm {
     width: 500px;
     margin: 1% auto 1% auto;
     padding: 20px;
@@ -163,7 +163,7 @@ HASTA LA SIGUIENTE INDICACION*/
     transition: transform 0.5s ease-in-out;
 }
 
-#contenedorPaginaFormRegistro:before {
+#contenedorPaginaForm:before {
     content: "";
     position: absolute;
     top: 0;
@@ -177,16 +177,17 @@ HASTA LA SIGUIENTE INDICACION*/
     border-radius: 5%;
 }
 
-#contenedorPaginaFormRegistro:hover:before {
+#contenedorPaginaForm:hover:before {
     opacity: 1;
 }
 
-#contenedorPaginaFormRegistro:hover {
+#contenedorPaginaForm:hover {
     transform: scale(1.1) translateZ(50px);
 }
 
-/*HATA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
+/*HASTA AQUÍ LA CONFIGURACIÓN QUE DA UN EFECTO AL FORMULARIO, PERO SI NO SE QUIERE SE PUEDE COMENTAR TODO 
 DESDE LA ANTERIOR INDICACION*/
+
 
 form { 
     max-width: 400px; 
@@ -369,40 +370,22 @@ LA ANTERIOR INDICACION Y DESCOMENTAR EL SIGUIENTE '.contenedorSesion'*/
     border-radius: 20px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582); 
     overflow: auto; 
-    background-color: rgba(159, 169, 175, 0.522); 
+    background-color: rgba(255, 255, 255, 0.522);
+    border: 2px solid rgb(104, 112, 128); 
+} 
 
-} 
-#contenedorPaisIndex{ 
-    width: calc(30% - 10px); 
-    height: 450px; 
-    margin: 10px 5px 20px 5px; 
-    padding: 10px; 
-    position: relative; 
-    float: left; 
-    border-radius: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582); 
-    overflow: auto; 
-    background-color: rgba(159, 169, 175, 0.522); 
-} 
-#contenedorPaisIndex img{ 
-    width: 55%; 
-    height: 150px; 
-    display: block; 
-    transition: transform 0.3s; 
-    border-radius: 20px; 
-    margin-bottom: 20px; 
-    min-height: 100px; 
-    margin: auto; 
-} 
 #contenedorPais img { 
     width: 80%; 
-    height: 100px; 
+    height: 120px; 
     display: block; 
     transition: transform 0.3s; 
-    border-radius: 20px; 
-    margin-bottom: 20px; 
+    border-radius: 10px; 
+    margin-top: 10px !important;
+    margin-bottom: 10px; 
     min-height: 100px; 
     margin: auto; 
+    cursor: pointer;
+    border: 2px solid black;
 } 
 
 #contenedorPais:hover img { 
@@ -411,7 +394,8 @@ LA ANTERIOR INDICACION Y DESCOMENTAR EL SIGUIENTE '.contenedorSesion'*/
 
 .infoPais { 
     text-align: center; 
-    font-size: 13px; 
+    font-size: 14px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 } 
 
 .infoPais p{
@@ -421,7 +405,7 @@ LA ANTERIOR INDICACION Y DESCOMENTAR EL SIGUIENTE '.contenedorSesion'*/
 
 .infoPais h3{ 
     text-align: center; 
-    font-size: 17px; 
+    font-size: 18px; 
 } 
 
 /* Estilizando el selector */ 
@@ -694,15 +678,16 @@ footer p {
     display: block; 
 } 
 .btnFavorito {
-    margin-top: 10px;
     width: auto;
     height: auto;
     padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: #0056b3;
     border: none;
     border-radius: 4px;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.6s; /* Añadir transición para el giro */
     text-align: center;
@@ -716,6 +701,8 @@ footer p {
 .btnFavorito.girar {
     transform: rotateY(180deg); /* Aplicar rotación completa en el eje Y */
 }
+
+
 
 /* Reviews Section */
 #resenas {

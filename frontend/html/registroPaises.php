@@ -17,10 +17,10 @@
 
     ?>
 
-    <div id="contenedorPaginaFormRegistro">
+    <div id="contenedorPaginaForm">
 
         <h2>Formulario de Ingreso de Países</h2>
-        <form id="formularioPaises" action="/proyectoComparador/backend/procesarFormulario.php" method="post" enctype="multipart/form-data">
+        <form id="formularioPaises" action="/proyectoComparador/backend/controlador/procesarFormulario.php" method="post" enctype="multipart/form-data">
 
             <label for="nombre">Nombre del País:</label><br>
             <input type="text" id="nombre" name="nombre" required><br><br>

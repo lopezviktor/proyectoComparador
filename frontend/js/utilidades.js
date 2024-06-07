@@ -26,13 +26,13 @@ function crearContenedorPais(pais, favoritosUsuario, usuarioLogueado, toggleFavo
     const infoPais = document.createElement('div');
     infoPais.className = 'infoPais';
     infoPais.innerHTML = `<h3>${pais.nombre}</h3>
-                            <p>Población: <br> ${pais.poblacion} hab</p>
-                            <p>Superficie: <br> ${pais.superficie} km²</p>
-                            <p>PIB: <br> ${pais.PIB} mill. €</p>
-                            <p>Esperanza vida: <br> ${pais.esperanzaVida} años</p>
+                            <p>Población <br> ${pais.poblacion} hab</p>
+                            <p>Superficie <br> ${pais.superficie} km²</p>
+                            <p>PIB <br> ${pais.PIB} mill. €</p>
+                            <p>Esperanza vida <br> ${pais.esperanzaVida} años</p>
                             <!--
-                            <p>Tasa natalidad: ${pais.tasaNatalidad} %</p>
-                            <p>Tasa mortalidad: ${pais.tasaMortalidad} %</p>
+                            <p>Tasa natalidad ${pais.tasaNatalidad} %</p>
+                            <p>Tasa mortalidad ${pais.tasaMortalidad} %</p>
                             -->`;
 
     const btnFavorito = document.createElement('button');
