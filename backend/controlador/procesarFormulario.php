@@ -84,7 +84,7 @@ if (!isset($_POST["nombre"]) || !isset($_POST["poblacion"]) ||
             //if($queryRegistro = 0) {               
 
             // Preparar la consulta SQL para insertar los datos en la tabla
-            $query = "INSERT INTO paises (nombre, bandera, poblacion, superficie, pib, esperanzaVida, tasaNatalidad, tasaMortalidad, continente) VALUES ('$nombre', '$banderaNombre', $poblacion, $superficie, $pib, $esperanzaVida, $tasaNatalidad, $tasaMortalidad, '$continente')";
+            $query = "INSERT INTO paises (nombre, bandera, poblacion, superficie, pib, esperanzaVida, tasaNatalidad, tasaMortalidad, continente) VALUES ('$nombre', '$banderaNombre$tipo', $poblacion, $superficie, $pib, $esperanzaVida, $tasaNatalidad, $tasaMortalidad, '$continente')";
 
             // Ejecutar la consulta
             if ($conexion->getConexion()->query($query) === TRUE) {
