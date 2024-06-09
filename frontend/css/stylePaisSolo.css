@@ -24,11 +24,11 @@
 }
 
 .imagenUbicacion:hover { 
-    transform: scale(1.4); 
+    transform: scale(1.1); 
 } 
 
 .imagenBandera:hover { 
-    transform: scale(1.4); 
+    transform: scale(1.1); 
 } 
 
 .imagenes {
@@ -44,7 +44,7 @@
     height: auto;
     box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.8);
     border-radius: 10px;
-    margin: 5px 50px; /* Margen lateral para separación */
+    margin: 5px 50px; 
     border: 2px solid black;
 
 }
@@ -55,7 +55,7 @@
 }
 
 .infoPais {
-    order: 3; /* Coloca la información del país en tercer lugar */
+    order: 3; 
     text-align: center;
     width: 100%;
     padding: 15px;

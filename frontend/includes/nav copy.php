@@ -22,7 +22,7 @@ session_start(); // Asegúrate de llamar a session_start() si no se ha llamado a
             <a href="../html/comparadorFavoritos.php"><?= htmlspecialchars('Favoritos') ?></a>
         </li>
         <li class="nombre-usuario">
-            Bienvenido, <a href="../html/paginaPerfil.php"><?= htmlspecialchars($_SESSION['usuario']) ?></a>
+            Bienvenido <a href="../html/paginaPerfil.php"><?= htmlspecialchars($_SESSION['usuario']) ?></a>
         </li>
         <li><a href="../../backend/controlador/logout.php">Cerrar sesión</a></li>
 

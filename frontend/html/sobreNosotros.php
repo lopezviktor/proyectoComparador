@@ -17,7 +17,7 @@
 
         <h2>Sobre Nosotros</h2>
         <h3>Contacto</h3>
-        <p>
+        <p class="parrafosSobreNosotros">
         Para cualquier consulta, colaboración o sugerencia, no dudes en ponerte en contacto con nosotros. <br>
         Valoramos tus comentarios y nos esforzamos por mejorar continuamente. <br>
         Puedes enviarnos un correo electrónico a comparadorPaises@comparatupais.com o llamarnos al +34 918 456 789. <br>
@@ -25,7 +25,7 @@
         actualizaciones.
         </p>
         <h3>Términos de servicio.</h3>
-        <p>
+        <p class="parrafosSobreNosotros">
         Al acceder y utilizar nuestro comparador de países, aceptas estar sujeto a los siguientes términos y 
         condiciones. <br>
         Este servicio se proporciona "tal cual", sin garantías de ningún tipo sobre la exactitud, adecuación o 
@@ -35,7 +35,7 @@
         momento, por lo que te recomendamos revisarlos periódicamente.
         </p>
         <h3>Política de privacidad</h3>
-        <p>
+        <p class="parrafosSobreNosotros">
         Nos comprometemos a proteger la privacidad de nuestros usuarios. <br>
         Toda la información personal recopilada se utiliza exclusivamente para mejorar la experiencia del 
         usuario y no se comparte con terceros sin el consentimiento explícito del usuario, salvo en lo 

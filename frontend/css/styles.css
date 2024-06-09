@@ -35,7 +35,7 @@ nav, #contenedorFooter {
     padding: 5px;
     background-color: white;
     border-radius: 10px;
-    max-width: 200px; /* Ajustar para controlar el ancho */
+    max-width: 200px;
     display: flex;
     align-items: center;
     justify-content: right;
@@ -67,7 +67,7 @@ nav, #contenedorFooter {
     color: white;
     padding: 10px 15px;
     border-radius: 20px;
-    transition: transform 0.3s ease, color 0.3s ease; /* Asegurarse de añadir esta línea */
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 .listaNav a:hover {
@@ -76,9 +76,8 @@ nav, #contenedorFooter {
 }
 
 
-
 .favoritosComparador a, .nombre-usuario a {
-    color: #00a01d; /* Color diferente para enlaces específicos */
+    color: white; /* Color diferente para enlaces específicos */
 }
 
 .favoritosComparador a:hover, .nombre-usuario a:hover {
@@ -111,33 +110,6 @@ nav, #contenedorFooter {
     padding: 8px 10px; /* Espaciado interno */ 
 
 } 
-
-.buscadorIndex { 
-    position: relative; /* Posicionamiento relativo para alinear los elementos internos */ 
-    padding: 5px; 
-    margin: auto; 
-    background-color: white; 
-    border-radius: 10px; 
-    flex-grow: 1; /* No permitirá que el buscador crezca */ 
-    max-width: 600px; /* Ajusta esto según tus necesidades para controlar el ancho */ 
-
-} 
-
-.buscadorIndex .espacioBuscador{ 
-    color: black; 
-    position: absolute; 
-    top: 4px; 
-    border-color: 1px solid black; 
-
-} 
-
-.buscadorIndex input[type="text"] { 
-    width: 100%; 
-    border: none; 
-    background: transparent; 
-    padding: 8px 10px; /* Espaciado interno */ 
-
-}
 
 .nombre-usuario { 
     color: rgb(9, 240, 244); /* Establece el color del texto a azul */ 
@@ -458,6 +430,15 @@ button:hover {
     align-items: center; 
 } 
 
+#listaPaisesFavoritos div { 
+    margin-bottom: 10px; 
+    padding: 5px; 
+    background-color: #5d89bb; 
+    border-radius: 4px; 
+    display: flex; 
+    align-items: center; 
+} 
+
 input[type='checkbox'] { 
     margin-right: 10px; 
 } 
@@ -474,10 +455,25 @@ label {
     padding: 5px;  
     margin-bottom: 10px; 
 } 
-#comparadorForm { 
-    width: 15%; /* O ajusta según tus necesidades */ 
-    margin: 0 1% 1% 1%; /* Espacio entre el formulario y la tabla */ 
+
+#listaPaisesFavoritos{  
+    height: 400px; 
+    overflow-y: auto;  
+    border: 1px solid #000000; 
+    background-color: #ccc; 
+    padding: 5px;  
+    margin-bottom: 10px; 
 } 
+
+#comparadorForm { 
+    width: 15%; 
+    margin: 0 1% 1% 1%; /* Espacio entre el formulario y la tabla */ 
+}
+
+#comparadorForm h2{
+    font-size: 14;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 #ResultadosComparacion { 
     width: 80%; 
@@ -494,7 +490,7 @@ label {
 .tabla-comparativa { 
     width: 80%; /* Ajusta esto según el diseño de tu página */ 
     margin: 20px auto; /* Centra la tabla horizontalmente y proporciona espacio arriba y abajo */ 
-    border-collapse: collapse; /* Los bordes de las celdas se colapsan en uno solo */ 
+    border-collapse: collapse; 
     background-color: #ffffff; /* Fondo blanco para la claridad */ 
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para resaltar la tabla */ 
     font-family: 'Arial', sans-serif; /* Fuente sans-serif para mejor legibilidad */ 
@@ -532,7 +528,11 @@ label {
     text-align: left; 
     width: 220px; 
 } 
-
+.parrafosSobreNosotros{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    line-height: 1.6; 
+}
 canvas{
     width: 70%;
     margin: auto;
@@ -546,18 +546,23 @@ canvas{
         box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */ 
     } 
 } 
+
 footer {
-    height: 140px;
+    height: 150px;
     background-color: #001f3f; /* Azul oscuro */
     color: white;
     clear: both;
-    margin-top: auto;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px; /* Añadido para evitar margen blanco */
+    box-sizing: border-box; /* Para asegurar que el padding no aumenta el tamaño total */
 }
 
 footer div {
     float: right;
-    padding-top: 50px;
+    padding-top: 20px;
     margin-right: 50px;
 }
 
@@ -600,6 +605,8 @@ footer p {
     position: relative;
     width: 70px;
     height: 70px;
+    margin: 0;
+    padding: 0;
 }
 
 /*ESTILOS DE TABLA DE ADMINISTRADOR PARA EDITAR PAISES*/ 
@@ -695,7 +702,7 @@ footer p {
 }
 
 .btnFavorito.favorito {
-    background-color: rgb(28, 163, 7); /* ejemplo de cambio de color */
+    background-color: rgb(28, 163, 7); 
 }
 
 .btnFavorito.girar {
@@ -821,15 +828,20 @@ footer p {
     font-weight: bold; /* Grosor de fuente adicional */
 }
 
+
+
+/*RESPONSIVE*/
+
+
 @media (max-width: 768px) { 
     nav, #contenedorFooter {
-        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
-        padding: 10px; /* Reducir padding para móviles */
+        flex-wrap: wrap;
+        padding: 10px; 
     }
 
     .logo, .buscadorNav, .listaNav {
         margin: 10px 0;
-        flex: 1 1 100%; /* Los elementos ocuparán el ancho completo en móviles */
+        flex: 1 1 100%; 
         text-align: center; /* Centrar elementos */
     }
 
@@ -844,7 +856,7 @@ footer p {
     }
 
     .listaNav {
-        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        flex-wrap: wrap; 
     }
 
     .listaNav li {
@@ -852,35 +864,35 @@ footer p {
     }
 
     form {
-        max-width: 90%; /* Ajustar el ancho del formulario para móviles */
+        max-width: 90%; 
     }
 
     #contenedorPagina, #contenedorPaginaPlus {
-        max-width: 100%; /* Ajustar el ancho del contenedor para móviles */
-        padding: 10px; /* Reducir padding para móviles */
+        max-width: 100%; 
+        padding: 10px;
     }
 
     #contenedorPaginaComparador {
         flex-direction: column; /* Disponer los elementos en columna en móviles */
     }
     #comparadorForm{
-        width: 100%;
+        width: 90%;
     }
 
     #contenedorPais {
-        width: calc(45% - 30px); /* Ajustar el ancho para mostrar dos en una fila en móviles */
-        margin: 20px 13px; /* Ajustar margen para móviles */
+        width: calc(45% - 30px); 
+        margin: 20px 13px; 
         
     }
 
     #contenedorPaisIndex {
-        width: calc(50% - 20px); /* Ajustar el ancho para mostrar dos en una fila en móviles */
-        margin: 10px 5px; /* Ajustar margen para móviles */
+        width: calc(50% - 20px); 
+        margin: 10px 5px; 
     }
 
     .tabla-comparativa {
-        width: 100%; /* La tabla ocupa el 100% del ancho en dispositivos más pequeños */
-        box-shadow: none; /* Remover sombra para evitar sensación de demasiado lleno */
+        width: 100%; 
+        box-shadow: none; 
     }
     footer {
         display: flex;
@@ -901,5 +913,94 @@ footer p {
 
     p {
         font-size: 15px;
+    }
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 20px;
+    }
+
+    footer div {
+        float: none;
+        margin: 20px 0;
+        padding-top: 0;
+        margin-right: 0;
+    }
+
+    footer ul {
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer li {
+        margin-top: 8px;
+    }
+
+    footer a {
+        margin-left: 0;
+        font-size: 15px;
+        margin: 2px;
+    }
+    #contenedorPaginaForm {
+        width: 70%;
+        margin: 10% auto;
+        padding: 10px;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 5px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .contenedorSesion {
+        width: 90%; 
+        height: auto;
+        margin: 10% auto; 
+        padding: 10px; 
+    }
+}
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+    .hero p {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh; 
+        padding: 20px;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.5em;
+    }
+    .hero p {
+        font-size: 1em;
     }
 }
