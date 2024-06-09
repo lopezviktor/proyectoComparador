@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
         obtenerPaisesPorContinente(continenteSeleccionado);
     });
 });
-
+// Objeto para almacenar los países seleccionados
 let seleccionados = {};
-
+// Función asíncrona para obtener países según el continente seleccionado
 async function obtenerPaisesPorContinente(continente) {
     const lista = document.getElementById('listaPaises');
     lista.innerHTML = ''; // Limpiar la lista anterior
@@ -34,7 +34,7 @@ function mostrarPaises(paises) {
         checkbox.value = JSON.stringify(pais);
         checkbox.name = 'paises[]';
         checkbox.checked = seleccionados[pais.nombre] || false;
-
+        // Evento para manejar la selección y deselección de países
         checkbox.addEventListener('change', () => {
             if (checkbox.checked) {
                 seleccionados[pais.nombre] = pais;
@@ -51,7 +51,7 @@ function mostrarPaises(paises) {
         lista.appendChild(contenedor);
     });
 }
-
+// Función para comparar los países seleccionados
 function comparadorPaises() {
     const paisesSeleccionados = Object.values(seleccionados);
     if (paisesSeleccionados.length < 2 || paisesSeleccionados.length > 4) {

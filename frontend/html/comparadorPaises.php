@@ -18,7 +18,7 @@
 
         <div id="contenedorPaginaComparador">
             <form id="comparadorForm">
-            <h2>Selecciona y compara</h2>
+                <h2>Selecciona y compara</h2>
                 <select id="selectorContinente">
                     <option value="">Seleccione un continente</option>
                     <option value="Europa">Europa</option>
