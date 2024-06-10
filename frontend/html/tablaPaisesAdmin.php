@@ -27,7 +27,7 @@
                 <th>Esperanza Vida</th>
                 <th>Tasa Natalidad</th>
                 <th>Tasa Mortalidad</th>
-                <th>Acciones</th>
+                <th colspan="2">Acciones</th>
             </tr>
         </thead>
         <tbody>
