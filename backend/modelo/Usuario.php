@@ -77,6 +77,7 @@ class Usuario{
     {
         return $this->contrasena;
     }
+    
     public function setContrasena($contrasena)
     {
         $this->contrasena = $contrasena;
